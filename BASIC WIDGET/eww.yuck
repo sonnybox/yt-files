@@ -1,0 +1,89 @@
+(
+    defwindow window
+    :monitor 0 ; Can be either a number (X11 and Wayland) or an output name (X11 only).
+    :geometry ; Geometry of the window.
+    (
+        geometry ; Geometry of the window.
+        :anchor "left center" ; Values include top, center, bottom and left, center, right.
+        :x "0" ; Position of the window. Values may be provided in px or %.
+        :y "0" ; Will be relative to anchor.
+        :width "0" ; Width and height of the window.
+        :height "0" ; Values may be provided in px or %.
+    )
+
+    ; X11
+
+    ;:stacking "fg" ; Where the window should appear in the stack. Possible values: fg, bg.
+    ;:wm-ignore "true" ; Whether the window manager should ignore this window.
+    ;:reserve ; Specify how the window manager should make space for your window.
+    ;(
+    ;    struts ; This is useful for bars, which should not overlap any other windows.
+    ;    :distance "10px"
+    ;    :side "top"
+    ;)
+    ;:windowtype "dock" ; Possible values: normal, dock, toolbar, dialog, desktop.
+
+    ; Wayland
+
+    :stacking "fg" ; Possible values: fg, bg, overlay, bottom.
+    :exclusive "true" ; Whether the compositor should reserve space for the window.
+    :focusable "false" ; This is necessary for any widgets that use the keyboard to work.
+    ;:namespace "??" ; Set the wayland layersurface namespace eww uses.
+    (
+        widget
+        :arg1 "This is a widget."
+        :arg2 "This is a tooltip."
+    )
+)
+
+(
+    defwidget widget [arg1 ?arg2]
+    (
+        box
+        
+        ; Box specific
+
+        :spacing "0" ; Int spacing between elements
+        :orientation "h" ; Orientation of the box. possible values: "vertical", "v", "horizontal", "h"
+        :space-evenly "false" ; Bool space the widgets evenly.
+
+        ; General
+
+        :class "example" ; String css class name
+        :valign "center" ; Vertical alignment, ex: "fill", "baseline", "center", "start", "end"
+        :halign "center" ; Horizontal alignment, ex: "fill", "baseline", "center", "start", "end"
+        :vexpand "false" ; Bool should this container expand vertically. Default: false.
+        :hexpand "false" ; Bool should this widget expand horizontally. Default: false.
+        :width "0" ; Int, note: Cannot restrict the size if the contents stretch it
+        :height "0" ; Int, note: Cannot restrict the size if the contents stretch it
+        :active "true" ; Bool If this widget can be interacted with
+        :tooltip arg2 ; String tooltip text (on hover)
+        :visible "true" ; Bool visibility of the widget
+        ;:style ; String inline css style applied to the widget
+        (
+            box
+            
+            ; Box specific
+
+            :spacing "0" ; Int spacing between elements
+            :orientation "h" ; Orientation of the box. possible values: "vertical", "v", "horizontal", "h"
+            :space-evenly "false" ; Bool space the widgets evenly.
+
+            ; General
+
+            :class "example" ; String css class name
+            :valign "center" ; Vertical alignment, ex: "fill", "baseline", "center", "start", "end"
+            :halign "center" ; Horizontal alignment, ex: "fill", "baseline", "center", "start", "end"
+            :vexpand "false" ; Bool should this container expand vertically. Default: false.
+            :hexpand "false" ; Bool should this widget expand horizontally. Default: false.
+            :width "0" ; Int, note: Cannot restrict the size if the contents stretch it
+            :height "0" ; Int, note: Cannot restrict the size if the contents stretch it
+            :active "true" ; Bool If this widget can be interacted with
+            :tooltip arg2 ; String tooltip text (on hover)
+            :visible "true" ; Bool visibility of the widget
+            :style "margin-right: 8px;"; String inline css style applied to the widget
+            
+            arg1
+        )
+    )
+)
