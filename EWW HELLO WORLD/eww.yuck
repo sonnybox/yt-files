@@ -1,0 +1,33 @@
+(
+    defwindow ex
+    :monitor 0 ; Can be either a number (X11 and Wayland) or an output name (X11 only).
+    :geometry ; Geometry of the window.
+    (
+        geometry ; Geometry of the window.
+        :anchor "top center" ; Values include top, center, bottom and left, center, right.
+        :x "0" ; Position of the window. Values may be provided in px or %.
+        :y "0" ; Will be relative to anchor.
+        :width "10%" ; Width and height of the window.
+        :height "10%" ; Values may be provided in px or %.
+    )
+
+    ; X11
+
+    ;:stacking "fg" ; Where the window should appear in the stack. Possible values: fg, bg.
+    ;:wm-ignore "true" ; Whether the window manager should ignore this window.
+    ;:reserve ; Specify how the window manager should make space for your window.
+    ;(
+    ;    struts ; This is useful for bars, which should not overlap any other windows.
+    ;    :distance "10px"
+    ;    :side "top"
+    ;)
+    ;:windowtype "dock" ; Possible values: normal, dock, toolbar, dialog, desktop.
+
+    ; Wayland
+
+    :stacking "fg" ; Possible values: fg, bg, overlay, bottom.
+    :exclusive "true" ; Whether the compositor should reserve space for the window.
+    :focusable "false" ; This is necessary for any widgets that use the keyboard to work.
+    ;:namespace "??" ; Set the wayland layersurface namespace eww uses.
+    "HELLO WORLD"
+)
