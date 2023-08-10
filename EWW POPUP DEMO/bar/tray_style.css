@@ -1,0 +1,19 @@
+* {
+    font-family: figtree, sans-serif;
+    font-weight: 600;
+}
+
+#tray, #waybar {
+    background: none;
+}
+
+menu, tooltip {
+    background-color: rgba(0, 0, 0, 0.91);
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+tooltip * {
+    padding: 2px;
+}
+

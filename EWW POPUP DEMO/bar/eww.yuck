@@ -1,0 +1,114 @@
+(
+    defwindow status_bar
+    :monitor 0
+    :stacking "fg"
+    :exclusive false
+    :geometry
+    (geometry :anchor "top center" :y "-30" :height "30" :width "100%")
+    (parent)
+)
+
+(
+    defwindow audio_popup
+    :monitor 0
+    :stacking "fg"
+    :exclusive false
+    :geometry
+    (geometry :anchor "top left" :y "50" :x "50")
+    "test"
+)
+
+(
+    defwidget parent []
+    (
+        centerbox
+        :class "parent"
+        :orientation "h"
+        (
+            box
+            :class "left"
+            :halign "start"
+            (label :text {"  " + (window == "null" ? "Welcome" : window)} :limit-width 111)
+        )
+        (
+            box
+            :class "center-tray-reserve"
+            :halign "center"
+            {tray + audio}
+        )
+        (
+            box
+            :class "right"
+            :space-evenly false
+            :halign "end"
+            (
+                button
+                :class "button"
+                :tooltip "Top"
+                :onclick "hyprctl dispatch exec 'alacritty -e /usr/bin/top'"
+                " "
+            )
+            (
+                button
+                :class "button"
+                :tooltip "Network Manager"
+                :onclick "hyprctl dispatch exec 'alacritty -e /usr/bin/nmtui'"
+                network
+            )
+
+            ; button method
+
+            (
+                button
+                :class "button"
+                :tooltip "Switch Devices Button" 
+                :onclick "./scripts/popup_audio.sh" 
+                "󰓃"
+            )
+
+            ; hover method
+
+            (
+                eventbox
+                :onhover "./scripts/popup_audio.sh"
+                :tooltip "Switch Devices Hover"
+                "󰓃 "
+            )
+
+            (
+                box :class "time" 
+                time
+            )
+        )
+    )
+)
+
+(
+    deflisten time
+    :initial ""
+    "./scripts/time_synced.sh"
+)
+
+(
+    deflisten network
+    :initial ""
+    "./scripts/connected_status.sh"
+)
+
+(
+    deflisten window
+    :initial ""
+    "./scripts/hyprland_window_title.sh"
+)
+
+(
+    deflisten tray
+    :initial ""
+    "./scripts/start_tray.sh"
+)
+
+(
+    deflisten audio
+    :initial ""
+    "eww daemon --config ~/.config/eww/aud_men/"
+)

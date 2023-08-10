@@ -1,0 +1,65 @@
+(
+    defwindow audio_menu
+    :monitor 0
+    :exclusive "false"
+    :stacking "overlay"
+    :geometry
+
+    ; Reposition to correct area
+
+    (geometry :anchor "top left" :x 1488 :y 0)
+    (audio_event)
+)
+
+(
+    defwidget audio_event []
+    (
+        eventbox
+        :onhoverlost "./scripts/popup_audio.sh"
+        (revealer :transition "slideleft" :reveal "true" :duration "10000ms"
+            (audio_menu)
+        )
+    )
+)
+
+(
+    defwidget audio_menu []
+    (
+        box :class "parent" :space-evenly "false" :orientation "v"
+        (
+            box :class "header" :space-evenly "false"
+            (label :text "    Switch Audio Devices" :class "title")
+            (
+                button 
+                :class "exit" 
+                :onclick "eww open --config ~/.config/eww/aud_men audio_menu --toggle"
+                (label :text " ")
+            )
+        )
+        (
+            box :class "body" :space-evenly "false" :orientation "v"
+            (
+                button 
+                :class "button"
+                :vexpand "false"
+                :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_01_00.1.hdmi-stereo"
+                (label :text "󰓃   Speakers")
+            )
+            (
+                button 
+                :class "button"
+                :hexpand "false"
+                :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_00_1b.0.analog-surround-40"
+                (label :text "󰋋   Headphones")
+            )
+            (
+                button 
+                :class "button" 
+                :hexpand "false"
+                :onclick "scripts/set_audio_device.sh alsa_output.usb-Sony_Interactive_Entertainment_DualSense_Wireless_Controller-00.analog-surround-40"
+                (label :text "    PS5 Controller")
+            )
+        )
+    )
+)
+

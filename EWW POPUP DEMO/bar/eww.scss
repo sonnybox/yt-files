@@ -1,0 +1,35 @@
+* 
+{ 
+    all: unset; 
+    font-family: figtree, sans-serif;
+    font-weight: 600;
+}
+
+.parent { text-shadow: 2px 2px 2px #000000; }
+
+.center-tray-reserve 
+{ 
+    text-shadow: none;
+    color: red;
+}
+
+.right { margin-right: 8px; }
+.left { margin-left: 8px; }
+
+.button { 
+    color: white; 
+    transition: 100ms ease all;
+    margin-right: 8px;
+}
+
+.button:hover { color: #bbb; }
+
+tooltip {
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+tooltip * {
+    padding: 2px;
+}
