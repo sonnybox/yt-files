@@ -14,4 +14,4 @@ Same as `Basic Widget` except is more primitive.
 The provided config.rasi file is for Rofi users wanting a simple and elegant app launcher.
 
 ## EWW Popup Demo
-Basic source code of my bar configuration showing how you can use events to trigger window popups and closes in EWWW.
+Basic source code of my bar configuration showing how you can use events to trigger window popups and closes in EWW.
