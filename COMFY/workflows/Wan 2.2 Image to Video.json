@@ -3365,92 +3365,6 @@
       ]
     },
     {
-      "id": 935,
-      "type": "WanVideoModelLoader",
-      "pos": [
-        960,
-        -1424
-      ],
-      "size": [
-        211,
-        294
-      ],
-      "flags": {},
-      "order": 50,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "compile_args",
-          "shape": 7,
-          "type": "WANCOMPILEARGS",
-          "link": 1901
-        },
-        {
-          "name": "block_swap_args",
-          "shape": 7,
-          "type": "BLOCKSWAPARGS",
-          "link": 1924
-        },
-        {
-          "name": "lora",
-          "shape": 7,
-          "type": "WANVIDLORA",
-          "link": 1928
-        },
-        {
-          "name": "vram_management_args",
-          "shape": 7,
-          "type": "VRAM_MANAGEMENTARGS",
-          "link": null
-        },
-        {
-          "name": "extra_model",
-          "shape": 7,
-          "type": "VACEPATH",
-          "link": null
-        },
-        {
-          "name": "fantasytalking_model",
-          "shape": 7,
-          "type": "FANTASYTALKINGMODEL",
-          "link": null
-        },
-        {
-          "name": "multitalk_model",
-          "shape": 7,
-          "type": "MULTITALKMODEL",
-          "link": null
-        },
-        {
-          "name": "fantasyportrait_model",
-          "shape": 7,
-          "type": "FANTASYPORTRAITMODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model",
-          "type": "WANVIDEOMODEL",
-          "links": [
-            1900
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-wanvideowrapper",
-        "ver": "1.3.3",
-        "Node name for S&R": "WanVideoModelLoader"
-      },
-      "widgets_values": [
-        "Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors",
-        "fp16_fast",
-        "disabled",
-        "offload_device",
-        "sageattn"
-      ]
-    },
-    {
       "id": 965,
       "type": "WanVideoDecode",
       "pos": [
@@ -3980,93 +3894,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 970,
-      "type": "WanVideoModelLoader",
-      "pos": [
-        960,
-        -1768
-      ],
-      "size": [
-        232,
-        296
-      ],
-      "flags": {},
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "compile_args",
-          "shape": 7,
-          "type": "WANCOMPILEARGS",
-          "link": 1935
-        },
-        {
-          "name": "block_swap_args",
-          "shape": 7,
-          "type": "BLOCKSWAPARGS",
-          "link": 1933
-        },
-        {
-          "name": "lora",
-          "shape": 7,
-          "type": "WANVIDLORA",
-          "link": 1934
-        },
-        {
-          "name": "vram_management_args",
-          "shape": 7,
-          "type": "VRAM_MANAGEMENTARGS",
-          "link": null
-        },
-        {
-          "name": "extra_model",
-          "shape": 7,
-          "type": "VACEPATH",
-          "link": null
-        },
-        {
-          "name": "fantasytalking_model",
-          "shape": 7,
-          "type": "FANTASYTALKINGMODEL",
-          "link": null
-        },
-        {
-          "name": "multitalk_model",
-          "shape": 7,
-          "type": "MULTITALKMODEL",
-          "link": null
-        },
-        {
-          "name": "fantasyportrait_model",
-          "shape": 7,
-          "type": "FANTASYPORTRAITMODEL",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "model",
-          "type": "WANVIDEOMODEL",
-          "links": [
-            1936,
-            1945
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-wanvideowrapper",
-        "ver": "1.3.3",
-        "Node name for S&R": "WanVideoModelLoader"
-      },
-      "widgets_values": [
-        "Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors",
-        "fp16_fast",
-        "disabled",
-        "offload_device",
-        "sageattn"
-      ]
-    },
-    {
       "id": 973,
       "type": "SetNode",
       "pos": [
@@ -4229,6 +4056,181 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 935,
+      "type": "WanVideoModelLoader",
+      "pos": [
+        960,
+        -1424
+      ],
+      "size": [
+        211,
+        294
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "compile_args",
+          "shape": 7,
+          "type": "WANCOMPILEARGS",
+          "link": 1901
+        },
+        {
+          "name": "block_swap_args",
+          "shape": 7,
+          "type": "BLOCKSWAPARGS",
+          "link": 1924
+        },
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "WANVIDLORA",
+          "link": 1928
+        },
+        {
+          "name": "vram_management_args",
+          "shape": 7,
+          "type": "VRAM_MANAGEMENTARGS",
+          "link": null
+        },
+        {
+          "name": "extra_model",
+          "shape": 7,
+          "type": "VACEPATH",
+          "link": null
+        },
+        {
+          "name": "fantasytalking_model",
+          "shape": 7,
+          "type": "FANTASYTALKINGMODEL",
+          "link": null
+        },
+        {
+          "name": "multitalk_model",
+          "shape": 7,
+          "type": "MULTITALKMODEL",
+          "link": null
+        },
+        {
+          "name": "fantasyportrait_model",
+          "shape": 7,
+          "type": "FANTASYPORTRAITMODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "WANVIDEOMODEL",
+          "links": [
+            1900
+          ]
+        }
+      ],
+      "title": "High Noise Model Loader",
+      "properties": {
+        "cnr_id": "comfyui-wanvideowrapper",
+        "ver": "1.3.3",
+        "Node name for S&R": "WanVideoModelLoader"
+      },
+      "widgets_values": [
+        "Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors",
+        "fp16_fast",
+        "disabled",
+        "offload_device",
+        "sageattn"
+      ]
+    },
+    {
+      "id": 970,
+      "type": "WanVideoModelLoader",
+      "pos": [
+        960,
+        -1768
+      ],
+      "size": [
+        232,
+        296
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "compile_args",
+          "shape": 7,
+          "type": "WANCOMPILEARGS",
+          "link": 1935
+        },
+        {
+          "name": "block_swap_args",
+          "shape": 7,
+          "type": "BLOCKSWAPARGS",
+          "link": 1933
+        },
+        {
+          "name": "lora",
+          "shape": 7,
+          "type": "WANVIDLORA",
+          "link": 1934
+        },
+        {
+          "name": "vram_management_args",
+          "shape": 7,
+          "type": "VRAM_MANAGEMENTARGS",
+          "link": null
+        },
+        {
+          "name": "extra_model",
+          "shape": 7,
+          "type": "VACEPATH",
+          "link": null
+        },
+        {
+          "name": "fantasytalking_model",
+          "shape": 7,
+          "type": "FANTASYTALKINGMODEL",
+          "link": null
+        },
+        {
+          "name": "multitalk_model",
+          "shape": 7,
+          "type": "MULTITALKMODEL",
+          "link": null
+        },
+        {
+          "name": "fantasyportrait_model",
+          "shape": 7,
+          "type": "FANTASYPORTRAITMODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "WANVIDEOMODEL",
+          "links": [
+            1936,
+            1945
+          ]
+        }
+      ],
+      "title": "Low Noise Model Loader",
+      "properties": {
+        "cnr_id": "comfyui-wanvideowrapper",
+        "ver": "1.3.3",
+        "Node name for S&R": "WanVideoModelLoader"
+      },
+      "widgets_values": [
+        "Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors",
+        "fp16_fast",
+        "disabled",
+        "offload_device",
+        "sageattn"
+      ]
     }
   ],
   "links": [
