@@ -440,7 +440,7 @@
         -528
       ],
       "size": [
-        210.46665954589844,
+        210.25,
         88
       ],
       "flags": {
@@ -489,7 +489,7 @@
         -656
       ],
       "size": [
-        210.46665954589844,
+        210.25,
         88
       ],
       "flags": {
@@ -639,7 +639,9 @@
         "ver": "0.3.54",
         "Node name for S&R": "GetImageSize"
       },
-      "widgets_values": []
+      "widgets_values": [
+        "width: 363, height: 519\n batch size: 1"
+      ]
     },
     {
       "id": 126,
@@ -727,7 +729,9 @@
         "ver": "0.3.56",
         "Node name for S&R": "GetImageSize"
       },
-      "widgets_values": []
+      "widgets_values": [
+        "width: 742, height: 1060\n batch size: 1"
+      ]
     },
     {
       "id": 648,
@@ -1088,7 +1092,7 @@
         -1088
       ],
       "size": [
-        248.5,
+        248.18333435058594,
         392
       ],
       "flags": {},
@@ -1203,7 +1207,7 @@
         -568
       ],
       "size": [
-        248.5,
+        248.18333435058594,
         392
       ],
       "flags": {},
@@ -1413,7 +1417,7 @@
         -656
       ],
       "size": [
-        222.1999969482422,
+        221.96665954589844,
         46
       ],
       "flags": {},
@@ -1720,7 +1724,7 @@
         60
       ],
       "flags": {},
-      "order": 57,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -1756,7 +1760,7 @@
         58
       ],
       "flags": {},
-      "order": 58,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -1820,7 +1824,7 @@
       ],
       "size": [
         400,
-        728
+        876.6956787109375
       ],
       "flags": {
         "collapsed": false
@@ -1880,13 +1884,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "wan_highnoise_00038.mp4",
+            "filename": "wan_highnoise_00036.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 16,
-            "workflow": "wan_highnoise_00038.png",
-            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_highnoise_00038.mp4"
+            "workflow": "wan_highnoise_00036.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_highnoise_00036.mp4"
           }
         }
       }
@@ -2024,7 +2028,7 @@
       ],
       "size": [
         267.6666564941406,
-        951.6666259765625
+        1048.5797119140625
       ],
       "flags": {},
       "order": 63,
@@ -2236,7 +2240,7 @@
       ],
       "size": [
         267.6666564941406,
-        951.6666259765625
+        1048.5797119140625
       ],
       "flags": {},
       "order": 68,
@@ -2731,7 +2735,7 @@
       ],
       "size": [
         267.6666564941406,
-        951.6666259765625
+        1059.3477783203125
       ],
       "flags": {},
       "order": 82,
@@ -3099,7 +3103,7 @@
       ],
       "size": [
         400,
-        728
+        893.2174072265625
       ],
       "flags": {
         "collapsed": false
@@ -3159,13 +3163,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "wan_00046.mp4",
+            "filename": "wan_00044.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 32,
-            "workflow": "wan_00046.png",
-            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_00046.mp4"
+            "workflow": "wan_00044.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_00044.mp4"
           }
         }
       }
@@ -3179,7 +3183,7 @@
       ],
       "size": [
         400,
-        728
+        876.6956787109375
       ],
       "flags": {
         "collapsed": false
@@ -3239,13 +3243,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "wan_lownoise_00037.mp4",
+            "filename": "wan_lownoise_00035.mp4",
             "subfolder": "",
             "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 16,
-            "workflow": "wan_lownoise_00037.png",
-            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_lownoise_00037.mp4"
+            "workflow": "wan_lownoise_00035.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_lownoise_00035.mp4"
           }
         }
       }
@@ -3548,7 +3552,7 @@
         -856
       ],
       "size": [
-        222.16665649414062,
+        221.96665954589844,
         46
       ],
       "flags": {},
@@ -3720,6 +3724,109 @@
       ]
     },
     {
+      "id": 1009,
+      "type": "easy boolean",
+      "pos": [
+        2744,
+        256
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": [
+            2017
+          ]
+        }
+      ],
+      "title": "Toggle Upscale Pass",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.3",
+        "Node name for S&R": "easy boolean"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 1005,
+      "type": "easy boolean",
+      "pos": [
+        2264,
+        264
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": [
+            2005
+          ]
+        }
+      ],
+      "title": "Toggle Low Pass",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.3",
+        "Node name for S&R": "easy boolean"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 1031,
+      "type": "PrimitiveInt",
+      "pos": [
+        2504,
+        248
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            2050
+          ]
+        }
+      ],
+      "title": "Seed Generator",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        42,
+        "fixed"
+      ]
+    },
+    {
       "id": 1051,
       "type": "RIFE VFI",
       "pos": [
@@ -3727,7 +3834,7 @@
         -752
       ],
       "size": [
-        289.9666748046875,
+        289.6000061035156,
         198
       ],
       "flags": {},
@@ -3922,13 +4029,36 @@
         88
       ],
       "flags": {},
-      "order": 32,
+      "order": 35,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
         "You could also use Lanzcos if you want smoother edges below"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 1042,
+      "type": "MarkdownNote",
+      "pos": [
+        2104,
+        -504
+      ],
+      "size": [
+        416,
+        632
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "## Required Models\n\nRTX 3000s (e5m2)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/blob/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors)\n * [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors?download=true)\n\nRTX 4000s+ (e4m3fn)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n\nUMT5 Text Encoder\n * [FP16](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)\n* [FP8](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)\n\nVAE\n* [BF16](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors?download=true)\n\nLightX2V LoRA\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors?download=true)\n\n## Optional\n\n* [2x Upscale Model *(works surprising well for 8MB)*](https://drive.google.com/uc?export=download&confirm=1&id=1TpqLUsHvqgbnpGr8hOE47BYIH3zqBDpu)\n\n### Need help? Ask me on Discord\n* [Server Invite](https://discord.com/invite/dBMfugkb)"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -3945,7 +4075,7 @@
         88
       ],
       "flags": {},
-      "order": 33,
+      "order": 37,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3968,7 +4098,7 @@
         88
       ],
       "flags": {},
-      "order": 34,
+      "order": 38,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -4103,132 +4233,6 @@
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 1005,
-      "type": "easy boolean",
-      "pos": [
-        2264,
-        264
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 35,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "links": [
-            2005
-          ]
-        }
-      ],
-      "title": "Toggle Low Pass",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.3",
-        "Node name for S&R": "easy boolean"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 1009,
-      "type": "easy boolean",
-      "pos": [
-        2744,
-        256
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 36,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "links": [
-            2017
-          ]
-        }
-      ],
-      "title": "Toggle Upscale Pass",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.3",
-        "Node name for S&R": "easy boolean"
-      },
-      "widgets_values": [
-        true
-      ]
-    },
-    {
-      "id": 1031,
-      "type": "PrimitiveInt",
-      "pos": [
-        2504,
-        248
-      ],
-      "size": [
-        210,
-        82
-      ],
-      "flags": {},
-      "order": 37,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            2050
-          ]
-        }
-      ],
-      "title": "Seed Generator",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.57",
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        43,
-        "fixed"
-      ]
-    },
-    {
-      "id": 1042,
-      "type": "MarkdownNote",
-      "pos": [
-        2104,
-        -504
-      ],
-      "size": [
-        416,
-        632
-      ],
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "## Required Models \n### (WARNING FP8 IS HIGHER QUALITY THAN GGUF Q3/4/5/6 BUT USES A LOT OF SYSTEM RAM BECAUSE OF OFFLOADING)\n\nRTX 3000/4000 (e5m2)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/blob/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors)\n * [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors?download=true)\n\nRTX 5000 (e4m3fn)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n\nUMT5 Text Encoder\n * [FP16](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)\n* [FP8](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)\n\nVAE\n* [BF16](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors?download=true)\n\nLightX2V LoRA\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors?download=true)\n\n## Optional\n\n* [2x Upscale Model *(works surprising well for 8MB)*](https://drive.google.com/uc?export=download&confirm=1&id=1TpqLUsHvqgbnpGr8hOE47BYIH3zqBDpu)\n\n### Need help? Ask me on Discord\n* [Server Invite](https://discord.com/invite/dBMfugkb)"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
