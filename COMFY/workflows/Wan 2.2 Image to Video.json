@@ -1,8 +1,8 @@
 {
   "id": "e7533930-2792-43a9-b4b5-ded4617d8a43",
   "revision": 0,
-  "last_node_id": 1077,
-  "last_link_id": 2112,
+  "last_node_id": 1078,
+  "last_link_id": 2113,
   "nodes": [
     {
       "id": 606,
@@ -596,9 +596,7 @@
         "ver": "0.3.54",
         "Node name for S&R": "GetImageSize"
       },
-      "widgets_values": [
-        "width: 458, height: 458\n batch size: 1"
-      ]
+      "widgets_values": []
     },
     {
       "id": 126,
@@ -686,9 +684,7 @@
         "ver": "0.3.56",
         "Node name for S&R": "GetImageSize"
       },
-      "widgets_values": [
-        "width: 971, height: 971\n batch size: 1"
-      ]
+      "widgets_values": []
     },
     {
       "id": 648,
@@ -740,7 +736,7 @@
         58
       ],
       "flags": {},
-      "order": 57,
+      "order": 55,
       "mode": 0,
       "inputs": [
         {
@@ -851,13 +847,13 @@
         58
       ],
       "flags": {},
-      "order": 51,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
           "name": "WANVIDLORA",
           "type": "WANVIDLORA",
-          "link": 1927
+          "link": 2113
         }
       ],
       "outputs": [
@@ -887,7 +883,7 @@
         60
       ],
       "flags": {},
-      "order": 55,
+      "order": 60,
       "mode": 0,
       "inputs": [
         {
@@ -1598,7 +1594,7 @@
       "id": 1002,
       "type": "SetNode",
       "pos": [
-        2264,
+        2248,
         264
       ],
       "size": [
@@ -1606,7 +1602,7 @@
         60
       ],
       "flags": {},
-      "order": 60,
+      "order": 59,
       "mode": 0,
       "inputs": [
         {
@@ -1642,7 +1638,7 @@
         58
       ],
       "flags": {},
-      "order": 59,
+      "order": 57,
       "mode": 0,
       "inputs": [
         {
@@ -1761,7 +1757,7 @@
         60
       ],
       "flags": {},
-      "order": 52,
+      "order": 51,
       "mode": 0,
       "inputs": [
         {
@@ -2538,86 +2534,6 @@
       ]
     },
     {
-      "id": 975,
-      "type": "VHS_VideoCombine",
-      "pos": [
-        2176,
-        376
-      ],
-      "size": [
-        400,
-        728
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 41,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 1943
-        },
-        {
-          "name": "audio",
-          "shape": 7,
-          "type": "AUDIO",
-          "link": null
-        },
-        {
-          "name": "meta_batch",
-          "shape": 7,
-          "type": "VHS_BatchManager",
-          "link": null
-        },
-        {
-          "name": "vae",
-          "shape": 7,
-          "type": "VAE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "Filenames",
-          "type": "VHS_FILENAMES",
-          "links": null
-        }
-      ],
-      "title": "Low Noise Preview",
-      "properties": {
-        "cnr_id": "comfyui-videohelpersuite",
-        "ver": "1.7.4",
-        "Node name for S&R": "VHS_VideoCombine"
-      },
-      "widgets_values": {
-        "frame_rate": 16,
-        "loop_count": 0,
-        "filename_prefix": "wan_lownoise",
-        "format": "video/h264-mp4",
-        "pix_fmt": "yuv420p",
-        "crf": 19,
-        "save_metadata": true,
-        "trim_to_audio": false,
-        "pingpong": false,
-        "save_output": false,
-        "videopreview": {
-          "hidden": false,
-          "paused": false,
-          "params": {
-            "filename": "wan_lownoise_00008.mp4",
-            "subfolder": "",
-            "type": "temp",
-            "format": "video/h264-mp4",
-            "frame_rate": 16,
-            "workflow": "wan_lownoise_00008.png",
-            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_lownoise_00008.mp4"
-          }
-        }
-      }
-    },
-    {
       "id": 1022,
       "type": "SplitSigmas",
       "pos": [
@@ -2629,7 +2545,7 @@
         78
       ],
       "flags": {},
-      "order": 53,
+      "order": 52,
       "mode": 0,
       "inputs": [
         {
@@ -3389,64 +3305,6 @@
       ]
     },
     {
-      "id": 963,
-      "type": "WanVideoLoraSelectMulti",
-      "pos": [
-        1416,
-        808
-      ],
-      "size": [
-        320,
-        344
-      ],
-      "flags": {},
-      "order": 25,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "prev_lora",
-          "shape": 7,
-          "type": "WANVIDLORA",
-          "link": null
-        },
-        {
-          "name": "blocks",
-          "shape": 7,
-          "type": "SELECTEDBLOCKS",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "lora",
-          "type": "WANVIDLORA",
-          "links": [
-            1927
-          ]
-        }
-      ],
-      "title": "Low Noise WanVideo Lora Select Multi",
-      "properties": {
-        "cnr_id": "comfyui-wanvideowrapper",
-        "ver": "1.3.3",
-        "Node name for S&R": "WanVideoLoraSelectMulti"
-      },
-      "widgets_values": [
-        "speed/Wan2.2-Lightning_I2V-A14B-4steps-lora_HIGH_fp16.safetensors",
-        0.95,
-        "wan2.1-n0k1a.safetensors",
-        0.9,
-        "wan2.1-l3n0v0.safetensors",
-        0.8,
-        "Instareal_low.safetensors",
-        0.7,
-        "none",
-        1,
-        false,
-        true
-      ]
-    },
-    {
       "id": 1031,
       "type": "PrimitiveInt",
       "pos": [
@@ -3458,7 +3316,7 @@
         82
       ],
       "flags": {},
-      "order": 26,
+      "order": 25,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3493,7 +3351,7 @@
         82
       ],
       "flags": {},
-      "order": 56,
+      "order": 54,
       "mode": 0,
       "inputs": [
         {
@@ -3536,7 +3394,7 @@
         82
       ],
       "flags": {},
-      "order": 58,
+      "order": 56,
       "mode": 0,
       "inputs": [
         {
@@ -3579,7 +3437,7 @@
         112
       ],
       "flags": {},
-      "order": 27,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3614,7 +3472,7 @@
         112
       ],
       "flags": {},
-      "order": 28,
+      "order": 27,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3650,7 +3508,7 @@
         112
       ],
       "flags": {},
-      "order": 29,
+      "order": 28,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3732,7 +3590,7 @@
         88
       ],
       "flags": {},
-      "order": 30,
+      "order": 29,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3755,7 +3613,7 @@
         88
       ],
       "flags": {},
-      "order": 31,
+      "order": 30,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3778,7 +3636,7 @@
         60
       ],
       "flags": {},
-      "order": 32,
+      "order": 31,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -3810,7 +3668,7 @@
         176
       ],
       "flags": {},
-      "order": 33,
+      "order": 32,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3830,12 +3688,12 @@
       ],
       "size": [
         400,
-        728
+        334
       ],
       "flags": {
         "collapsed": false
       },
-      "order": 54,
+      "order": 53,
       "mode": 0,
       "inputs": [
         {
@@ -3952,6 +3810,239 @@
       ]
     },
     {
+      "id": 1070,
+      "type": "Note",
+      "pos": [
+        2344,
+        -1648
+      ],
+      "size": [
+        210,
+        88
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You could also use Lanzcos if you want smoother edges below"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 1049,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2304,
+        -888
+      ],
+      "size": [
+        222.16665649414062,
+        46
+      ],
+      "flags": {},
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 2066
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2072
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2068
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.57",
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 566,
+      "type": "LoadImage",
+      "pos": [
+        376,
+        240
+      ],
+      "size": [
+        688,
+        920
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1174,
+            1256,
+            1270
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.56",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 1009,
+      "type": "easy boolean",
+      "pos": [
+        2744,
+        256
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": [
+            2017
+          ]
+        }
+      ],
+      "title": "Toggle Upscale Pass",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.3",
+        "Node name for S&R": "easy boolean"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
+      "id": 1078,
+      "type": "WanVideoLoraSelectMulti",
+      "pos": [
+        1416,
+        808
+      ],
+      "size": [
+        328,
+        344
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "prev_lora",
+          "shape": 7,
+          "type": "WANVIDLORA",
+          "link": null
+        },
+        {
+          "name": "blocks",
+          "shape": 7,
+          "type": "SELECTEDBLOCKS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "lora",
+          "type": "WANVIDLORA",
+          "links": [
+            2113
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-wanvideowrapper",
+        "ver": "1.3.3",
+        "Node name for S&R": "WanVideoLoraSelectMulti"
+      },
+      "widgets_values": [
+        "speed/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors",
+        1,
+        "none",
+        1,
+        "none",
+        1,
+        "none",
+        1,
+        "none",
+        1,
+        false,
+        true
+      ]
+    },
+    {
+      "id": 1005,
+      "type": "easy boolean",
+      "pos": [
+        2248,
+        264
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "boolean",
+          "type": "BOOLEAN",
+          "links": [
+            2005
+          ]
+        }
+      ],
+      "title": "Toggle Low Pass",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.3",
+        "Node name for S&R": "easy boolean"
+      },
+      "widgets_values": [
+        false
+      ]
+    },
+    {
       "id": 984,
       "type": "VHS_VideoCombine",
       "pos": [
@@ -3960,7 +4051,7 @@
       ],
       "size": [
         400,
-        728
+        334
       ],
       "flags": {
         "collapsed": false
@@ -4032,93 +4123,84 @@
       }
     },
     {
-      "id": 1070,
-      "type": "Note",
+      "id": 975,
+      "type": "VHS_VideoCombine",
       "pos": [
-        2344,
-        -1648
+        2176,
+        376
       ],
       "size": [
-        210,
-        88
+        400,
+        334
       ],
-      "flags": {},
-      "order": 34,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "You could also use Lanzcos if you want smoother edges below"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 1042,
-      "type": "MarkdownNote",
-      "pos": [
-        2096,
-        -544
-      ],
-      "size": [
-        448,
-        672
-      ],
-      "flags": {},
-      "order": 35,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "SuperComfy Workflow v0.1.1",
-      "properties": {},
-      "widgets_values": [
-        "## Required Models \n### (WARNING FP8 IS HIGHER QUALITY THAN GGUF Q3/4/5/6 BUT USES A LOT OF SYSTEM RAM BECAUSE OF OFFLOADING)\n\nRTX 3000 (e5m2)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/blob/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors)\n * [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors?download=true)\n\nRTX 4000/5000 (e4m3fn), *as of writing torch compile support is not fully working with blackwell cards just yet, if you get an error, bypass the torch compile node.*\n\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n\nUMT5 Text Encoder\n * [FP16](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)\n* [FP8](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)\n\nVAE\n* [BF16](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors?download=true)\n\nLightX2V LoRA\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors?download=true)\n\n## Optional\n\n* [2x Upscale Model *(works surprising well for 8MB)*](https://drive.google.com/uc?export=download&confirm=1&id=1TpqLUsHvqgbnpGr8hOE47BYIH3zqBDpu)\n\n### Need help? Ask me on Discord\n* [Server Invite](https://discord.com/invite/dBMfugkb)"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 1049,
-      "type": "ImageUpscaleWithModel",
-      "pos": [
-        2304,
-        -888
-      ],
-      "size": [
-        222.16665649414062,
-        46
-      ],
-      "flags": {},
-      "order": 86,
+      "flags": {
+        "collapsed": false
+      },
+      "order": 41,
       "mode": 0,
       "inputs": [
         {
-          "name": "upscale_model",
-          "type": "UPSCALE_MODEL",
-          "link": 2066
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1943
         },
         {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 2072
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            2068
-          ]
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
         }
       ],
+      "title": "Low Noise Preview",
       "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.57",
-        "Node name for S&R": "ImageUpscaleWithModel"
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.4",
+        "Node name for S&R": "VHS_VideoCombine"
       },
-      "widgets_values": []
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "wan_lownoise",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "wan_lownoise_00008.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "wan_lownoise_00008.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_lownoise_00008.mp4"
+          }
+        }
+      }
     },
     {
       "id": 650,
@@ -4132,7 +4214,7 @@
         392
       ],
       "flags": {},
-      "order": 36,
+      "order": 38,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4151,121 +4233,34 @@
         "Node name for S&R": "PrimitiveStringMultiline"
       },
       "widgets_values": [
-        "PLEASE ADD A VERY DETAILED PROMPT"
+        "PLEASE ADD A VERY DETAILED PROMPT. DON'T FORGET TO TOGGLE ON LOW PASS AND HIGH RES!"
       ],
       "color": "#232",
       "bgcolor": "#353"
     },
     {
-      "id": 566,
-      "type": "LoadImage",
+      "id": 1042,
+      "type": "MarkdownNote",
       "pos": [
-        376,
-        240
+        2096,
+        -544
       ],
       "size": [
-        688,
-        920
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 37,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1174,
-            1256,
-            1270
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.56",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "example.png",
-        "image"
-      ]
-    },
-    {
-      "id": 1009,
-      "type": "easy boolean",
-      "pos": [
-        2744,
-        256
-      ],
-      "size": [
-        210,
-        58
-      ],
-      "flags": {},
-      "order": 38,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "links": [
-            2017
-          ]
-        }
-      ],
-      "title": "Toggle Upscale Pass",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.3",
-        "Node name for S&R": "easy boolean"
-      },
-      "widgets_values": [
-        false
-      ]
-    },
-    {
-      "id": 1005,
-      "type": "easy boolean",
-      "pos": [
-        2264,
-        264
-      ],
-      "size": [
-        210,
-        58
+        448,
+        672
       ],
       "flags": {},
       "order": 39,
       "mode": 0,
       "inputs": [],
-      "outputs": [
-        {
-          "name": "boolean",
-          "type": "BOOLEAN",
-          "links": [
-            2005
-          ]
-        }
-      ],
-      "title": "Toggle Low Pass",
-      "properties": {
-        "cnr_id": "comfyui-easy-use",
-        "ver": "1.3.3",
-        "Node name for S&R": "easy boolean"
-      },
+      "outputs": [],
+      "title": "SuperComfy Workflow v0.1.1a",
+      "properties": {},
       "widgets_values": [
-        false
-      ]
+        "## Required Models \n### (WARNING FP8 IS HIGHER QUALITY THAN GGUF Q3/4/5/6 BUT USES A LOT OF SYSTEM RAM BECAUSE OF OFFLOADING)\n\nRTX 3000 (e5m2)\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/blob/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e5m2_scaled_KJ.safetensors)\n * [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e5m2_scaled_KJ.safetensors?download=true)\n\nRTX 4000/5000 (e4m3fn), *as of writing torch compile support is not fully working with blackwell cards just yet, if you get an error, bypass the torch compile node.*\n\n * [High Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-HIGH_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy_fp8_scaled/resolve/main/I2V/Wan2_2-I2V-A14B-LOW_fp8_e4m3fn_scaled_KJ.safetensors?download=true)\n\nUMT5 Text Encoder\n * [FP16](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)\n* [FP8](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)\n\nVAE\n* [BF16](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors?download=true)\n\nLightX2V LoRA\n* [Low Noise](https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan22-Lightning/Wan2.2-Lightning_I2V-A14B-4steps-lora_LOW_fp16.safetensors?download=true)\n\n## Optional\n\n* [2x Upscale Model *(works surprising well for 8MB)*](https://drive.google.com/uc?export=download&confirm=1&id=1TpqLUsHvqgbnpGr8hOE47BYIH3zqBDpu)\n\n### Need help? Ask me on Discord\n* [Server Invite](https://discord.com/invite/dBMfugkb)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -4530,14 +4525,6 @@
       960,
       0,
       961,
-      0,
-      "*"
-    ],
-    [
-      1927,
-      963,
-      0,
-      962,
       0,
       "*"
     ],
@@ -5012,6 +4999,14 @@
       969,
       11,
       "SIGMAS"
+    ],
+    [
+      2113,
+      1078,
+      0,
+      962,
+      0,
+      "WANVIDLORA"
     ]
   ],
   "groups": [
