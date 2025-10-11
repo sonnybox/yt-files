@@ -1,8 +1,8 @@
 {
   "id": "e3769147-8dc7-4f4f-8c7b-8480696aca95",
   "revision": 0,
-  "last_node_id": 1587,
-  "last_link_id": 9267,
+  "last_node_id": 1589,
+  "last_link_id": 9274,
   "nodes": [
     {
       "id": 1573,
@@ -268,9 +268,7 @@
           "input_ue_unconnectable": {}
         }
       },
-      "widgets_values": [
-        "width: 3584, height: 10566\n batch size: 1"
-      ]
+      "widgets_values": []
     },
     {
       "id": 735,
@@ -985,189 +983,6 @@
       ]
     },
     {
-      "id": 1087,
-      "type": "9d4f1911-eca8-49b5-ab85-40951263f9f8",
-      "pos": [
-        1896,
-        648
-      ],
-      "size": [
-        384,
-        430
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 8354
-        },
-        {
-          "label": "conditioning",
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 8355
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 8356
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 9234
-        },
-        {
-          "label": "num_tiles",
-          "name": "batch_size",
-          "type": "INT",
-          "widget": {
-            "name": "batch_size"
-          },
-          "link": 8368
-        },
-        {
-          "name": "noise_seed",
-          "type": "INT",
-          "widget": {
-            "name": "noise_seed"
-          },
-          "link": 9191
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            9235
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.61",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "total": true,
-            "rows": true,
-            "cols": true,
-            "overlap_x": true,
-            "strength": true,
-            "steps": true,
-            "start_at_step": true,
-            "cfg": true,
-            "sampler_name": true,
-            "scheduler": true,
-            "noise_seed": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        0,
-        "speed/sdxl_lightning_8step_lora.safetensors",
-        8,
-        20,
-        1,
-        "tiled-controlnet-sdxl.safetensors",
-        "euler_ancestral",
-        0,
-        0.49999999999999956,
-        true,
-        true,
-        "simple",
-        0.7000000000000003,
-        0.2
-      ]
-    },
-    {
-      "id": 1584,
-      "type": "7f3d16c6-6fab-478e-b8eb-d6c12c704640",
-      "pos": [
-        784,
-        240
-      ],
-      "size": [
-        320,
-        126
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 9257
-        },
-        {
-          "label": "max_res_squared",
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 9255
-        },
-        {
-          "name": "block_swap_config",
-          "type": "block_swap_config",
-          "link": 9256
-        },
-        {
-          "label": "seed",
-          "name": "value_1",
-          "type": "INT",
-          "widget": {
-            "name": "value_1"
-          },
-          "link": 9254
-        }
-      ],
-      "outputs": [
-        {
-          "label": "increment_seed",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            9258
-          ]
-        },
-        {
-          "label": "IMAGE",
-          "name": "*",
-          "type": "*",
-          "links": [
-            9260,
-            9267
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.64",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "value": true,
-            "model": true,
-            "value_1": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        1440,
-        "seedvr2_ema_7b_fp16.safetensors",
-        67
-      ]
-    },
-    {
       "id": 1526,
       "type": "PrimitiveInt",
       "pos": [
@@ -1190,7 +1005,7 @@
             9112,
             9125,
             9247,
-            9255
+            9270
           ]
         }
       ],
@@ -1234,7 +1049,7 @@
           "links": [
             9110,
             9123,
-            9256
+            9269
           ]
         }
       ],
@@ -1290,79 +1105,6 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
-    },
-    {
-      "id": 1525,
-      "type": "a160d212-5e31-41d9-a8ea-7d9bc66c257d",
-      "pos": [
-        784,
-        64
-      ],
-      "size": [
-        320,
-        126
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 9114
-        },
-        {
-          "label": "max_res_squared",
-          "name": "value",
-          "type": "INT",
-          "widget": {
-            "name": "value"
-          },
-          "link": 9112
-        },
-        {
-          "name": "block_swap_config",
-          "type": "block_swap_config",
-          "link": 9110
-        }
-      ],
-      "outputs": [
-        {
-          "label": "increment_seed",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            9254
-          ]
-        },
-        {
-          "label": "IMAGE",
-          "name": "*",
-          "type": "*",
-          "links": [
-            9130,
-            9257
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.64",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "value": true,
-            "model": true,
-            "value_1": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        1440,
-        "seedvr2_ema_7b_fp16.safetensors",
-        67
-      ]
     },
     {
       "id": 1531,
@@ -1541,7 +1283,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 9260
+          "link": 9272
         }
       ],
       "outputs": [],
@@ -1659,7 +1401,7 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 9267
+          "link": 9273
         },
         {
           "name": "block_swap_config",
@@ -1682,7 +1424,7 @@
           "widget": {
             "name": "value_1"
           },
-          "link": 9258
+          "link": 9274
         }
       ],
       "outputs": [
@@ -1769,14 +1511,270 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_pbdzf_00001_.png&type=temp&subfolder=&rand=0.010847115934941143"
+            "url": "/api/view?filename=rgthree.compare._temp_pbdzf_00005_.png&type=temp&subfolder=&rand=0.006788688388333464"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_pbdzf_00002_.png&type=temp&subfolder=&rand=0.6895169355157061"
+            "url": "/api/view?filename=rgthree.compare._temp_pbdzf_00006_.png&type=temp&subfolder=&rand=0.4708791087798855"
           }
         ]
+      ]
+    },
+    {
+      "id": 1087,
+      "type": "9d4f1911-eca8-49b5-ab85-40951263f9f8",
+      "pos": [
+        1896,
+        648
+      ],
+      "size": [
+        384,
+        430
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8354
+        },
+        {
+          "label": "conditioning",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 8355
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8356
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9234
+        },
+        {
+          "label": "num_tiles",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": 8368
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 9191
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9235
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "total": true,
+            "rows": true,
+            "cols": true,
+            "overlap_x": true,
+            "strength": true,
+            "steps": true,
+            "start_at_step": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "noise_seed": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        0,
+        "speed/sdxl_lightning_8step_lora.safetensors",
+        8,
+        20,
+        1,
+        "tiled-controlnet-sdxl.safetensors",
+        "euler_ancestral",
+        0,
+        0.49999999999999956,
+        true,
+        true,
+        "simple",
+        0.7000000000000003,
+        0.1
+      ]
+    },
+    {
+      "id": 1525,
+      "type": "a160d212-5e31-41d9-a8ea-7d9bc66c257d",
+      "pos": [
+        784,
+        64
+      ],
+      "size": [
+        320,
+        126
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9114
+        },
+        {
+          "label": "max_res_squared",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 9112
+        },
+        {
+          "name": "block_swap_config",
+          "type": "block_swap_config",
+          "link": 9110
+        }
+      ],
+      "outputs": [
+        {
+          "label": "increment_seed",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            9271
+          ]
+        },
+        {
+          "label": "IMAGE",
+          "name": "*",
+          "type": "*",
+          "links": [
+            9130,
+            9268
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "value": true,
+            "model": true,
+            "value_1": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1440,
+        "seedvr2_ema_7b_fp16.safetensors",
+        67
+      ]
+    },
+    {
+      "id": 1588,
+      "type": "b5c01b72-cc6c-48f3-87ab-956b527a0b7a",
+      "pos": [
+        784,
+        256
+      ],
+      "size": [
+        320,
+        126
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9268
+        },
+        {
+          "label": "max_res_squared",
+          "name": "value",
+          "type": "INT",
+          "widget": {
+            "name": "value"
+          },
+          "link": 9270
+        },
+        {
+          "name": "block_swap_config",
+          "type": "block_swap_config",
+          "link": 9269
+        },
+        {
+          "label": "seed",
+          "name": "value_1",
+          "type": "INT",
+          "widget": {
+            "name": "value_1"
+          },
+          "link": 9271
+        }
+      ],
+      "outputs": [
+        {
+          "label": "increment_seed",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            9274
+          ]
+        },
+        {
+          "label": "IMAGE",
+          "name": "*",
+          "type": "*",
+          "links": [
+            9272,
+            9273
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "value": true,
+            "model": true,
+            "value_1": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1440,
+        "seedvr2_ema_7b_fp16.safetensors",
+        67
       ]
     },
     {
@@ -2214,60 +2212,60 @@
       "IMAGE"
     ],
     [
-      9254,
-      1525,
-      0,
-      1584,
-      3,
-      "INT"
-    ],
-    [
-      9255,
-      1526,
-      0,
-      1584,
-      1,
-      "INT"
-    ],
-    [
-      9256,
-      1521,
-      0,
-      1584,
-      2,
-      "block_swap_config"
-    ],
-    [
-      9257,
+      9268,
       1525,
       1,
-      1584,
+      1588,
       0,
       "IMAGE"
     ],
     [
-      9258,
-      1584,
+      9269,
+      1521,
       0,
-      1529,
+      1588,
+      2,
+      "block_swap_config"
+    ],
+    [
+      9270,
+      1526,
+      0,
+      1588,
+      1,
+      "INT"
+    ],
+    [
+      9271,
+      1525,
+      0,
+      1588,
       3,
       "INT"
     ],
     [
-      9260,
-      1584,
+      9272,
+      1588,
       1,
       1530,
       0,
       "IMAGE"
     ],
     [
-      9267,
-      1584,
+      9273,
+      1588,
       1,
       1529,
       0,
       "IMAGE"
+    ],
+    [
+      9274,
+      1588,
+      0,
+      1529,
+      3,
+      "INT"
     ]
   ],
   "groups": [
@@ -3723,7 +3721,7 @@
             ],
             "size": [
               202.51666259765625,
-              307.2379150390625
+              355.82220458984375
             ],
             "flags": {},
             "order": 3,
@@ -4041,7 +4039,7 @@
               }
             },
             "widgets_values": [
-              0.2
+              0.1
             ]
           }
         ],
@@ -4498,8 +4496,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 10,
-          "lastNodeId": 1526,
-          "lastLinkId": 9118,
+          "lastNodeId": 1530,
+          "lastLinkId": 9127,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -4508,8 +4506,8 @@
         "inputNode": {
           "id": -10,
           "bounding": [
-            268,
-            -2856,
+            384,
+            520,
             141.33333587646484,
             140
           ]
@@ -4517,8 +4515,8 @@
         "outputNode": {
           "id": -20,
           "bounding": [
-            1798,
-            -2886,
+            1912,
+            496,
             125.33333587646484,
             80
           ]
@@ -4533,8 +4531,8 @@
             ],
             "localized_name": "image",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2836
+              "0": 505.3333435058594,
+              "1": 540
             }
           },
           {
@@ -4546,8 +4544,8 @@
             ],
             "label": "max_res_squared",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2816
+              "0": 505.3333435058594,
+              "1": 560
             }
           },
           {
@@ -4558,8 +4556,8 @@
               9097
             ],
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2796
+              "0": 505.3333435058594,
+              "1": 580
             }
           },
           {
@@ -4567,11 +4565,11 @@
             "name": "model",
             "type": "COMBO",
             "linkIds": [
-              9098
+              9124
             ],
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2776
+              "0": 505.3333435058594,
+              "1": 600
             }
           },
           {
@@ -4583,8 +4581,8 @@
             ],
             "label": "seed",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2756
+              "0": 505.3333435058594,
+              "1": 620
             }
           }
         ],
@@ -4599,8 +4597,8 @@
             "localized_name": "INT",
             "label": "increment_seed",
             "pos": {
-              "0": 1818,
-              "1": -2866
+              "0": 1932,
+              "1": 516
             }
           },
           {
@@ -4613,8 +4611,8 @@
             "localized_name": "*",
             "label": "IMAGE",
             "pos": {
-              "0": 1818,
-              "1": -2846
+              "0": 1932,
+              "1": 536
             }
           }
         ],
@@ -4624,15 +4622,15 @@
             "id": 1299,
             "type": "PrimitiveInt",
             "pos": [
-              448,
-              -2848
+              560,
+              528
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -4677,15 +4675,15 @@
             "id": 1300,
             "type": "ImageScaleBy",
             "pos": [
-              448,
-              -2976
+              560,
+              400
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -4730,15 +4728,15 @@
             "id": 814,
             "type": "Basic data handling: LessThanOrEqual",
             "pos": [
-              1176,
-              -2984
+              1288,
+              392
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 1,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -4790,170 +4788,18 @@
             ]
           },
           {
-            "id": 1424,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              944,
-              -2984
-            ],
-            "size": [
-              210,
-              98
-            ],
-            "flags": {},
-            "order": 8,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8858
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8859
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8862
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "sqrt(2*(a*b))"
-            ]
-          },
-          {
-            "id": 801,
-            "type": "SeedVR2",
-            "pos": [
-              912,
-              -2840
-            ],
-            "size": [
-              320,
-              200
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "images",
-                "name": "images",
-                "type": "IMAGE",
-                "link": 8624
-              },
-              {
-                "localized_name": "block_swap_config",
-                "name": "block_swap_config",
-                "shape": 7,
-                "type": "block_swap_config",
-                "link": 9097
-              },
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model"
-                },
-                "link": 9098
-              },
-              {
-                "localized_name": "seed",
-                "name": "seed",
-                "type": "INT",
-                "widget": {
-                  "name": "seed"
-                },
-                "link": 9100
-              },
-              {
-                "localized_name": "new_resolution",
-                "name": "new_resolution",
-                "type": "INT",
-                "widget": {
-                  "name": "new_resolution"
-                },
-                "link": 9105
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "links": [
-                  7440
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
-              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
-              "Node name for S&R": "SeedVR2",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "model": true,
-                  "seed": true,
-                  "new_resolution": true,
-                  "batch_size": true,
-                  "preserve_vram": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "seedvr2_ema_7b_fp16.safetensors",
-              0,
-              "fixed",
-              512,
-              1,
-              false
-            ]
-          },
-          {
             "id": 1520,
             "type": "PrimitiveInt",
             "pos": [
-              448,
-              -2728
+              560,
+              648
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -4994,15 +4840,15 @@
             "id": 815,
             "type": "easy ifElse",
             "pos": [
-              1416,
-              -2984
+              1528,
+              392
             ],
             "size": [
               210,
               78
             ],
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -5055,246 +4901,18 @@
             ]
           },
           {
-            "id": 1522,
-            "type": "easy mathInt",
-            "pos": [
-              680,
-              -2808
-            ],
-            "size": [
-              210,
-              106
-            ],
-            "flags": {},
-            "order": 11,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "type": "INT",
-                "widget": {
-                  "name": "a"
-                },
-                "link": 9102
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  9103
-                ]
-              }
-            ],
-            "title": "Double Resolution",
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy mathInt",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "a": true,
-                  "b": true,
-                  "operation": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              2,
-              "multiply"
-            ]
-          },
-          {
-            "id": 1303,
-            "type": "easy mathInt",
-            "pos": [
-              680,
-              -2656
-            ],
-            "size": [
-              210,
-              106
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "type": "INT",
-                "widget": {
-                  "name": "a"
-                },
-                "link": 8626
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  9104
-                ]
-              }
-            ],
-            "title": "Double Resolution",
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy mathInt",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "a": true,
-                  "b": true,
-                  "operation": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              2,
-              "multiply"
-            ]
-          },
-          {
-            "id": 1525,
-            "type": "Basic data handling: LessThanOrEqual",
-            "pos": [
-              680,
-              -2504
-            ],
-            "size": [
-              210,
-              82
-            ],
-            "flags": {},
-            "order": 12,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "value1",
-                "name": "value1",
-                "type": "FLOAT,INT",
-                "widget": {
-                  "name": "value1"
-                },
-                "link": 9116
-              },
-              {
-                "localized_name": "value2",
-                "name": "value2",
-                "type": "FLOAT,INT",
-                "widget": {
-                  "name": "value2"
-                },
-                "link": 9117
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "result",
-                "name": "result",
-                "type": "BOOLEAN",
-                "links": [
-                  9118
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: LessThanOrEqual",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": 1521,
-            "type": "easy ifElse",
-            "pos": [
-              912,
-              -2568
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9103
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9104
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9118
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "*",
-                "name": "*",
-                "type": "*",
-                "links": [
-                  9105
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
             "id": 895,
             "type": "GetImageSize",
             "pos": [
-              680,
-              -2984
+              792,
+              392
             ],
             "size": [
               210,
               136
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -5311,8 +4929,7 @@
                 "type": "INT",
                 "links": [
                   8626,
-                  8858,
-                  9117
+                  8858
                 ]
               },
               {
@@ -5321,8 +4938,7 @@
                 "type": "INT",
                 "links": [
                   8859,
-                  9102,
-                  9116
+                  9102
                 ]
               },
               {
@@ -5348,15 +4964,15 @@
             "id": 819,
             "type": "easy mathInt",
             "pos": [
-              1256,
-              -2784
+              1368,
+              592
             ],
             "size": [
               210,
               106
             ],
             "flags": {},
-            "order": 3,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -5398,6 +5014,362 @@
               0,
               1,
               "add"
+            ]
+          },
+          {
+            "id": 1303,
+            "type": "easy mathInt",
+            "pos": [
+              792,
+              720
+            ],
+            "size": [
+              210,
+              106
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "type": "INT",
+                "widget": {
+                  "name": "a"
+                },
+                "link": 8626
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9121
+                ]
+              }
+            ],
+            "title": "Double Resolution",
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy mathInt",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "a": true,
+                  "b": true,
+                  "operation": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              0,
+              2,
+              "multiply"
+            ]
+          },
+          {
+            "id": 1522,
+            "type": "easy mathInt",
+            "pos": [
+              792,
+              568
+            ],
+            "size": [
+              210,
+              106
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "type": "INT",
+                "widget": {
+                  "name": "a"
+                },
+                "link": 9102
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9122
+                ]
+              }
+            ],
+            "title": "Double Resolution",
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy mathInt",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "a": true,
+                  "b": true,
+                  "operation": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              0,
+              2,
+              "multiply"
+            ]
+          },
+          {
+            "id": 801,
+            "type": "SeedVR2",
+            "pos": [
+              1024,
+              536
+            ],
+            "size": [
+              320,
+              200
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 8624
+              },
+              {
+                "localized_name": "block_swap_config",
+                "name": "block_swap_config",
+                "shape": 7,
+                "type": "block_swap_config",
+                "link": 9097
+              },
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": 9124
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 9100
+              },
+              {
+                "localized_name": "new_resolution",
+                "name": "new_resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "new_resolution"
+                },
+                "link": 9127
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "links": [
+                  7440
+                ]
+              }
+            ],
+            "properties": {
+              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
+              "Node name for S&R": "SeedVR2",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "model": true,
+                  "seed": true,
+                  "new_resolution": true,
+                  "batch_size": true,
+                  "preserve_vram": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "seedvr2_ema_7b_fp16.safetensors",
+              0,
+              "fixed",
+              512,
+              1,
+              false
+            ]
+          },
+          {
+            "id": 1528,
+            "type": "Basic data handling: MathMin",
+            "pos": [
+              1024,
+              776
+            ],
+            "size": [
+              210,
+              82
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value1",
+                "name": "value1",
+                "type": "FLOAT,INT",
+                "widget": {
+                  "name": "value1"
+                },
+                "link": 9122
+              },
+              {
+                "localized_name": "value2",
+                "name": "value2",
+                "type": "FLOAT,INT",
+                "widget": {
+                  "name": "value2"
+                },
+                "link": 9121
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "*",
+                "name": "*",
+                "type": "*",
+                "links": [
+                  9126
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathMin"
+            },
+            "widgets_values": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": 1530,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              1248,
+              776
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9126
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9127
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt"
+            }
+          },
+          {
+            "id": 1424,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              1056,
+              392
+            ],
+            "size": [
+              210,
+              98
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8858
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8859
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  8862
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "formula": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "2*sqrt(a*b)"
             ]
           }
         ],
@@ -5524,14 +5496,6 @@
             "type": "block_swap_config"
           },
           {
-            "id": 9098,
-            "origin_id": -10,
-            "origin_slot": 3,
-            "target_id": 801,
-            "target_slot": 2,
-            "type": "COMBO"
-          },
-          {
             "id": 9099,
             "origin_id": -10,
             "origin_slot": 4,
@@ -5564,52 +5528,44 @@
             "type": "INT"
           },
           {
-            "id": 9103,
+            "id": 9121,
+            "origin_id": 1303,
+            "origin_slot": 0,
+            "target_id": 1528,
+            "target_slot": 1,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9122,
             "origin_id": 1522,
             "origin_slot": 0,
-            "target_id": 1521,
+            "target_id": 1528,
+            "target_slot": 0,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9124,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 801,
+            "target_slot": 2,
+            "type": "COMBO"
+          },
+          {
+            "id": 9126,
+            "origin_id": 1528,
+            "origin_slot": 0,
+            "target_id": 1530,
             "target_slot": 0,
             "type": "*"
           },
           {
-            "id": 9104,
-            "origin_id": 1303,
-            "origin_slot": 0,
-            "target_id": 1521,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9105,
-            "origin_id": 1521,
+            "id": 9127,
+            "origin_id": 1530,
             "origin_slot": 0,
             "target_id": 801,
             "target_slot": 4,
             "type": "INT"
-          },
-          {
-            "id": 9116,
-            "origin_id": 895,
-            "origin_slot": 1,
-            "target_id": 1525,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9117,
-            "origin_id": 895,
-            "origin_slot": 0,
-            "target_id": 1525,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9118,
-            "origin_id": 1525,
-            "origin_slot": 0,
-            "target_id": 1521,
-            "target_slot": 2,
-            "type": "BOOLEAN"
           }
         ],
         "extra": {
@@ -5767,7 +5723,7 @@
               82
             ],
             "flags": {},
-            "order": 20,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -5821,7 +5777,7 @@
               118
             ],
             "flags": {},
-            "order": 12,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -5889,7 +5845,7 @@
               118
             ],
             "flags": {},
-            "order": 9,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -5957,7 +5913,7 @@
               26
             ],
             "flags": {},
-            "order": 11,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -6001,7 +5957,7 @@
               26
             ],
             "flags": {},
-            "order": 13,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -6045,7 +6001,7 @@
               138
             ],
             "flags": {},
-            "order": 18,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -6119,7 +6075,7 @@
               138
             ],
             "flags": {},
-            "order": 16,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -6193,7 +6149,7 @@
               26
             ],
             "flags": {},
-            "order": 17,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -6237,7 +6193,7 @@
               82
             ],
             "flags": {},
-            "order": 26,
+            "order": 24,
             "mode": 0,
             "inputs": [
               {
@@ -6297,7 +6253,7 @@
               66
             ],
             "flags": {},
-            "order": 6,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -6355,7 +6311,7 @@
               98
             ],
             "flags": {},
-            "order": 25,
+            "order": 23,
             "mode": 0,
             "inputs": [
               {
@@ -6413,7 +6369,7 @@
               98
             ],
             "flags": {},
-            "order": 24,
+            "order": 22,
             "mode": 0,
             "inputs": [
               {
@@ -6471,7 +6427,7 @@
               26
             ],
             "flags": {},
-            "order": 28,
+            "order": 26,
             "mode": 0,
             "inputs": [
               {
@@ -6513,7 +6469,7 @@
               26
             ],
             "flags": {},
-            "order": 27,
+            "order": 25,
             "mode": 0,
             "inputs": [
               {
@@ -6555,7 +6511,7 @@
               82
             ],
             "flags": {},
-            "order": 22,
+            "order": 20,
             "mode": 0,
             "inputs": [
               {
@@ -6608,7 +6564,7 @@
               26
             ],
             "flags": {},
-            "order": 19,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
@@ -6652,7 +6608,7 @@
               130
             ],
             "flags": {},
-            "order": 8,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -6744,7 +6700,7 @@
               82
             ],
             "flags": {},
-            "order": 23,
+            "order": 21,
             "mode": 0,
             "inputs": [
               {
@@ -6797,7 +6753,7 @@
               82
             ],
             "flags": {},
-            "order": 4,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -6848,7 +6804,7 @@
               198
             ],
             "flags": {},
-            "order": 3,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -6940,7 +6896,7 @@
               234
             ],
             "flags": {},
-            "order": 5,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -7048,7 +7004,7 @@
               82
             ],
             "flags": {},
-            "order": 7,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -7104,7 +7060,7 @@
               106
             ],
             "flags": {},
-            "order": 21,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -7153,7 +7109,7 @@
               136
             ],
             "flags": {},
-            "order": 10,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -7214,7 +7170,7 @@
               218
             ],
             "flags": {},
-            "order": 15,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -7308,7 +7264,7 @@
               82
             ],
             "flags": {},
-            "order": 30,
+            "order": 28,
             "mode": 0,
             "inputs": [
               {
@@ -7344,7 +7300,10 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: LessThanOrEqual"
+              "Node name for S&R": "Basic data handling: LessThanOrEqual",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               0,
@@ -7363,7 +7322,7 @@
               78
             ],
             "flags": {},
-            "order": 1,
+            "order": 29,
             "mode": 0,
             "inputs": [
               {
@@ -7401,7 +7360,10 @@
             "properties": {
               "cnr_id": "comfyui-easy-use",
               "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse"
+              "Node name for S&R": "easy ifElse",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               false
@@ -7419,7 +7381,7 @@
               78
             ],
             "flags": {},
-            "order": 2,
+            "order": 30,
             "mode": 0,
             "inputs": [
               {
@@ -7457,7 +7419,10 @@
             "properties": {
               "cnr_id": "comfyui-easy-use",
               "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse"
+              "Node name for S&R": "easy ifElse",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               false
@@ -7492,7 +7457,10 @@
             "properties": {
               "cnr_id": "comfy-core",
               "ver": "0.3.64",
-              "Node name for S&R": "PrimitiveInt"
+              "Node name for S&R": "PrimitiveInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               0,
@@ -7511,7 +7479,7 @@
               138
             ],
             "flags": {},
-            "order": 14,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -7584,7 +7552,7 @@
               26
             ],
             "flags": {},
-            "order": 29,
+            "order": 27,
             "mode": 0,
             "inputs": [
               {
@@ -7608,8 +7576,12 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt"
-            }
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
           }
         ],
         "groups": [],
@@ -8141,12 +8113,12 @@
         }
       },
       {
-        "id": "7f3d16c6-6fab-478e-b8eb-d6c12c704640",
+        "id": "b5c01b72-cc6c-48f3-87ab-956b527a0b7a",
         "version": 1,
         "state": {
           "lastGroupId": 10,
-          "lastNodeId": 1526,
-          "lastLinkId": 9118,
+          "lastNodeId": 1529,
+          "lastLinkId": 9125,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -8155,8 +8127,8 @@
         "inputNode": {
           "id": -10,
           "bounding": [
-            268,
-            -2856,
+            384,
+            520,
             141.33333587646484,
             140
           ]
@@ -8164,8 +8136,8 @@
         "outputNode": {
           "id": -20,
           "bounding": [
-            1798,
-            -2886,
+            1912,
+            496,
             125.33333587646484,
             80
           ]
@@ -8180,8 +8152,8 @@
             ],
             "localized_name": "image",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2836
+              "0": 505.3333435058594,
+              "1": 540
             }
           },
           {
@@ -8193,8 +8165,8 @@
             ],
             "label": "max_res_squared",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2816
+              "0": 505.3333435058594,
+              "1": 560
             }
           },
           {
@@ -8205,8 +8177,8 @@
               9097
             ],
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2796
+              "0": 505.3333435058594,
+              "1": 580
             }
           },
           {
@@ -8217,8 +8189,8 @@
               9098
             ],
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2776
+              "0": 505.3333435058594,
+              "1": 600
             }
           },
           {
@@ -8230,8 +8202,8 @@
             ],
             "label": "seed",
             "pos": {
-              "0": 389.3333435058594,
-              "1": -2756
+              "0": 505.3333435058594,
+              "1": 620
             }
           }
         ],
@@ -8246,8 +8218,8 @@
             "localized_name": "INT",
             "label": "increment_seed",
             "pos": {
-              "0": 1818,
-              "1": -2866
+              "0": 1932,
+              "1": 516
             }
           },
           {
@@ -8260,8 +8232,8 @@
             "localized_name": "*",
             "label": "IMAGE",
             "pos": {
-              "0": 1818,
-              "1": -2846
+              "0": 1932,
+              "1": 536
             }
           }
         ],
@@ -8271,15 +8243,15 @@
             "id": 1299,
             "type": "PrimitiveInt",
             "pos": [
-              448,
-              -2848
+              560,
+              528
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 5,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -8324,15 +8296,15 @@
             "id": 1300,
             "type": "ImageScaleBy",
             "pos": [
-              448,
-              -2976
+              560,
+              400
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -8377,15 +8349,15 @@
             "id": 814,
             "type": "Basic data handling: LessThanOrEqual",
             "pos": [
-              1176,
-              -2984
+              1288,
+              392
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 1,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -8437,170 +8409,18 @@
             ]
           },
           {
-            "id": 1424,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              944,
-              -2984
-            ],
-            "size": [
-              210,
-              98
-            ],
-            "flags": {},
-            "order": 8,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8858
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8859
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8862
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "sqrt(2*(a*b))"
-            ]
-          },
-          {
-            "id": 801,
-            "type": "SeedVR2",
-            "pos": [
-              912,
-              -2840
-            ],
-            "size": [
-              320,
-              200
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "images",
-                "name": "images",
-                "type": "IMAGE",
-                "link": 8624
-              },
-              {
-                "localized_name": "block_swap_config",
-                "name": "block_swap_config",
-                "shape": 7,
-                "type": "block_swap_config",
-                "link": 9097
-              },
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model"
-                },
-                "link": 9098
-              },
-              {
-                "localized_name": "seed",
-                "name": "seed",
-                "type": "INT",
-                "widget": {
-                  "name": "seed"
-                },
-                "link": 9100
-              },
-              {
-                "localized_name": "new_resolution",
-                "name": "new_resolution",
-                "type": "INT",
-                "widget": {
-                  "name": "new_resolution"
-                },
-                "link": 9105
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "links": [
-                  7440
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
-              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
-              "Node name for S&R": "SeedVR2",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "model": true,
-                  "seed": true,
-                  "new_resolution": true,
-                  "batch_size": true,
-                  "preserve_vram": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "seedvr2_ema_7b_fp16.safetensors",
-              0,
-              "fixed",
-              512,
-              1,
-              false
-            ]
-          },
-          {
             "id": 1520,
             "type": "PrimitiveInt",
             "pos": [
-              448,
-              -2728
+              560,
+              648
             ],
             "size": [
               210,
               82
             ],
             "flags": {},
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -8638,74 +8458,18 @@
             ]
           },
           {
-            "id": 819,
-            "type": "easy mathInt",
-            "pos": [
-              1304,
-              -2784
-            ],
-            "size": [
-              210,
-              106
-            ],
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "type": "INT",
-                "widget": {
-                  "name": "a"
-                },
-                "link": 9101
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  8690
-                ]
-              }
-            ],
-            "title": "Increment Seed",
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy mathInt",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "a": true,
-                  "b": true,
-                  "operation": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              1,
-              "add"
-            ]
-          },
-          {
             "id": 815,
             "type": "easy ifElse",
             "pos": [
-              1416,
-              -2984
+              1528,
+              392
             ],
             "size": [
               210,
               78
             ],
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -8761,15 +8525,15 @@
             "id": 895,
             "type": "GetImageSize",
             "pos": [
-              688,
-              -2984
+              792,
+              392
             ],
             "size": [
               210,
               136
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -8786,8 +8550,7 @@
                 "type": "INT",
                 "links": [
                   8626,
-                  8858,
-                  9117
+                  8858
                 ]
               },
               {
@@ -8796,8 +8559,7 @@
                 "type": "INT",
                 "links": [
                   8859,
-                  9102,
-                  9116
+                  9102
                 ]
               },
               {
@@ -8816,15 +8578,126 @@
                 "version": "7.1",
                 "input_ue_unconnectable": {}
               }
+            }
+          },
+          {
+            "id": 819,
+            "type": "easy mathInt",
+            "pos": [
+              1368,
+              592
+            ],
+            "size": [
+              210,
+              106
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "type": "INT",
+                "widget": {
+                  "name": "a"
+                },
+                "link": 9101
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  8690
+                ]
+              }
+            ],
+            "title": "Increment Seed",
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy mathInt",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "a": true,
+                  "b": true,
+                  "operation": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
             },
-            "widgets_values": []
+            "widgets_values": [
+              0,
+              1,
+              "add"
+            ]
+          },
+          {
+            "id": 1303,
+            "type": "easy mathInt",
+            "pos": [
+              792,
+              720
+            ],
+            "size": [
+              210,
+              106
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "type": "INT",
+                "widget": {
+                  "name": "a"
+                },
+                "link": 8626
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9121
+                ]
+              }
+            ],
+            "title": "Double Resolution",
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy mathInt",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "a": true,
+                  "b": true,
+                  "operation": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              0,
+              2,
+              "multiply"
+            ]
           },
           {
             "id": 1522,
             "type": "easy mathInt",
             "pos": [
-              680,
-              -2808
+              792,
+              568
             ],
             "size": [
               210,
@@ -8850,7 +8723,7 @@
                 "name": "INT",
                 "type": "INT",
                 "links": [
-                  9103
+                  9122
                 ]
               }
             ],
@@ -8876,67 +8749,11 @@
             ]
           },
           {
-            "id": 1303,
-            "type": "easy mathInt",
+            "id": 1528,
+            "type": "Basic data handling: MathMin",
             "pos": [
-              680,
-              -2656
-            ],
-            "size": [
-              210,
-              106
-            ],
-            "flags": {},
-            "order": 7,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "type": "INT",
-                "widget": {
-                  "name": "a"
-                },
-                "link": 8626
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  9104
-                ]
-              }
-            ],
-            "title": "Double Resolution",
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy mathInt",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "a": true,
-                  "b": true,
-                  "operation": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              2,
-              "multiply"
-            ]
-          },
-          {
-            "id": 1525,
-            "type": "Basic data handling: LessThanOrEqual",
-            "pos": [
-              680,
-              -2504
+              1024,
+              776
             ],
             "size": [
               210,
@@ -8953,7 +8770,7 @@
                 "widget": {
                   "name": "value1"
                 },
-                "link": 9116
+                "link": 9122
               },
               {
                 "localized_name": "value2",
@@ -8962,67 +8779,7 @@
                 "widget": {
                   "name": "value2"
                 },
-                "link": 9117
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "result",
-                "name": "result",
-                "type": "BOOLEAN",
-                "links": [
-                  9118
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: LessThanOrEqual",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": 1521,
-            "type": "easy ifElse",
-            "pos": [
-              912,
-              -2568
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9103
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9104
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9118
+                "link": 9121
               }
             ],
             "outputs": [
@@ -9031,21 +8788,209 @@
                 "name": "*",
                 "type": "*",
                 "links": [
-                  9105
+                  9124
                 ]
               }
             ],
             "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse",
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathMin"
+            },
+            "widgets_values": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": 1424,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              1056,
+              392
+            ],
+            "size": [
+              210,
+              98
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8858
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8859
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  8862
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
               "ue_properties": {
-                "widget_ue_connectable": {}
+                "widget_ue_connectable": {
+                  "formula": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
               }
             },
             "widgets_values": [
+              "2*sqrt(a*b)"
+            ]
+          },
+          {
+            "id": 801,
+            "type": "SeedVR2",
+            "pos": [
+              1024,
+              536
+            ],
+            "size": [
+              320,
+              200
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 8624
+              },
+              {
+                "localized_name": "block_swap_config",
+                "name": "block_swap_config",
+                "shape": 7,
+                "type": "block_swap_config",
+                "link": 9097
+              },
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": 9098
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 9100
+              },
+              {
+                "localized_name": "new_resolution",
+                "name": "new_resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "new_resolution"
+                },
+                "link": 9125
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "links": [
+                  7440
+                ]
+              }
+            ],
+            "properties": {
+              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
+              "Node name for S&R": "SeedVR2",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "model": true,
+                  "seed": true,
+                  "new_resolution": true,
+                  "batch_size": true,
+                  "preserve_vram": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "seedvr2_ema_7b_fp16.safetensors",
+              0,
+              "fixed",
+              512,
+              1,
               false
             ]
+          },
+          {
+            "id": 1529,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              1240,
+              776
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9124
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9125
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt"
+            }
           }
         ],
         "groups": [],
@@ -9211,52 +9156,36 @@
             "type": "INT"
           },
           {
-            "id": 9103,
+            "id": 9121,
+            "origin_id": 1303,
+            "origin_slot": 0,
+            "target_id": 1528,
+            "target_slot": 1,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9122,
             "origin_id": 1522,
             "origin_slot": 0,
-            "target_id": 1521,
+            "target_id": 1528,
+            "target_slot": 0,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9124,
+            "origin_id": 1528,
+            "origin_slot": 0,
+            "target_id": 1529,
             "target_slot": 0,
             "type": "*"
           },
           {
-            "id": 9104,
-            "origin_id": 1303,
-            "origin_slot": 0,
-            "target_id": 1521,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9105,
-            "origin_id": 1521,
+            "id": 9125,
+            "origin_id": 1529,
             "origin_slot": 0,
             "target_id": 801,
             "target_slot": 4,
             "type": "INT"
-          },
-          {
-            "id": 9116,
-            "origin_id": 895,
-            "origin_slot": 1,
-            "target_id": 1525,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9117,
-            "origin_id": 895,
-            "origin_slot": 0,
-            "target_id": 1525,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9118,
-            "origin_id": 1525,
-            "origin_slot": 0,
-            "target_id": 1521,
-            "target_slot": 2,
-            "type": "BOOLEAN"
           }
         ],
         "extra": {
