@@ -1,8 +1,8 @@
 {
   "id": "e3769147-8dc7-4f4f-8c7b-8480696aca95",
   "revision": 0,
-  "last_node_id": 1589,
-  "last_link_id": 9274,
+  "last_node_id": 1591,
+  "last_link_id": 9276,
   "nodes": [
     {
       "id": 1573,
@@ -269,7 +269,7 @@
         }
       },
       "widgets_values": [
-        "width: 4876, height: 2742\n batch size: 1"
+        "width: 5502, height: 6816\n batch size: 1"
       ]
     },
     {
@@ -690,7 +690,7 @@
         82
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -856,55 +856,6 @@
       ]
     },
     {
-      "id": 1533,
-      "type": "ImageScaleBy",
-      "pos": [
-        992,
-        488
-      ],
-      "size": [
-        210,
-        82
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 9253
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            9160,
-            9174
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.64",
-        "Node name for S&R": "ImageScaleBy",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "upscale_method": true,
-            "scale_by": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "lanczos",
-        2
-      ]
-    },
-    {
       "id": 1086,
       "type": "CLIPTextEncode",
       "pos": [
@@ -1063,36 +1014,6 @@
         }
       },
       "widgets_values": []
-    },
-    {
-      "id": 1118,
-      "type": "Note",
-      "pos": [
-        528,
-        984
-      ],
-      "size": [
-        432,
-        728
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Workflow v0.2",
-      "properties": {
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "- Can upscale any image to 8K and beyond\n- Takes 2-4 min on RTX 3080 12GB\n- Uses lots of RAM 64GB+, page-file absolutely necessary on low RAM systems\n- Uses 10GB VRAM on Linux\n- Caching SeedVR2 model increases generation speed but memory leaks\n- You don't NEED to use SDXL, it is more like a restore / denoise option to add / refine details that otherwise aren't there. You can bypass group.\n- You can stack as many times as you want, sometimes SDXL first is better you can change the order\n\nNeed help? https://discord.gg/hq8qPbvznf\n\nMy preferred SDXL model: https://civitai.com/models/133005/juggernaut-xl\n\nControlNet model: https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors\n\nKnown Issues\n----\n- Color shift on SDXL\n- Garbage in garbage out\n\nBest Settings\n----\nfast_mode = false\ncustom_scheduler = true\nsampler = \n          dpmpp_2m_sde \\\n          euler_a (fast_mode on) \\\ncustom_denoise = 0.1-0.3\nprompt = usually blank is best, sometimes \"close up\" gives good textures"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     },
     {
       "id": 1561,
@@ -1270,7 +1191,7 @@
         82
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -1304,163 +1225,6 @@
       "widgets_values": [
         "lanczos",
         1
-      ]
-    },
-    {
-      "id": 1577,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        2312,
-        440
-      ],
-      "size": [
-        1472,
-        1528
-      ],
-      "flags": {
-        "collapsed": true
-      },
-      "order": 32,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "image_a",
-          "type": "IMAGE",
-          "link": 9249
-        },
-        {
-          "dir": 3,
-          "name": "image_b",
-          "type": "IMAGE",
-          "link": 9248
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "1.0.2510052058",
-        "comparer_mode": "Slide",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_ctlkz_00003_.png&type=temp&subfolder=&rand=0.9646173979951114"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_ctlkz_00004_.png&type=temp&subfolder=&rand=0.45759705012660157"
-          }
-        ]
-      ]
-    },
-    {
-      "id": 1087,
-      "type": "9d4f1911-eca8-49b5-ab85-40951263f9f8",
-      "pos": [
-        1896,
-        648
-      ],
-      "size": [
-        384,
-        430
-      ],
-      "flags": {},
-      "order": 28,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 8354
-        },
-        {
-          "label": "conditioning",
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 8355
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 8356
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 9234
-        },
-        {
-          "label": "num_tiles",
-          "name": "batch_size",
-          "type": "INT",
-          "widget": {
-            "name": "batch_size"
-          },
-          "link": 8368
-        },
-        {
-          "name": "noise_seed",
-          "type": "INT",
-          "widget": {
-            "name": "noise_seed"
-          },
-          "link": 9191
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            9235
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.61",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "total": true,
-            "rows": true,
-            "cols": true,
-            "overlap_x": true,
-            "strength": true,
-            "steps": true,
-            "start_at_step": true,
-            "cfg": true,
-            "sampler_name": true,
-            "scheduler": true,
-            "noise_seed": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        0,
-        "speed/sdxl_lightning_8step_lora.safetensors",
-        8,
-        20,
-        1,
-        "tiled-controlnet-sdxl.safetensors",
-        "euler_ancestral",
-        0,
-        0.49999999999999956,
-        true,
-        true,
-        "simple",
-        0.7000000000000003,
-        0.1
       ]
     },
     {
@@ -1653,6 +1417,107 @@
       ]
     },
     {
+      "id": 1577,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        2312,
+        440
+      ],
+      "size": [
+        1472,
+        1528
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 9249
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 9248
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2510052058",
+        "comparer_mode": "Slide",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_ctlkz_00085_.png&type=temp&subfolder=&rand=0.9171009311134315"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_ctlkz_00086_.png&type=temp&subfolder=&rand=0.6137797562160687"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 1526,
+      "type": "PrimitiveInt",
+      "pos": [
+        536,
+        296
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            9112,
+            9125,
+            9247,
+            9270
+          ]
+        }
+      ],
+      "title": "Max Resolution ^2",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "PrimitiveInt",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "value": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        1280,
+        "fixed"
+      ]
+    },
+    {
       "id": 1529,
       "type": "a0be0c30-3e3b-4b21-9943-65650211f43b",
       "pos": [
@@ -1710,7 +1575,7 @@
           "type": "IMAGE",
           "links": [
             9127,
-            9253
+            9276
           ]
         }
       ],
@@ -1731,7 +1596,187 @@
         1280,
         "seedvr2_ema_7b_fp16.safetensors",
         0,
-        2
+        2.5
+      ]
+    },
+    {
+      "id": 1118,
+      "type": "Note",
+      "pos": [
+        528,
+        984
+      ],
+      "size": [
+        432,
+        728
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Workflow v0.3 beta",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "- Can upscale any image to 8K and beyond\n- Takes 2-4 min on RTX 3080 12GB\n- Uses lots of RAM 64GB+, page-file absolutely necessary on low RAM systems\n- Uses 10GB VRAM on Linux\n- Caching SeedVR2 model increases generation speed but memory leaks\n- You don't NEED to use SDXL, it is more like a restore / denoise option to add / refine details that otherwise aren't there. You can bypass group.\n- You can stack as many times as you want, sometimes SDXL first is better you can change the order\n\nNeed help? https://discord.gg/hq8qPbvznf\n\nMy preferred SDXL model: https://civitai.com/models/133005/juggernaut-xl\n\nControlNet model: https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors\n\nKnown Issues\n----\n- Color shift on SDXL\n- Garbage in garbage out\n\nBest Settings\n----\nfast_mode = false\ncustom_scheduler = true\nsampler = \n          dpmpp_2m_sde \\\n          euler_a (fast_mode on) \\\ncustom_denoise = 0.1-0.3\nprompt = usually blank is best, sometimes \"close up\" gives good textures"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 1087,
+      "type": "9d4f1911-eca8-49b5-ab85-40951263f9f8",
+      "pos": [
+        1896,
+        648
+      ],
+      "size": [
+        384,
+        430
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 8354
+        },
+        {
+          "label": "conditioning",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 8355
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8356
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9234
+        },
+        {
+          "label": "num_tiles",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": 8368
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 9191
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9235
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.61",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "total": true,
+            "rows": true,
+            "cols": true,
+            "overlap_x": true,
+            "strength": true,
+            "steps": true,
+            "start_at_step": true,
+            "cfg": true,
+            "sampler_name": true,
+            "scheduler": true,
+            "noise_seed": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        0,
+        "speed/sdxl_lightning_8step_lora.safetensors",
+        8,
+        20,
+        1,
+        "tiled-controlnet-sdxl.safetensors",
+        "euler_ancestral",
+        0,
+        0.49999999999999956,
+        true,
+        true,
+        "simple",
+        0.7000000000000003,
+        0.15
+      ]
+    },
+    {
+      "id": 1533,
+      "type": "ImageScaleBy",
+      "pos": [
+        992,
+        488
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 9276
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9160,
+            9174
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "ImageScaleBy",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "upscale_method": true,
+            "scale_by": true
+          },
+          "version": "7.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "lanczos",
+        2.5
       ]
     },
     {
@@ -1746,7 +1791,7 @@
         512
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1780,51 +1825,6 @@
       "widgets_values": [
         "example.png",
         "image"
-      ]
-    },
-    {
-      "id": 1526,
-      "type": "PrimitiveInt",
-      "pos": [
-        536,
-        296
-      ],
-      "size": [
-        210,
-        82
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            9112,
-            9125,
-            9247,
-            9270
-          ]
-        }
-      ],
-      "title": "Max Resolution ^2",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.64",
-        "Node name for S&R": "PrimitiveInt",
-        "ue_properties": {
-          "widget_ue_connectable": {
-            "value": true
-          },
-          "version": "7.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        1024,
-        "fixed"
       ]
     }
   ],
@@ -2206,14 +2206,6 @@
       "IMAGE"
     ],
     [
-      9253,
-      1529,
-      1,
-      1533,
-      0,
-      "IMAGE"
-    ],
-    [
       9268,
       1525,
       1,
@@ -2268,6 +2260,14 @@
       1529,
       3,
       "INT"
+    ],
+    [
+      9276,
+      1529,
+      1,
+      1533,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -3723,7 +3723,7 @@
             ],
             "size": [
               202.51666259765625,
-              641.5933837890625
+              310.51666259765625
             ],
             "flags": {},
             "order": 3,
@@ -4041,7 +4041,7 @@
               }
             },
             "widgets_values": [
-              0.1
+              0.15
             ]
           }
         ],
@@ -5268,7 +5268,10 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathMin"
+              "Node name for S&R": "Basic data handling: MathMin",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               "0",
@@ -5310,8 +5313,12 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt"
-            }
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
           },
           {
             "id": 1424,
@@ -5580,8 +5587,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 11,
-          "lastNodeId": 1607,
-          "lastLinkId": 9306,
+          "lastNodeId": 1650,
+          "lastLinkId": 9434,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -5676,7 +5683,7 @@
             "name": "scale_by",
             "type": "FLOAT",
             "linkIds": [
-              9250
+              9345
             ],
             "pos": {
               "0": 488,
@@ -5703,7 +5710,7 @@
             "name": "IMAGE",
             "type": "IMAGE",
             "linkIds": [
-              9303
+              9308
             ],
             "pos": {
               "0": 3132,
@@ -5725,7 +5732,7 @@
               82
             ],
             "flags": {},
-            "order": 19,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -5768,422 +5775,6 @@
             ]
           },
           {
-            "id": 1375,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              2096,
-              -2104
-            ],
-            "size": [
-              210,
-              118
-            ],
-            "flags": {},
-            "order": 11,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8752
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8753
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8796
-              },
-              {
-                "name": "d",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8755
-                ]
-              }
-            ],
-            "title": "overlap y",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "round((b/a)*c)"
-            ]
-          },
-          {
-            "id": 1370,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              2088,
-              -2360
-            ],
-            "size": [
-              210,
-              118
-            ],
-            "flags": {},
-            "order": 8,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8744
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8745
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8795
-              },
-              {
-                "name": "d",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8749
-                ]
-              }
-            ],
-            "title": "overlap x",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "round((b/a)*c)"
-            ]
-          },
-          {
-            "id": 1373,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              2120,
-              -2200
-            ],
-            "size": [
-              140,
-              26
-            ],
-            "flags": {},
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "input",
-                "name": "input",
-                "type": "*",
-                "link": 8749
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  8813
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
-            "id": 1376,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              2128,
-              -1936
-            ],
-            "size": [
-              140,
-              26
-            ],
-            "flags": {},
-            "order": 12,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "input",
-                "name": "input",
-                "type": "*",
-                "link": 8755
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  8827
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
-            "id": 1406,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              2296,
-              -1896
-            ],
-            "size": [
-              240,
-              138
-            ],
-            "flags": {},
-            "order": 17,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8824
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8825
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9140
-              },
-              {
-                "name": "d",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8827
-              },
-              {
-                "name": "e",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8828
-                ]
-              }
-            ],
-            "title": "adjust overlap y",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "round((1+(c*2)*(a-b)/b)*d)"
-            ]
-          },
-          {
-            "id": 1396,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              2312,
-              -2352
-            ],
-            "size": [
-              240,
-              138
-            ],
-            "flags": {},
-            "order": 15,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8809
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8810
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9138
-              },
-              {
-                "name": "d",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 8813
-              },
-              {
-                "name": "e",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  8814
-                ]
-              }
-            ],
-            "title": "adjust overlap x",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "round((1+(c*2)*(a-b)/b)*d)"
-            ]
-          },
-          {
-            "id": 1402,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              2368,
-              -2160
-            ],
-            "size": [
-              140,
-              26
-            ],
-            "flags": {},
-            "order": 16,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "input",
-                "name": "input",
-                "type": "*",
-                "link": 8814
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  8831
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
             "id": 1568,
             "type": "ImageScaleBy",
             "pos": [
@@ -6195,7 +5786,7 @@
               82
             ],
             "flags": {},
-            "order": 25,
+            "order": 18,
             "mode": 0,
             "inputs": [
               {
@@ -6211,7 +5802,7 @@
                 "widget": {
                   "name": "scale_by"
                 },
-                "link": 9250
+                "link": 9346
               }
             ],
             "outputs": [
@@ -6244,180 +5835,6 @@
             ]
           },
           {
-            "id": 1346,
-            "type": "GetImageSize",
-            "pos": [
-              792,
-              -2584
-            ],
-            "size": [
-              140,
-              66
-            ],
-            "flags": {},
-            "order": 5,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "link": 9205
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "width",
-                "name": "width",
-                "type": "INT",
-                "links": [
-                  9197
-                ]
-              },
-              {
-                "localized_name": "height",
-                "name": "height",
-                "type": "INT",
-                "links": [
-                  9199
-                ]
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "links": null
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.3.64",
-              "Node name for S&R": "GetImageSize",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
-            "id": 1565,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              944,
-              -2528
-            ],
-            "size": [
-              210,
-              98
-            ],
-            "flags": {},
-            "order": 24,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9199
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9200
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  9243
-                ]
-              }
-            ],
-            "title": "rows",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              "max(1, floor((a/b) + 0.5))"
-            ]
-          },
-          {
-            "id": 1564,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              944,
-              -2664
-            ],
-            "size": [
-              210,
-              98
-            ],
-            "flags": {},
-            "order": 23,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9197
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9198
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  9242
-                ]
-              }
-            ],
-            "title": "cols",
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              "max(1, floor((a/b) + 0.5))"
-            ]
-          },
-          {
             "id": 1582,
             "type": "Basic data handling: CastToInt",
             "pos": [
@@ -6429,7 +5846,7 @@
               26
             ],
             "flags": {},
-            "order": 27,
+            "order": 20,
             "mode": 0,
             "inputs": [
               {
@@ -6471,7 +5888,7 @@
               26
             ],
             "flags": {},
-            "order": 26,
+            "order": 19,
             "mode": 0,
             "inputs": [
               {
@@ -6502,50 +5919,6 @@
             "widgets_values": []
           },
           {
-            "id": 1407,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              2376,
-              -1976
-            ],
-            "size": [
-              140,
-              26
-            ],
-            "flags": {},
-            "order": 18,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "input",
-                "name": "input",
-                "type": "*",
-                "link": 8828
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  8830
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
             "id": 1279,
             "type": "ImageScaleBy",
             "pos": [
@@ -6557,7 +5930,7 @@
               82
             ],
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -6608,7 +5981,7 @@
               106
             ],
             "flags": {},
-            "order": 20,
+            "order": 13,
             "mode": 0,
             "inputs": [
               {
@@ -6646,492 +6019,6 @@
             ]
           },
           {
-            "id": 1371,
-            "type": "GetImageSize",
-            "pos": [
-              1752,
-              -2240
-            ],
-            "size": [
-              210,
-              136
-            ],
-            "flags": {},
-            "order": 9,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "link": 8794
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "width",
-                "name": "width",
-                "type": "INT",
-                "links": [
-                  8809,
-                  9279
-                ]
-              },
-              {
-                "localized_name": "height",
-                "name": "height",
-                "type": "INT",
-                "links": [
-                  8824,
-                  9275,
-                  9278
-                ]
-              },
-              {
-                "localized_name": "batch_size",
-                "name": "batch_size",
-                "type": "INT",
-                "links": null
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.3.64",
-              "Node name for S&R": "GetImageSize",
-              "ue_properties": {
-                "widget_ue_connectable": {},
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
-            "id": 1390,
-            "type": "ImageResize+",
-            "pos": [
-              1896,
-              -1584
-            ],
-            "size": [
-              210,
-              218
-            ],
-            "flags": {},
-            "order": 14,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "link": 8781
-              },
-              {
-                "localized_name": "width",
-                "name": "width",
-                "type": "INT",
-                "widget": {
-                  "name": "width"
-                },
-                "link": 9284
-              },
-              {
-                "localized_name": "height",
-                "name": "height",
-                "type": "INT",
-                "widget": {
-                  "name": "height"
-                },
-                "link": 9285
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "IMAGE",
-                "name": "IMAGE",
-                "type": "IMAGE",
-                "links": [
-                  8786
-                ]
-              },
-              {
-                "localized_name": "width",
-                "name": "width",
-                "type": "INT",
-                "links": [
-                  8795,
-                  8810
-                ]
-              },
-              {
-                "localized_name": "height",
-                "name": "height",
-                "type": "INT",
-                "links": [
-                  8796,
-                  8825
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui_essentials",
-              "ver": "1.1.0",
-              "Node name for S&R": "ImageResize+",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "width": true,
-                  "height": true,
-                  "interpolation": true,
-                  "method": true,
-                  "condition": true,
-                  "multiple_of": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              0,
-              "nearest",
-              "stretch",
-              "always",
-              0
-            ]
-          },
-          {
-            "id": 1598,
-            "type": "Basic data handling: LessThanOrEqual",
-            "pos": [
-              1792,
-              -1880
-            ],
-            "size": [
-              210,
-              82
-            ],
-            "flags": {},
-            "order": 29,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "value1",
-                "name": "value1",
-                "type": "FLOAT,INT",
-                "widget": {
-                  "name": "value1"
-                },
-                "link": 9279
-              },
-              {
-                "localized_name": "value2",
-                "name": "value2",
-                "type": "FLOAT,INT",
-                "widget": {
-                  "name": "value2"
-                },
-                "link": 9278
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "result",
-                "name": "result",
-                "type": "BOOLEAN",
-                "links": [
-                  9286,
-                  9287
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: LessThanOrEqual",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              0
-            ]
-          },
-          {
-            "id": 1599,
-            "type": "easy ifElse",
-            "pos": [
-              1592,
-              -1552
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 30,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9288
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9290
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9286
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "*",
-                "name": "*",
-                "type": "*",
-                "links": [
-                  9284
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
-            "id": 1601,
-            "type": "easy ifElse",
-            "pos": [
-              1592,
-              -1440
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 31,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9291
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9289
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9287
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "*",
-                "name": "*",
-                "type": "*",
-                "links": [
-                  9285
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
-            "id": 1600,
-            "type": "PrimitiveInt",
-            "pos": [
-              1360,
-              -1504
-            ],
-            "size": [
-              210,
-              82
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  9288,
-                  9289
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.3.64",
-              "Node name for S&R": "PrimitiveInt",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": [
-              0,
-              "fixed"
-            ]
-          },
-          {
-            "id": 1381,
-            "type": "Basic data handling: MathFormula",
-            "pos": [
-              1336,
-              -1736
-            ],
-            "size": [
-              210,
-              138
-            ],
-            "flags": {},
-            "order": 13,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "a",
-                "name": "a",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9145
-              },
-              {
-                "name": "b",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9146
-              },
-              {
-                "name": "c",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9269
-              },
-              {
-                "name": "d",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": 9275
-              },
-              {
-                "name": "e",
-                "shape": 7,
-                "type": "FLOAT,INT",
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "FLOAT",
-                "name": "FLOAT",
-                "type": "FLOAT",
-                "links": [
-                  9271
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "formula": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "max(a/b,b/a)*c"
-            ]
-          },
-          {
-            "id": 1597,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              1552,
-              -1736
-            ],
-            "size": [
-              140,
-              26
-            ],
-            "flags": {},
-            "order": 28,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "input",
-                "name": "input",
-                "type": "*",
-                "link": 9271
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
-                "links": [
-                  9290,
-                  9291
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "basic_data_handling",
-              "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt",
-              "ue_properties": {
-                "widget_ue_connectable": {}
-              }
-            },
-            "widgets_values": []
-          },
-          {
             "id": 1535,
             "type": "PrimitiveInt",
             "pos": [
@@ -7143,7 +6030,7 @@
               82
             ],
             "flags": {},
-            "order": 21,
+            "order": 14,
             "mode": 0,
             "inputs": [
               {
@@ -7162,10 +6049,8 @@
                 "name": "INT",
                 "type": "INT",
                 "links": [
-                  9138,
                   9141,
-                  9256,
-                  9293
+                  9256
                 ]
               }
             ],
@@ -7197,7 +6082,7 @@
               82
             ],
             "flags": {},
-            "order": 22,
+            "order": 15,
             "mode": 0,
             "inputs": [
               {
@@ -7216,10 +6101,8 @@
                 "name": "INT",
                 "type": "INT",
                 "links": [
-                  9140,
                   9142,
-                  9257,
-                  9294
+                  9257
                 ]
               }
             ],
@@ -7251,7 +6134,7 @@
               82
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -7271,9 +6154,7 @@
                 "type": "INT",
                 "links": [
                   9198,
-                  9200,
-                  9269,
-                  9297
+                  9200
                 ]
               }
             ],
@@ -7296,15 +6177,15 @@
             ]
           },
           {
-            "id": 1345,
-            "type": "ImageTile+",
+            "id": 1346,
+            "type": "GetImageSize",
             "pos": [
-              936,
-              -2320
+              792,
+              -2584
             ],
             "size": [
-              210,
-              234
+              140,
+              66
             ],
             "flags": {},
             "order": 4,
@@ -7314,110 +6195,58 @@
                 "localized_name": "image",
                 "name": "image",
                 "type": "IMAGE",
-                "link": 8712
-              },
-              {
-                "localized_name": "rows",
-                "name": "rows",
-                "type": "INT",
-                "widget": {
-                  "name": "rows"
-                },
-                "link": 9141
-              },
-              {
-                "localized_name": "cols",
-                "name": "cols",
-                "type": "INT",
-                "widget": {
-                  "name": "cols"
-                },
-                "link": 9142
+                "link": 9205
               }
             ],
             "outputs": [
               {
-                "localized_name": "IMAGE",
-                "name": "IMAGE",
-                "type": "IMAGE",
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
                 "links": [
-                  8713
+                  9197
                 ]
               },
               {
-                "localized_name": "tile_width",
-                "name": "tile_width",
+                "localized_name": "height",
+                "name": "height",
                 "type": "INT",
                 "links": [
-                  8744,
-                  9145,
-                  9299
+                  9199
                 ]
               },
               {
-                "localized_name": "tile_height",
-                "name": "tile_height",
+                "localized_name": "batch_size",
+                "name": "batch_size",
                 "type": "INT",
-                "links": [
-                  8752,
-                  9146,
-                  9300
-                ]
-              },
-              {
-                "localized_name": "overlap_x",
-                "name": "overlap_x",
-                "type": "INT",
-                "links": [
-                  8745
-                ]
-              },
-              {
-                "localized_name": "overlap_y",
-                "name": "overlap_y",
-                "type": "INT",
-                "links": [
-                  8753
-                ]
+                "links": null
               }
             ],
             "properties": {
-              "cnr_id": "comfyui_essentials",
-              "ver": "1.1.0",
-              "Node name for S&R": "ImageTile+",
+              "cnr_id": "comfy-core",
+              "ver": "0.3.64",
+              "Node name for S&R": "GetImageSize",
               "ue_properties": {
-                "widget_ue_connectable": {
-                  "rows": true,
-                  "cols": true,
-                  "overlap": true,
-                  "overlap_x": true,
-                  "overlap_y": true
-                },
+                "widget_ue_connectable": {},
                 "version": "7.1",
                 "input_ue_unconnectable": {}
               }
             },
-            "widgets_values": [
-              2,
-              2,
-              0.05000000000000002,
-              0,
-              0
-            ]
+            "widgets_values": []
           },
           {
-            "id": 1605,
+            "id": 1564,
             "type": "Basic data handling: MathFormula",
             "pos": [
-              720,
-              -2048
+              944,
+              -2664
             ],
             "size": [
               210,
               98
             ],
             "flags": {},
-            "order": 34,
+            "order": 16,
             "mode": 0,
             "inputs": [
               {
@@ -7425,13 +6254,13 @@
                 "name": "a",
                 "shape": 7,
                 "type": "FLOAT,INT",
-                "link": 9299
+                "link": 9197
               },
               {
                 "name": "b",
                 "shape": 7,
                 "type": "FLOAT,INT",
-                "link": 9300
+                "link": 9198
               },
               {
                 "name": "c",
@@ -7446,84 +6275,785 @@
                 "name": "FLOAT",
                 "type": "FLOAT",
                 "links": [
-                  9298
+                  9242
                 ]
               }
             ],
+            "title": "cols",
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathFormula"
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
-              "2*min(a,b)"
+              "max(1, floor((a/b) + 0.5))"
             ]
           },
           {
-            "id": 1604,
-            "type": "Basic data handling: Equal",
+            "id": 1565,
+            "type": "Basic data handling: MathFormula",
             "pos": [
-              784,
-              -1904
+              944,
+              -2528
             ],
             "size": [
-              140,
-              46
+              210,
+              98
             ],
             "flags": {},
-            "order": 33,
+            "order": 17,
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "value1",
-                "name": "value1",
-                "type": "*",
-                "link": 9293
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9199
               },
               {
-                "localized_name": "value2",
-                "name": "value2",
-                "type": "*",
-                "link": 9294
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9200
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
               }
             ],
             "outputs": [
               {
-                "localized_name": "result",
-                "name": "result",
-                "type": "BOOLEAN",
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
                 "links": [
-                  9295,
-                  9301
+                  9243
+                ]
+              }
+            ],
+            "title": "rows",
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              "max(1, floor((a/b) + 0.5))"
+            ]
+          },
+          {
+            "id": 1617,
+            "type": "PrimitiveFloat",
+            "pos": [
+              568,
+              -2104
+            ],
+            "size": [
+              210,
+              58
+            ],
+            "flags": {},
+            "order": 23,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": 9345
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9346,
+                  9347
+                ]
+              }
+            ],
+            "title": "Scale By",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.64",
+              "Node name for S&R": "PrimitiveFloat",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              2.5
+            ]
+          },
+          {
+            "id": 1407,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              2656,
+              -2288
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9326
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  8830
                 ]
               }
             ],
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: Equal"
-            }
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": []
           },
           {
-            "id": 1355,
-            "type": "ImageUntile+",
+            "id": 1402,
+            "type": "Basic data handling: CastToInt",
             "pos": [
-              2776,
-              -2040
+              2656,
+              -2536
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9324
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  8831
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1611,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              872,
+              -2080
+            ],
+            "size": [
+              240,
+              120
+            ],
+            "flags": {},
+            "order": 21,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9340
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9339
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9347
+              },
+              {
+                "name": "d",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9342
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              "round(min(a,b)*c/16)*16"
+            ]
+          },
+          {
+            "id": 1621,
+            "type": "ImageScale",
+            "pos": [
+              2392,
+              -2208
             ],
             "size": [
               210,
               130
             ],
             "flags": {},
+            "order": 24,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 9416
+              },
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 9405
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 9406
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  9363
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.64",
+              "Node name for S&R": "ImageScale",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              "lanczos",
+              512,
+              512,
+              "disabled"
+            ]
+          },
+          {
+            "id": 1375,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              2392,
+              -2376
+            ],
+            "size": [
+              210,
+              118
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8752
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8753
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9412
+              },
+              {
+                "name": "d",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9326
+                ]
+              }
+            ],
+            "title": "overlap y",
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "formula": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "round((b/a)*c)"
+            ]
+          },
+          {
+            "id": 1370,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              2392,
+              -2536
+            ],
+            "size": [
+              210,
+              118
+            ],
+            "flags": {},
             "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8744
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 8745
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9411
+              },
+              {
+                "name": "d",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9324
+                ]
+              }
+            ],
+            "title": "overlap x",
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "formula": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "round((b/a)*c)"
+            ]
+          },
+          {
+            "id": 1622,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              2208,
+              -1968
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 25,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9407
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9406,
+                  9412
+                ]
+              }
+            ],
+            "title": "height",
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1623,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              2208,
+              -2704
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 26,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9408
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9405,
+                  9411
+                ]
+              }
+            ],
+            "title": "width",
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1616,
+            "type": "Basic data handling: CastToInt",
+            "pos": [
+              1120,
+              -1984
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 22,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "input",
+                "name": "input",
+                "type": "*",
+                "link": 9342
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "INT",
+                "name": "INT",
+                "type": "INT",
+                "links": [
+                  9343,
+                  9393,
+                  9424
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1636,
+            "type": "easy ifElse",
+            "pos": [
+              2040,
+              -1792
+            ],
+            "size": [
+              210,
+              78
+            ],
+            "flags": {},
+            "order": 28,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "*",
+                "link": 9433
+              },
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "*",
+                "link": 9400
+              },
+              {
+                "localized_name": "boolean",
+                "name": "boolean",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "boolean"
+                },
+                "link": 9428
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "*",
+                "name": "*",
+                "type": "*",
+                "links": [
+                  9407
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy ifElse",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 1166,
+            "type": "SeedVR2",
+            "pos": [
+              1272,
+              -2280
+            ],
+            "size": [
+              272,
+              198
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 9344
+              },
+              {
+                "localized_name": "block_swap_config",
+                "name": "block_swap_config",
+                "shape": 7,
+                "type": "block_swap_config",
+                "link": 9121
+              },
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "COMBO",
+                "widget": {
+                  "name": "model"
+                },
+                "link": 9123
+              },
+              {
+                "localized_name": "seed",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 8871
+              },
+              {
+                "localized_name": "new_resolution",
+                "name": "new_resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "new_resolution"
+                },
+                "link": 9343
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "links": [
+                  8794,
+                  9416
+                ]
+              }
+            ],
+            "properties": {
+              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
+              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
+              "Node name for S&R": "SeedVR2",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "model": true,
+                  "seed": true,
+                  "new_resolution": true,
+                  "batch_size": true,
+                  "preserve_vram": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              "seedvr2_ema_7b_fp16.safetensors",
+              42,
+              "fixed",
+              1088,
+              1,
+              false
+            ]
+          },
+          {
+            "id": 1355,
+            "type": "ImageUntile+",
+            "pos": [
+              2880,
+              -2304
+            ],
+            "size": [
+              210,
+              130
+            ],
+            "flags": {},
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
                 "localized_name": "tiles",
                 "name": "tiles",
                 "type": "IMAGE",
-                "link": 8786
+                "link": 9363
               },
               {
                 "localized_name": "overlap_x",
@@ -7570,7 +7100,7 @@
                 "links": [
                   8719,
                   9127,
-                  9302
+                  9308
                 ]
               }
             ],
@@ -7597,283 +7127,492 @@
             ]
           },
           {
-            "id": 1606,
-            "type": "easy ifElse",
+            "id": 1637,
+            "type": "Basic data handling: Equal",
             "pos": [
-              2776,
-              -2168
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 35,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9304
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9302
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9301
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "*",
-                "name": "*",
-                "type": "*",
-                "links": [
-                  9303
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse"
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
-            "id": 1603,
-            "type": "easy ifElse",
-            "pos": [
-              952,
-              -2032
-            ],
-            "size": [
-              210,
-              78
-            ],
-            "flags": {},
-            "order": 32,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "on_true",
-                "name": "on_true",
-                "type": "*",
-                "link": 9298
-              },
-              {
-                "localized_name": "on_false",
-                "name": "on_false",
-                "type": "*",
-                "link": 9297
-              },
-              {
-                "localized_name": "boolean",
-                "name": "boolean",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "boolean"
-                },
-                "link": 9295
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "*",
-                "name": "*",
-                "type": "*",
-                "links": [
-                  9305
-                ]
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfyui-easy-use",
-              "ver": "1.3.3",
-              "Node name for S&R": "easy ifElse"
-            },
-            "widgets_values": [
-              false
-            ]
-          },
-          {
-            "id": 1166,
-            "type": "SeedVR2",
-            "pos": [
-              1272,
-              -2128
-            ],
-            "size": [
-              392,
-              198
-            ],
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "images",
-                "name": "images",
-                "type": "IMAGE",
-                "link": 8713
-              },
-              {
-                "localized_name": "block_swap_config",
-                "name": "block_swap_config",
-                "shape": 7,
-                "type": "block_swap_config",
-                "link": 9121
-              },
-              {
-                "localized_name": "model",
-                "name": "model",
-                "type": "COMBO",
-                "widget": {
-                  "name": "model"
-                },
-                "link": 9123
-              },
-              {
-                "localized_name": "seed",
-                "name": "seed",
-                "type": "INT",
-                "widget": {
-                  "name": "seed"
-                },
-                "link": 8871
-              },
-              {
-                "localized_name": "new_resolution",
-                "name": "new_resolution",
-                "type": "INT",
-                "widget": {
-                  "name": "new_resolution"
-                },
-                "link": 9306
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "image",
-                "name": "image",
-                "type": "IMAGE",
-                "links": [
-                  8781,
-                  8794,
-                  9304
-                ]
-              }
-            ],
-            "properties": {
-              "aux_id": "numz/ComfyUI-SeedVR2_VideoUpscaler",
-              "ver": "4df5cef5937001bcef056d5508c6a884849ffe13",
-              "Node name for S&R": "SeedVR2",
-              "ue_properties": {
-                "widget_ue_connectable": {
-                  "model": true,
-                  "seed": true,
-                  "new_resolution": true,
-                  "batch_size": true,
-                  "preserve_vram": true
-                },
-                "version": "7.1",
-                "input_ue_unconnectable": {}
-              }
-            },
-            "widgets_values": [
-              "seedvr2_ema_7b_fp16.safetensors",
-              42,
-              "fixed",
-              1088,
-              1,
-              false
-            ]
-          },
-          {
-            "id": 1607,
-            "type": "Basic data handling: CastToInt",
-            "pos": [
-              992,
-              -1912
+              1800,
+              -1744
             ],
             "size": [
               140,
-              26
+              46
             ],
             "flags": {},
-            "order": 1,
+            "order": 29,
             "mode": 0,
             "inputs": [
               {
-                "localized_name": "input",
-                "name": "input",
+                "localized_name": "value1",
+                "name": "value1",
                 "type": "*",
-                "link": 9305
+                "link": 9392
+              },
+              {
+                "localized_name": "value2",
+                "name": "value2",
+                "type": "*",
+                "link": 9393
               }
             ],
             "outputs": [
               {
-                "localized_name": "INT",
-                "name": "INT",
-                "type": "INT",
+                "localized_name": "result",
+                "name": "result",
+                "type": "BOOLEAN",
                 "links": [
-                  9306
+                  9428
                 ]
               }
             ],
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt"
+              "Node name for S&R": "Basic data handling: Equal",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1647,
+            "type": "Basic data handling: Equal",
+            "pos": [
+              1704,
+              -2592
+            ],
+            "size": [
+              140,
+              46
+            ],
+            "flags": {},
+            "order": 31,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "value1",
+                "name": "value1",
+                "type": "*",
+                "link": 9424
+              },
+              {
+                "localized_name": "value2",
+                "name": "value2",
+                "type": "*",
+                "link": 9425
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "result",
+                "name": "result",
+                "type": "BOOLEAN",
+                "links": [
+                  9427
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: Equal",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            }
+          },
+          {
+            "id": 1638,
+            "type": "easy ifElse",
+            "pos": [
+              1984,
+              -2536
+            ],
+            "size": [
+              210,
+              78
+            ],
+            "flags": {},
+            "order": 30,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "on_true",
+                "name": "on_true",
+                "type": "*",
+                "link": 9403
+              },
+              {
+                "localized_name": "on_false",
+                "name": "on_false",
+                "type": "*",
+                "link": 9404
+              },
+              {
+                "localized_name": "boolean",
+                "name": "boolean",
+                "type": "BOOLEAN",
+                "widget": {
+                  "name": "boolean"
+                },
+                "link": 9427
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "*",
+                "name": "*",
+                "type": "*",
+                "links": [
+                  9408
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "1.3.3",
+              "Node name for S&R": "easy ifElse",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              false
+            ]
+          },
+          {
+            "id": 1371,
+            "type": "GetImageSize",
+            "pos": [
+              1560,
+              -2008
+            ],
+            "size": [
+              140,
+              66
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 8794
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "links": [
+                  9392,
+                  9397,
+                  9403
+                ]
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "links": [
+                  9400,
+                  9425,
+                  9432
+                ]
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.64",
+              "Node name for S&R": "GetImageSize",
+              "ue_properties": {
+                "widget_ue_connectable": {},
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 1649,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              1744,
+              -2184
+            ],
+            "size": [
+              210,
+              118
+            ],
+            "flags": {},
+            "order": 32,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9430
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9431
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9432
+              },
+              {
+                "name": "d",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9433
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              "c*max(a/b,b/a)"
+            ]
+          },
+          {
+            "id": 1629,
+            "type": "Basic data handling: MathFormula",
+            "pos": [
+              1744,
+              -2344
+            ],
+            "size": [
+              210,
+              118
+            ],
+            "flags": {},
+            "order": 27,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "a",
+                "name": "a",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9375
+              },
+              {
+                "name": "b",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9376
+              },
+              {
+                "name": "c",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": 9397
+              },
+              {
+                "name": "d",
+                "shape": 7,
+                "type": "FLOAT,INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  9404
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "basic_data_handling",
+              "ver": "0.6.0",
+              "Node name for S&R": "Basic data handling: MathFormula",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": [
+              "c*max(a/b,b/a)"
+            ]
+          },
+          {
+            "id": 1345,
+            "type": "ImageTile+",
+            "pos": [
+              904,
+              -2352
+            ],
+            "size": [
+              210,
+              234
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 8712
+              },
+              {
+                "localized_name": "rows",
+                "name": "rows",
+                "type": "INT",
+                "widget": {
+                  "name": "rows"
+                },
+                "link": 9141
+              },
+              {
+                "localized_name": "cols",
+                "name": "cols",
+                "type": "INT",
+                "widget": {
+                  "name": "cols"
+                },
+                "link": 9142
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  9344,
+                  9434
+                ]
+              },
+              {
+                "localized_name": "tile_width",
+                "name": "tile_width",
+                "type": "INT",
+                "links": [
+                  8744,
+                  9340,
+                  9375,
+                  9430
+                ]
+              },
+              {
+                "localized_name": "tile_height",
+                "name": "tile_height",
+                "type": "INT",
+                "links": [
+                  8752,
+                  9339,
+                  9376,
+                  9431
+                ]
+              },
+              {
+                "localized_name": "overlap_x",
+                "name": "overlap_x",
+                "type": "INT",
+                "links": [
+                  8745
+                ]
+              },
+              {
+                "localized_name": "overlap_y",
+                "name": "overlap_y",
+                "type": "INT",
+                "links": [
+                  8753
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui_essentials",
+              "ver": "1.1.0",
+              "Node name for S&R": "ImageTile+",
+              "ue_properties": {
+                "widget_ue_connectable": {
+                  "rows": true,
+                  "cols": true,
+                  "overlap": true,
+                  "overlap_x": true,
+                  "overlap_y": true
+                },
+                "version": "7.1",
+                "input_ue_unconnectable": {}
+              }
+            },
+            "widgets_values": [
+              2,
+              2,
+              0.05000000000000002,
+              0,
+              0
+            ]
+          },
+          {
+            "id": 1650,
+            "type": "PreviewImage",
+            "pos": [
+              1056,
+              -1744
+            ],
+            "size": [
+              140,
+              26
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "link": 9434
+              }
+            ],
+            "outputs": [],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.64",
+              "Node name for S&R": "PreviewImage"
             }
           }
         ],
         "groups": [],
         "links": [
-          {
-            "id": 8749,
-            "origin_id": 1370,
-            "origin_slot": 0,
-            "target_id": 1373,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 8755,
-            "origin_id": 1375,
-            "origin_slot": 0,
-            "target_id": 1376,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 8828,
-            "origin_id": 1406,
-            "origin_slot": 0,
-            "target_id": 1407,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 8814,
-            "origin_id": 1396,
-            "origin_slot": 0,
-            "target_id": 1402,
-            "target_slot": 0,
-            "type": "*"
-          },
           {
             "id": 8752,
             "origin_id": 1345,
@@ -7891,26 +7630,10 @@
             "type": "FLOAT,INT"
           },
           {
-            "id": 8796,
-            "origin_id": 1390,
-            "origin_slot": 2,
-            "target_id": 1375,
-            "target_slot": 2,
-            "type": "FLOAT,INT"
-          },
-          {
             "id": 8794,
             "origin_id": 1166,
             "origin_slot": 0,
             "target_id": 1371,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 8781,
-            "origin_id": 1166,
-            "origin_slot": 0,
-            "target_id": 1390,
             "target_slot": 0,
             "type": "IMAGE"
           },
@@ -7931,26 +7654,10 @@
             "type": "FLOAT,INT"
           },
           {
-            "id": 8795,
-            "origin_id": 1390,
-            "origin_slot": 1,
-            "target_id": 1370,
-            "target_slot": 2,
-            "type": "FLOAT,INT"
-          },
-          {
             "id": 8712,
             "origin_id": 1279,
             "origin_slot": 0,
             "target_id": 1345,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
-            "id": 8713,
-            "origin_id": 1345,
-            "origin_slot": 0,
-            "target_id": 1166,
             "target_slot": 0,
             "type": "IMAGE"
           },
@@ -7961,62 +7668,6 @@
             "target_id": 1166,
             "target_slot": 3,
             "type": "INT"
-          },
-          {
-            "id": 8809,
-            "origin_id": 1371,
-            "origin_slot": 0,
-            "target_id": 1396,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8810,
-            "origin_id": 1390,
-            "origin_slot": 1,
-            "target_id": 1396,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8813,
-            "origin_id": 1373,
-            "origin_slot": 0,
-            "target_id": 1396,
-            "target_slot": 3,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8824,
-            "origin_id": 1371,
-            "origin_slot": 1,
-            "target_id": 1406,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8825,
-            "origin_id": 1390,
-            "origin_slot": 2,
-            "target_id": 1406,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8827,
-            "origin_id": 1376,
-            "origin_slot": 0,
-            "target_id": 1406,
-            "target_slot": 3,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 8786,
-            "origin_id": 1390,
-            "origin_slot": 0,
-            "target_id": 1355,
-            "target_slot": 0,
-            "type": "IMAGE"
           },
           {
             "id": 8831,
@@ -8091,22 +7742,6 @@
             "type": "INT"
           },
           {
-            "id": 9138,
-            "origin_id": 1535,
-            "origin_slot": 0,
-            "target_id": 1396,
-            "target_slot": 2,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9140,
-            "origin_id": 1536,
-            "origin_slot": 0,
-            "target_id": 1406,
-            "target_slot": 2,
-            "type": "FLOAT,INT"
-          },
-          {
             "id": 9141,
             "origin_id": 1535,
             "origin_slot": 0,
@@ -8121,22 +7756,6 @@
             "target_id": 1345,
             "target_slot": 2,
             "type": "INT"
-          },
-          {
-            "id": 9145,
-            "origin_id": 1345,
-            "origin_slot": 1,
-            "target_id": 1381,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9146,
-            "origin_id": 1345,
-            "origin_slot": 2,
-            "target_id": 1381,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
           },
           {
             "id": 9197,
@@ -8219,14 +7838,6 @@
             "type": "INT"
           },
           {
-            "id": 9250,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 1568,
-            "target_slot": 1,
-            "type": "FLOAT"
-          },
-          {
             "id": 9256,
             "origin_id": 1535,
             "origin_slot": 0,
@@ -8243,212 +7854,292 @@
             "type": "INT"
           },
           {
-            "id": 9269,
-            "origin_id": 1348,
-            "origin_slot": 0,
-            "target_id": 1381,
-            "target_slot": 2,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9271,
-            "origin_id": 1381,
-            "origin_slot": 0,
-            "target_id": 1597,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 9275,
-            "origin_id": 1371,
-            "origin_slot": 1,
-            "target_id": 1381,
-            "target_slot": 3,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9278,
-            "origin_id": 1371,
-            "origin_slot": 1,
-            "target_id": 1598,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9279,
-            "origin_id": 1371,
-            "origin_slot": 0,
-            "target_id": 1598,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9284,
-            "origin_id": 1599,
-            "origin_slot": 0,
-            "target_id": 1390,
-            "target_slot": 1,
-            "type": "INT"
-          },
-          {
-            "id": 9285,
-            "origin_id": 1601,
-            "origin_slot": 0,
-            "target_id": 1390,
-            "target_slot": 2,
-            "type": "INT"
-          },
-          {
-            "id": 9286,
-            "origin_id": 1598,
-            "origin_slot": 0,
-            "target_id": 1599,
-            "target_slot": 2,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 9287,
-            "origin_id": 1598,
-            "origin_slot": 0,
-            "target_id": 1601,
-            "target_slot": 2,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 9288,
-            "origin_id": 1600,
-            "origin_slot": 0,
-            "target_id": 1599,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 9289,
-            "origin_id": 1600,
-            "origin_slot": 0,
-            "target_id": 1601,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9290,
-            "origin_id": 1597,
-            "origin_slot": 0,
-            "target_id": 1599,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9291,
-            "origin_id": 1597,
-            "origin_slot": 0,
-            "target_id": 1601,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 9293,
-            "origin_id": 1535,
-            "origin_slot": 0,
-            "target_id": 1604,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 9294,
-            "origin_id": 1536,
-            "origin_slot": 0,
-            "target_id": 1604,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9295,
-            "origin_id": 1604,
-            "origin_slot": 0,
-            "target_id": 1603,
-            "target_slot": 2,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 9297,
-            "origin_id": 1348,
-            "origin_slot": 0,
-            "target_id": 1603,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9298,
-            "origin_id": 1605,
-            "origin_slot": 0,
-            "target_id": 1603,
-            "target_slot": 0,
-            "type": "*"
-          },
-          {
-            "id": 9299,
-            "origin_id": 1345,
-            "origin_slot": 1,
-            "target_id": 1605,
-            "target_slot": 0,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9300,
-            "origin_id": 1345,
-            "origin_slot": 2,
-            "target_id": 1605,
-            "target_slot": 1,
-            "type": "FLOAT,INT"
-          },
-          {
-            "id": 9301,
-            "origin_id": 1604,
-            "origin_slot": 0,
-            "target_id": 1606,
-            "target_slot": 2,
-            "type": "BOOLEAN"
-          },
-          {
-            "id": 9302,
+            "id": 9308,
             "origin_id": 1355,
-            "origin_slot": 0,
-            "target_id": 1606,
-            "target_slot": 1,
-            "type": "*"
-          },
-          {
-            "id": 9303,
-            "origin_id": 1606,
             "origin_slot": 0,
             "target_id": -20,
             "target_slot": 1,
-            "type": "*"
+            "type": "IMAGE"
           },
           {
-            "id": 9304,
-            "origin_id": 1166,
+            "id": 9324,
+            "origin_id": 1370,
             "origin_slot": 0,
-            "target_id": 1606,
+            "target_id": 1402,
             "target_slot": 0,
             "type": "*"
           },
           {
-            "id": 9305,
-            "origin_id": 1603,
+            "id": 9326,
+            "origin_id": 1375,
             "origin_slot": 0,
-            "target_id": 1607,
+            "target_id": 1407,
             "target_slot": 0,
             "type": "*"
           },
           {
-            "id": 9306,
-            "origin_id": 1607,
+            "id": 9339,
+            "origin_id": 1345,
+            "origin_slot": 2,
+            "target_id": 1611,
+            "target_slot": 1,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9340,
+            "origin_id": 1345,
+            "origin_slot": 1,
+            "target_id": 1611,
+            "target_slot": 0,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9342,
+            "origin_id": 1611,
+            "origin_slot": 0,
+            "target_id": 1616,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9343,
+            "origin_id": 1616,
             "origin_slot": 0,
             "target_id": 1166,
             "target_slot": 4,
             "type": "INT"
+          },
+          {
+            "id": 9344,
+            "origin_id": 1345,
+            "origin_slot": 0,
+            "target_id": 1166,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 9345,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 1617,
+            "target_slot": 0,
+            "type": "FLOAT"
+          },
+          {
+            "id": 9346,
+            "origin_id": 1617,
+            "origin_slot": 0,
+            "target_id": 1568,
+            "target_slot": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": 9347,
+            "origin_id": 1617,
+            "origin_slot": 0,
+            "target_id": 1611,
+            "target_slot": 2,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9363,
+            "origin_id": 1621,
+            "origin_slot": 0,
+            "target_id": 1355,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 9375,
+            "origin_id": 1345,
+            "origin_slot": 1,
+            "target_id": 1629,
+            "target_slot": 0,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9376,
+            "origin_id": 1345,
+            "origin_slot": 2,
+            "target_id": 1629,
+            "target_slot": 1,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9392,
+            "origin_id": 1371,
+            "origin_slot": 0,
+            "target_id": 1637,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9393,
+            "origin_id": 1616,
+            "origin_slot": 0,
+            "target_id": 1637,
+            "target_slot": 1,
+            "type": "*"
+          },
+          {
+            "id": 9397,
+            "origin_id": 1371,
+            "origin_slot": 0,
+            "target_id": 1629,
+            "target_slot": 2,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9400,
+            "origin_id": 1371,
+            "origin_slot": 1,
+            "target_id": 1636,
+            "target_slot": 1,
+            "type": "*"
+          },
+          {
+            "id": 9403,
+            "origin_id": 1371,
+            "origin_slot": 0,
+            "target_id": 1638,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9404,
+            "origin_id": 1629,
+            "origin_slot": 0,
+            "target_id": 1638,
+            "target_slot": 1,
+            "type": "*"
+          },
+          {
+            "id": 9405,
+            "origin_id": 1623,
+            "origin_slot": 0,
+            "target_id": 1621,
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 9406,
+            "origin_id": 1622,
+            "origin_slot": 0,
+            "target_id": 1621,
+            "target_slot": 2,
+            "type": "INT"
+          },
+          {
+            "id": 9407,
+            "origin_id": 1636,
+            "origin_slot": 0,
+            "target_id": 1622,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9408,
+            "origin_id": 1638,
+            "origin_slot": 0,
+            "target_id": 1623,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9411,
+            "origin_id": 1623,
+            "origin_slot": 0,
+            "target_id": 1370,
+            "target_slot": 2,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9412,
+            "origin_id": 1622,
+            "origin_slot": 0,
+            "target_id": 1375,
+            "target_slot": 2,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9416,
+            "origin_id": 1166,
+            "origin_slot": 0,
+            "target_id": 1621,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 9424,
+            "origin_id": 1616,
+            "origin_slot": 0,
+            "target_id": 1647,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9425,
+            "origin_id": 1371,
+            "origin_slot": 1,
+            "target_id": 1647,
+            "target_slot": 1,
+            "type": "*"
+          },
+          {
+            "id": 9427,
+            "origin_id": 1647,
+            "origin_slot": 0,
+            "target_id": 1638,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 9428,
+            "origin_id": 1637,
+            "origin_slot": 0,
+            "target_id": 1636,
+            "target_slot": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": 9430,
+            "origin_id": 1345,
+            "origin_slot": 1,
+            "target_id": 1649,
+            "target_slot": 0,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9431,
+            "origin_id": 1345,
+            "origin_slot": 2,
+            "target_id": 1649,
+            "target_slot": 1,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9432,
+            "origin_id": 1371,
+            "origin_slot": 1,
+            "target_id": 1649,
+            "target_slot": 2,
+            "type": "FLOAT,INT"
+          },
+          {
+            "id": 9433,
+            "origin_id": 1649,
+            "origin_slot": 0,
+            "target_id": 1636,
+            "target_slot": 0,
+            "type": "*"
+          },
+          {
+            "id": 9434,
+            "origin_id": 1345,
+            "origin_slot": 0,
+            "target_id": 1650,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {
@@ -8595,7 +8286,7 @@
               82
             ],
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -8648,7 +8339,7 @@
               82
             ],
             "flags": {},
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
               {
@@ -8701,7 +8392,7 @@
               82
             ],
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "inputs": [
               {
@@ -8764,7 +8455,7 @@
               82
             ],
             "flags": {},
-            "order": 10,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -8813,7 +8504,7 @@
               78
             ],
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "inputs": [
               {
@@ -8877,7 +8568,7 @@
               136
             ],
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -8922,7 +8613,8 @@
                 "version": "7.1",
                 "input_ue_unconnectable": {}
               }
-            }
+            },
+            "widgets_values": []
           },
           {
             "id": 819,
@@ -8936,7 +8628,7 @@
               106
             ],
             "flags": {},
-            "order": 4,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -8992,7 +8684,7 @@
               106
             ],
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -9048,7 +8740,7 @@
               106
             ],
             "flags": {},
-            "order": 11,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -9104,7 +8796,7 @@
               82
             ],
             "flags": {},
-            "order": 12,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -9139,7 +8831,10 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: MathMin"
+              "Node name for S&R": "Basic data handling: MathMin",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
             },
             "widgets_values": [
               "0",
@@ -9158,7 +8853,7 @@
               98
             ],
             "flags": {},
-            "order": 9,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -9219,7 +8914,7 @@
               200
             ],
             "flags": {},
-            "order": 1,
+            "order": 0,
             "mode": 0,
             "inputs": [
               {
@@ -9310,7 +9005,7 @@
               26
             ],
             "flags": {},
-            "order": 0,
+            "order": 12,
             "mode": 0,
             "inputs": [
               {
@@ -9333,8 +9028,12 @@
             "properties": {
               "cnr_id": "basic_data_handling",
               "ver": "0.6.0",
-              "Node name for S&R": "Basic data handling: CastToInt"
-            }
+              "Node name for S&R": "Basic data handling: CastToInt",
+              "ue_properties": {
+                "widget_ue_connectable": {}
+              }
+            },
+            "widgets_values": []
           }
         ],
         "groups": [],
