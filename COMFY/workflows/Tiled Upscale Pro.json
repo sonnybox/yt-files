@@ -1,8 +1,8 @@
 {
   "id": "01a876a3-4b26-441b-8323-64907d747ac0",
   "revision": 0,
-  "last_node_id": 231,
-  "last_link_id": 524,
+  "last_node_id": 234,
+  "last_link_id": 526,
   "nodes": [
     {
       "id": 140,
@@ -758,7 +758,7 @@
         }
       },
       "widgets_values": [
-        "width: 3140, height: 5340\n batch size: 1"
+        "width: 3546, height: 4728\n batch size: 1"
       ]
     },
     {
@@ -901,7 +901,7 @@
         }
       },
       "widgets_values": [
-        "width: 2376, height: 1766\n batch size: 1"
+        "width: 1774, height: 2365\n batch size: 1"
       ]
     },
     {
@@ -1252,7 +1252,7 @@
         "Node name for S&R": "GetImageSize"
       },
       "widgets_values": [
-        "width: 1120, height: 1904\n batch size: 1"
+        "width: 864, height: 1152\n batch size: 1"
       ]
     },
     {
@@ -1607,135 +1607,6 @@
       ]
     },
     {
-      "id": 195,
-      "type": "ImageSharpen",
-      "pos": [
-        1902.1072829695838,
-        839.9337662755268
-      ],
-      "size": [
-        210,
-        106
-      ],
-      "flags": {},
-      "order": 54,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 475
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            508
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.68",
-        "Node name for S&R": "ImageSharpen"
-      },
-      "widgets_values": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "id": 192,
-      "type": "ImageSharpen",
-      "pos": [
-        2546.7198212950043,
-        828.7692787128898
-      ],
-      "size": [
-        210,
-        106
-      ],
-      "flags": {},
-      "order": 61,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 469
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            471
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.68",
-        "Node name for S&R": "ImageSharpen"
-      },
-      "widgets_values": [
-        1,
-        1,
-        1
-      ]
-    },
-    {
-      "id": 218,
-      "type": "ColorMatch",
-      "pos": [
-        3150.1475221166525,
-        -16.401884272773113
-      ],
-      "size": [
-        210,
-        126
-      ],
-      "flags": {},
-      "order": 63,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image_ref",
-          "type": "IMAGE",
-          "link": 514
-        },
-        {
-          "name": "image_target",
-          "type": "IMAGE",
-          "link": 515
-        }
-      ],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            516,
-            517
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.1.9",
-        "Node name for S&R": "ColorMatch"
-      },
-      "widgets_values": [
-        "hm-mvgd-hm",
-        1,
-        true
-      ]
-    },
-    {
       "id": 15,
       "type": "CheckpointLoaderSimple",
       "pos": [
@@ -1791,55 +1662,6 @@
       ]
     },
     {
-      "id": 136,
-      "type": "Image Comparer (rgthree)",
-      "pos": [
-        3147.363450380517,
-        151.6532562907152
-      ],
-      "size": [
-        855.4863181538003,
-        907.6995743018153
-      ],
-      "flags": {},
-      "order": 65,
-      "mode": 0,
-      "inputs": [
-        {
-          "dir": 3,
-          "name": "image_a",
-          "type": "IMAGE",
-          "link": 517
-        },
-        {
-          "dir": 3,
-          "name": "image_b",
-          "type": "IMAGE",
-          "link": 477
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "rgthree-comfy",
-        "ver": "1.0.2510052058",
-        "comparer_mode": "Slide"
-      },
-      "widgets_values": [
-        [
-          {
-            "name": "A",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_anhat_00017_.png&type=temp&subfolder=&preview=jpeg&rand=0.3967008980595985"
-          },
-          {
-            "name": "B",
-            "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_anhat_00018_.png&type=temp&subfolder=&preview=jpeg&rand=0.6206864997562213"
-          }
-        ]
-      ]
-    },
-    {
       "id": 225,
       "type": "Note",
       "pos": [
@@ -1858,60 +1680,6 @@
       "properties": {},
       "widgets_values": [
         "Strength 0.5 - Balanced\n\nA high strength (0.6-0.8) will focus more on the original image rather than adding / changing detail."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 191,
-      "type": "PreviewImage",
-      "pos": [
-        2828.9139371222122,
-        -300.70348177676965
-      ],
-      "size": [
-        259.62876101107986,
-        409.21939167649913
-      ],
-      "flags": {
-        "collapsed": false
-      },
-      "order": 64,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 516
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.68",
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 222,
-      "type": "Note",
-      "pos": [
-        3381.6103479191,
-        -6.055489092387894
-      ],
-      "size": [
-        285.92631943892957,
-        102.06865238740443
-      ],
-      "flags": {},
-      "order": 24,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "WARNING: Sometimes the color match can burn out your image. Could lower strength."
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -1980,7 +1748,7 @@
         60
       ],
       "flags": {},
-      "order": 25,
+      "order": 24,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2095,7 +1863,7 @@
       ],
       "size": [
         331.72608912279384,
-        781.5567214353941
+        903.4132835470317
       ],
       "flags": {},
       "order": 39,
@@ -2318,7 +2086,7 @@
         124.89642541795976
       ],
       "flags": {},
-      "order": 26,
+      "order": 25,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2341,7 +2109,7 @@
         58
       ],
       "flags": {},
-      "order": 27,
+      "order": 26,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2375,7 +2143,7 @@
         180.40085967991115
       ],
       "flags": {},
-      "order": 28,
+      "order": 27,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2395,7 +2163,7 @@
       ],
       "size": [
         331.72608912279384,
-        837.2895676724997
+        761.3445351754269
       ],
       "flags": {},
       "order": 56,
@@ -2543,7 +2311,7 @@
       ],
       "size": [
         331.72608912279384,
-        781.4485583232765
+        899.6347854970584
       ],
       "flags": {},
       "order": 49,
@@ -2693,7 +2461,7 @@
         184.11419165919912
       ],
       "flags": {},
-      "order": 29,
+      "order": 28,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2716,7 +2484,7 @@
         180.40085967991115
       ],
       "flags": {},
-      "order": 30,
+      "order": 29,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2794,7 +2562,7 @@
       ],
       "size": [
         331.72608912279384,
-        786.1345171497848
+        815.8374497113612
       ],
       "flags": {},
       "order": 62,
@@ -2939,6 +2707,265 @@
       ]
     },
     {
+      "id": 192,
+      "type": "ImageSharpen",
+      "pos": [
+        2546.7198212950043,
+        828.7692787128898
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 469
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            471
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "ImageSharpen"
+      },
+      "widgets_values": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 195,
+      "type": "ImageSharpen",
+      "pos": [
+        1902.1072829695838,
+        839.9337662755268
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 475
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            508
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "ImageSharpen"
+      },
+      "widgets_values": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 234,
+      "type": "PreviewImage",
+      "pos": [
+        4010.0126344366104,
+        151.01798652610094
+      ],
+      "size": [
+        828.4107017837696,
+        917.9953198120297
+      ],
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 526
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 136,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        3147.363450380517,
+        151.6532562907152
+      ],
+      "size": [
+        855.4863181538003,
+        907.6995743018153
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 4,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 517
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 477
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2510052058",
+        "comparer_mode": "Slide"
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_anhat_00021_.png&type=temp&subfolder=&preview=jpeg&rand=0.5239088406605074"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_anhat_00022_.png&type=temp&subfolder=&preview=jpeg&rand=0.4339460803415488"
+          }
+        ]
+      ]
+    },
+    {
+      "id": 218,
+      "type": "ColorMatch",
+      "pos": [
+        3150.1475221166525,
+        -16.401884272773113
+      ],
+      "size": [
+        210,
+        126
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image_ref",
+          "type": "IMAGE",
+          "link": 514
+        },
+        {
+          "name": "image_target",
+          "type": "IMAGE",
+          "link": 515
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            517,
+            526
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.1.9",
+        "Node name for S&R": "ColorMatch"
+      },
+      "widgets_values": [
+        "hm-mvgd-hm",
+        1,
+        true
+      ]
+    },
+    {
+      "id": 222,
+      "type": "Note",
+      "pos": [
+        3372.691757455113,
+        -28.137042982486477
+      ],
+      "size": [
+        304.35320047913365,
+        127.86631058683719
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Add color match if you need.\n\nWARNING: Sometimes the color match can burn out your image. Could lower strength."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 109,
+      "type": "MarkdownNote",
+      "pos": [
+        -325.11971095254637,
+        199.41968421702893
+      ],
+      "size": [
+        508.27070478582186,
+        314.6092056591247
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Workflow v1.2c",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.4.1",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "### Model Links:\n- ControlNet Model - [xinsir/controlnet-tile-sdxl-1.0](https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors)\n\n- SDXL Checkpoint - [Juggernaut XL - Ragnarok by RunDiffusion](https://civitai.com/models/133005/juggernaut-xl)\n\n- 8 Step LoRA - [ByteDance/SDXL-Lightning](https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_8step_lora.safetensors)\n\n**Built on ComfyUI v0.3.68**\n\nNeed help? **[Discord](https://discord.gg/hq8qPbvznf)**\n\n* Optimized for realistic photos\n\nKnown Issues:\n* Hair looks weird when blurry\n* Random noise speckles"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
       "id": 105,
       "type": "LoadImage",
       "pos": [
@@ -2952,7 +2979,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 31,
+      "order": 32,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -2990,36 +3017,6 @@
         "example.png",
         "image"
       ]
-    },
-    {
-      "id": 109,
-      "type": "MarkdownNote",
-      "pos": [
-        -325.11971095254637,
-        199.41968421702893
-      ],
-      "size": [
-        508.27070478582186,
-        314.6092056591247
-      ],
-      "flags": {},
-      "order": 32,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Workflow v1.2b",
-      "properties": {
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "version": "7.4.1",
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "### Model Links:\n- ControlNet Model - [xinsir/controlnet-tile-sdxl-1.0](https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors)\n\n- SDXL Checkpoint - [Juggernaut XL - Ragnarok by RunDiffusion](https://civitai.com/models/133005/juggernaut-xl)\n\n- 8 Step LoRA - [ByteDance/SDXL-Lightning](https://huggingface.co/ByteDance/SDXL-Lightning/resolve/main/sdxl_lightning_8step_lora.safetensors)\n\n**Built on ComfyUI v0.3.68**\n\nNeed help? **[Discord](https://discord.gg/hq8qPbvznf)**\n\n* Optimized for realistic photos\n\nKnown Issues:\n* Hair looks weird when blurry\n* Random noise speckles"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -3536,14 +3533,6 @@
       "IMAGE"
     ],
     [
-      516,
-      218,
-      0,
-      191,
-      0,
-      "IMAGE"
-    ],
-    [
       517,
       218,
       0,
@@ -3574,6 +3563,14 @@
       204,
       2,
       "BOOLEAN"
+    ],
+    [
+      526,
+      218,
+      0,
+      234,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [],
@@ -4284,7 +4281,7 @@
             ],
             "size": [
               202.5337890625,
-              302.17346284589695
+              371.3783854166667
             ],
             "flags": {},
             "order": 13,
@@ -8662,7 +8659,7 @@
             ],
             "size": [
               202.5337890625,
-              334.8716276041667
+              290.40138585707723
             ],
             "flags": {},
             "order": 13,
@@ -13014,7 +13011,7 @@
             ],
             "size": [
               202.5337890625,
-              304.91736478365385
+              322.3101625504032
             ],
             "flags": {},
             "order": 13,
@@ -15300,7 +15297,7 @@
             ],
             "size": [
               202.5337890625,
-              302.2367986505682
+              373.59091619318184
             ],
             "flags": {},
             "order": 13,
@@ -18952,10 +18949,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7627768444385487,
+      "scale": 0.7400249944258176,
       "offset": [
-        403.96300448323575,
-        274.4699624204498
+        601.9007640368966,
+        193.1314022184311
       ]
     },
     "frontendVersion": "1.28.8",
