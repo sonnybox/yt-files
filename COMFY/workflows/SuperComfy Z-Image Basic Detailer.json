@@ -1,8 +1,8 @@
 {
   "id": "0b371624-82d7-4c59-a6ab-ad96b8d3ba0c",
   "revision": 0,
-  "last_node_id": 45,
-  "last_link_id": 74,
+  "last_node_id": 49,
+  "last_link_id": 81,
   "nodes": [
     {
       "id": 10,
@@ -119,7 +119,7 @@
         588
       ],
       "flags": {},
-      "order": 16,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -165,7 +165,7 @@
         1,
         "dpmpp_2m_sde",
         "simple",
-        16,
+        15,
         10000,
         "disable"
       ]
@@ -207,7 +207,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        ""
+        "DESCRIBE THE MAIN PARTS YOU CARE ABOUT"
       ]
     },
     {
@@ -222,7 +222,7 @@
         46
       ],
       "flags": {},
-      "order": 17,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -264,7 +264,7 @@
         580
       ],
       "flags": {},
-      "order": 20,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -332,7 +332,7 @@
         810
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -341,7 +341,8 @@
           "type": "IMAGE",
           "links": [
             56,
-            69
+            69,
+            75
           ]
         },
         {
@@ -372,13 +373,29 @@
         234
       ],
       "flags": {},
-      "order": 9,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
           "name": "image",
           "type": "IMAGE",
           "link": 70
+        },
+        {
+          "name": "overlap_x",
+          "type": "INT",
+          "widget": {
+            "name": "overlap_x"
+          },
+          "link": 80
+        },
+        {
+          "name": "overlap_y",
+          "type": "INT",
+          "widget": {
+            "name": "overlap_y"
+          },
+          "link": 81
         }
       ],
       "outputs": [
@@ -422,9 +439,9 @@
       "widgets_values": [
         2,
         2,
-        0.08,
         0,
-        0
+        128,
+        128
       ]
     },
     {
@@ -439,7 +456,7 @@
         58
       ],
       "flags": {},
-      "order": 10,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -479,7 +496,7 @@
         130
       ],
       "flags": {},
-      "order": 19,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -538,7 +555,7 @@
         58
       ],
       "flags": {},
-      "order": 18,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -578,7 +595,7 @@
         46
       ],
       "flags": {},
-      "order": 14,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -620,7 +637,7 @@
         106
       ],
       "flags": {},
-      "order": 12,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -663,7 +680,7 @@
         106
       ],
       "flags": {},
-      "order": 11,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -705,7 +722,7 @@
         350
       ],
       "flags": {},
-      "order": 13,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -734,7 +751,7 @@
         350
       ],
       "flags": {},
-      "order": 15,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -803,7 +820,7 @@
         140
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -828,7 +845,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 22,
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -855,12 +872,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_amxnd_00043_.png&type=temp&subfolder=&rand=0.28250303068895266"
+            "url": "/api/view?filename=rgthree.compare._temp_amxnd_00053_.png&type=temp&subfolder=&rand=0.21268077431099663"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_amxnd_00044_.png&type=temp&subfolder=&rand=0.6851486100191412"
+            "url": "/api/view?filename=rgthree.compare._temp_amxnd_00054_.png&type=temp&subfolder=&rand=0.9201466788408972"
           }
         ]
       ]
@@ -879,7 +896,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 21,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -932,17 +949,158 @@
         110
       ],
       "flags": {},
-      "order": 3,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "title": "SuperComfy Workflow v1.0",
+      "title": "SuperComfy Workflow v1.1 - auto overlap calculation",
       "properties": {},
       "widgets_values": [
         "Discord Server (For Help) - https://discord.gg/hq8qPbvznf\nSpecial Requests (Patreon) - https://www.patreon.com/c/SuperComfy"
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 46,
+      "type": "GetImageSize",
+      "pos": [
+        170,
+        -350
+      ],
+      "size": [
+        140,
+        124
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 75
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            76
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            77
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.77",
+        "Node name for S&R": "GetImageSize"
+      },
+      "widgets_values": [
+        "width: 768, height: 768\n batch size: 1"
+      ]
+    },
+    {
+      "id": 47,
+      "type": "Basic data handling: MathFormula",
+      "pos": [
+        330,
+        -340
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "shape": 7,
+          "type": "FLOAT,INT",
+          "link": 76
+        },
+        {
+          "name": "b",
+          "shape": 7,
+          "type": "FLOAT,INT",
+          "link": 77
+        },
+        {
+          "name": "c",
+          "shape": 7,
+          "type": "FLOAT,INT",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "title": "formula for overlap",
+      "properties": {
+        "cnr_id": "basic_data_handling",
+        "ver": "0.6.0",
+        "Node name for S&R": "Basic data handling: MathFormula"
+      },
+      "widgets_values": [
+        "0.1*(a+b)/2"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "Basic data handling: CastToInt",
+      "pos": [
+        550,
+        -310
+      ],
+      "size": [
+        140,
+        26
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input",
+          "type": "*",
+          "link": 78
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            80,
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "basic_data_handling",
+        "ver": "0.6.0",
+        "Node name for S&R": "Basic data handling: CastToInt"
+      }
     }
   ],
   "links": [
@@ -1145,16 +1303,64 @@
       23,
       2,
       "INT"
+    ],
+    [
+      75,
+      19,
+      0,
+      46,
+      0,
+      "IMAGE"
+    ],
+    [
+      76,
+      46,
+      0,
+      47,
+      0,
+      "FLOAT,INT"
+    ],
+    [
+      77,
+      46,
+      1,
+      47,
+      1,
+      "FLOAT,INT"
+    ],
+    [
+      78,
+      47,
+      0,
+      48,
+      0,
+      "*"
+    ],
+    [
+      80,
+      48,
+      0,
+      21,
+      1,
+      "INT"
+    ],
+    [
+      81,
+      48,
+      0,
+      21,
+      2,
+      "INT"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7119863013698755,
+      "scale": 0.6472602739726177,
       "offset": [
-        1073.309918961878,
-        626.1631336255408
+        1430.5836524894114,
+        1031.1797989489623
       ]
     },
     "frontendVersion": "1.32.10",
