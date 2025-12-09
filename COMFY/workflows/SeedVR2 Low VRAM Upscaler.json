@@ -16,7 +16,7 @@
         202
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [
         {
@@ -139,7 +139,7 @@
         298
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [
         {
@@ -189,7 +189,7 @@
         783.0841515895627
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -223,20 +223,20 @@
       "type": "Note",
       "pos": [
         530,
-        300
+        220
       ],
       "size": [
-        300,
-        190
+        310,
+        270
       ],
       "flags": {},
-      "order": 0,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "Set Target Tile Size to 2048\n\nIf OOM\n- Decrease Target Tile Size\nTweak\n\nUpscale By ~3x seems optimal (2x2 or 3x3 tiles)"
+        "Set Target Tile Size to 2048\n\nIf OOM\n- Decrease Target Tile Size\nTweak\n\nUpscale By ~2x seems optimal (2x2 or 3x3 tiles)\n\nTiling is disabled when upscale_by is 1x AND tile size is larger than the input image"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -253,7 +253,7 @@
         190
       ],
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -512,7 +512,7 @@
         82.74002499442588
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -599,7 +599,7 @@
         100
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -753,10 +753,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6934334949441335,
+      "scale": 0.7627768444385471,
       "offset": [
-        324.1630826903036,
-        284.03749870781996
+        594.5608305740644,
+        252.97830898426093
       ]
     },
     "frontendVersion": "1.32.10",
