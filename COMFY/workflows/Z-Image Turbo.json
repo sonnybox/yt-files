@@ -1,8 +1,8 @@
 {
   "id": "ba5154f5-c834-4569-a95c-868dc7537525",
   "revision": 0,
-  "last_node_id": 459,
-  "last_link_id": 722,
+  "last_node_id": 460,
+  "last_link_id": 724,
   "nodes": [
     {
       "id": 374,
@@ -159,7 +159,7 @@
         106
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -168,7 +168,7 @@
           "widget": {
             "name": "width"
           },
-          "link": 721
+          "link": 723
         },
         {
           "name": "height",
@@ -176,7 +176,7 @@
           "widget": {
             "name": "height"
           },
-          "link": 722
+          "link": 724
         }
       ],
       "outputs": [
@@ -242,6 +242,149 @@
         true,
         64,
         false
+      ]
+    },
+    {
+      "id": 458,
+      "type": "Note",
+      "pos": [
+        238.56517172834168,
+        -1741.8773331606617
+      ],
+      "size": [
+        210,
+        94.66022494983235
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "fp8_scaled weights currently fail to compile"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 454,
+      "type": "PathchSageAttentionKJ",
+      "pos": [
+        555.2089619539313,
+        -1867.6672494343354
+      ],
+      "size": [
+        220.74380165289244,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 718
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            719
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.2.2",
+        "Node name for S&R": "PathchSageAttentionKJ"
+      },
+      "widgets_values": [
+        "auto",
+        true
+      ]
+    },
+    {
+      "id": 389,
+      "type": "UNETLoader",
+      "pos": [
+        156.00491666628287,
+        -1868.1737390129456
+      ],
+      "size": [
+        380.89883340868107,
+        82
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            718
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.4.0",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "zimage/z_image_turbo_bf16.safetensors",
+        "default"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CLIPTextEncode",
+      "pos": [
+        856.7342530035703,
+        -1394.834039545501
+      ],
+      "size": [
+        242.76711469195484,
+        285.47331593478566
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 677
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            656
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "Node name for S&R": "CLIPTextEncode",
+        "ue_properties": {
+          "version": "7.1",
+          "widget_ue_connectable": {
+            "text": true
+          },
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "a caucasian young woman, medium length straight blonde hair, wearing winged eyeliner, holding a cute puppy close to her chest, f/1.4 nice warm colors, rule of thirds left aligned, sun light on face, mountain background"
       ]
     },
     {
@@ -363,18 +506,18 @@
       ]
     },
     {
-      "id": 459,
+      "id": 460,
       "type": "ImageSizeCalculator",
       "pos": [
-        557.0538605840283,
-        -1619.702516827779
+        566.5802951034741,
+        -1624.6633057320455
       ],
       "size": [
-        223.33259704357806,
+        210,
         174
       ],
       "flags": {},
-      "order": 2,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -382,20 +525,20 @@
           "name": "width",
           "type": "INT",
           "links": [
-            721
+            723
           ]
         },
         {
           "name": "height",
           "type": "INT",
           "links": [
-            722
+            724
           ]
         }
       ],
       "properties": {
         "cnr_id": "comfyui-supernodes",
-        "ver": "0.1.3",
+        "ver": "f2432f06032c81c306792a2061235773a56348db",
         "Node name for S&R": "ImageSizeCalculator"
       },
       "widgets_values": [
@@ -404,149 +547,6 @@
         "max",
         1024,
         16
-      ]
-    },
-    {
-      "id": 458,
-      "type": "Note",
-      "pos": [
-        238.56517172834168,
-        -1741.8773331606617
-      ],
-      "size": [
-        210,
-        94.66022494983235
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "fp8_scaled weights currently fail to compile"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 454,
-      "type": "PathchSageAttentionKJ",
-      "pos": [
-        555.2089619539313,
-        -1867.6672494343354
-      ],
-      "size": [
-        220.74380165289244,
-        82
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 718
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            719
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfyui-kjnodes",
-        "ver": "1.2.2",
-        "Node name for S&R": "PathchSageAttentionKJ"
-      },
-      "widgets_values": [
-        "auto",
-        true
-      ]
-    },
-    {
-      "id": 389,
-      "type": "UNETLoader",
-      "pos": [
-        156.00491666628287,
-        -1868.1737390129456
-      ],
-      "size": [
-        380.89883340868107,
-        82
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            718
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.4.0",
-        "Node name for S&R": "UNETLoader"
-      },
-      "widgets_values": [
-        "zimage/z_image_turbo_bf16.safetensors",
-        "default"
-      ]
-    },
-    {
-      "id": 11,
-      "type": "CLIPTextEncode",
-      "pos": [
-        856.7342530035703,
-        -1394.834039545501
-      ],
-      "size": [
-        242.76711469195484,
-        285.47331593478566
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 677
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            656
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "CLIPTextEncode",
-        "ue_properties": {
-          "version": "7.1",
-          "widget_ue_connectable": {
-            "text": true
-          },
-          "input_ue_unconnectable": {}
-        }
-      },
-      "widgets_values": [
-        "a caucasian young woman, medium length straight blonde hair, wearing winged eyeliner, holding a cute puppy close to her chest, f/1.4 nice warm colors, rule of thirds left aligned, sun light on face, mountain background"
       ]
     }
   ],
@@ -624,16 +624,16 @@
       "MODEL"
     ],
     [
-      721,
-      459,
+      723,
+      460,
       0,
       426,
       0,
       "INT"
     ],
     [
-      722,
-      459,
+      724,
+      460,
       1,
       426,
       1,
@@ -648,8 +648,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 3,
-          "lastNodeId": 386,
-          "lastLinkId": 658,
+          "lastNodeId": 387,
+          "lastLinkId": 661,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -808,7 +808,7 @@
               58
             ],
             "flags": {},
-            "order": 8,
+            "order": 9,
             "mode": 0,
             "inputs": [
               {
@@ -858,7 +858,7 @@
               106
             ],
             "flags": {},
-            "order": 3,
+            "order": 4,
             "mode": 0,
             "inputs": [
               {
@@ -911,7 +911,7 @@
               78
             ],
             "flags": {},
-            "order": 9,
+            "order": 10,
             "mode": 0,
             "inputs": [
               {
@@ -944,7 +944,7 @@
                 "name": "low_sigmas",
                 "type": "SIGMAS",
                 "links": [
-                  656
+                  660
                 ]
               }
             ],
@@ -969,7 +969,7 @@
               493.067578125
             ],
             "flags": {},
-            "order": 4,
+            "order": 5,
             "mode": 0,
             "inputs": [
               {
@@ -1105,7 +1105,7 @@
               58
             ],
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
               {
@@ -1149,7 +1149,7 @@
               46
             ],
             "flags": {},
-            "order": 6,
+            "order": 7,
             "mode": 0,
             "inputs": [
               {
@@ -1184,75 +1184,6 @@
             "widgets_values": []
           },
           {
-            "id": 335,
-            "type": "SamplerCustomAdvanced",
-            "pos": [
-              -185.1705760989521,
-              -1748.8333005567772
-            ],
-            "size": [
-              202.5337890625,
-              493.067578125
-            ],
-            "flags": {},
-            "order": 5,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "noise",
-                "name": "noise",
-                "type": "NOISE",
-                "link": 643
-              },
-              {
-                "localized_name": "guider",
-                "name": "guider",
-                "type": "GUIDER",
-                "link": 548
-              },
-              {
-                "localized_name": "sampler",
-                "name": "sampler",
-                "type": "SAMPLER",
-                "link": 654
-              },
-              {
-                "localized_name": "sigmas",
-                "name": "sigmas",
-                "type": "SIGMAS",
-                "link": 657
-              },
-              {
-                "localized_name": "latent_image",
-                "name": "latent_image",
-                "type": "LATENT",
-                "link": 645
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "output",
-                "name": "output",
-                "type": "LATENT",
-                "links": [
-                  644
-                ]
-              },
-              {
-                "localized_name": "denoised_output",
-                "name": "denoised_output",
-                "type": "LATENT",
-                "links": []
-              }
-            ],
-            "properties": {
-              "cnr_id": "comfy-core",
-              "ver": "0.3.68",
-              "Node name for S&R": "SamplerCustomAdvanced"
-            },
-            "widgets_values": []
-          },
-          {
             "id": 384,
             "type": "VAEDecode",
             "pos": [
@@ -1264,7 +1195,7 @@
               46
             ],
             "flags": {},
-            "order": 10,
+            "order": 11,
             "mode": 0,
             "inputs": [
               {
@@ -1333,25 +1264,94 @@
             ]
           },
           {
-            "id": 385,
-            "type": "SigmaSmoother",
+            "id": 335,
+            "type": "SamplerCustomAdvanced",
             "pos": [
-              -440.6738281396236,
-              -1540.5054718089061
+              -185.1705760989521,
+              -1748.8333005567772
             ],
             "size": [
-              233.42687827616874,
+              202.5337890625,
+              493.067578125
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "noise",
+                "name": "noise",
+                "type": "NOISE",
+                "link": 643
+              },
+              {
+                "localized_name": "guider",
+                "name": "guider",
+                "type": "GUIDER",
+                "link": 548
+              },
+              {
+                "localized_name": "sampler",
+                "name": "sampler",
+                "type": "SAMPLER",
+                "link": 654
+              },
+              {
+                "localized_name": "sigmas",
+                "name": "sigmas",
+                "type": "SIGMAS",
+                "link": 661
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 645
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "LATENT",
+                "links": [
+                  644
+                ]
+              },
+              {
+                "localized_name": "denoised_output",
+                "name": "denoised_output",
+                "type": "LATENT",
+                "links": []
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.3.68",
+              "Node name for S&R": "SamplerCustomAdvanced"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": 387,
+            "type": "SigmaSmoother",
+            "pos": [
+              -427.51533007302316,
+              -1538.9949612366613
+            ],
+            "size": [
+              225.43119154624264,
               82
             ],
             "flags": {},
-            "order": 11,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
                 "localized_name": "sigmas",
                 "name": "sigmas",
                 "type": "SIGMAS",
-                "link": 656
+                "link": 660
               }
             ],
             "outputs": [
@@ -1360,13 +1360,13 @@
                 "name": "SIGMAS",
                 "type": "SIGMAS",
                 "links": [
-                  657
+                  661
                 ]
               }
             ],
             "properties": {
-              "cnr_id": "supernodes",
-              "ver": "9dbb0b4b71505f6423d8f7cc4f476b10c94ed8f5",
+              "cnr_id": "comfyui-supernodes",
+              "ver": "f2432f06032c81c306792a2061235773a56348db",
               "Node name for S&R": "SigmaSmoother"
             },
             "widgets_values": [
@@ -1546,16 +1546,16 @@
             "type": "SIGMAS"
           },
           {
-            "id": 656,
+            "id": 660,
             "origin_id": 375,
             "origin_slot": 1,
-            "target_id": 385,
+            "target_id": 387,
             "target_slot": 0,
             "type": "SIGMAS"
           },
           {
-            "id": 657,
-            "origin_id": 385,
+            "id": 661,
+            "origin_id": 387,
             "origin_slot": 0,
             "target_id": 335,
             "target_slot": 3,
@@ -1570,13 +1570,6 @@
   },
   "config": {},
   "extra": {
-    "ds": {
-      "scale": 0.47558431052234423,
-      "offset": [
-        179.12145226328107,
-        2833.0446530009485
-      ]
-    },
     "frontendVersion": "1.34.9",
     "workflowRendererVersion": "LG",
     "VHS_latentpreview": false,
@@ -1584,7 +1577,14 @@
     "VHS_MetadataImage": true,
     "VHS_KeepIntermediate": true,
     "ue_links": [],
-    "links_added_by_ue": []
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 1.2100000000000002,
+      "offset": [
+        21.471966404557065,
+        2029.0485753268217
+      ]
+    }
   },
   "version": 0.4
 }
