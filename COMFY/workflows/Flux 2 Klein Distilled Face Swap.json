@@ -384,7 +384,7 @@
         "Node name for S&R": "RandomNoise"
       },
       "widgets_values": [
-        670826205474288,
+        309310392474145,
         "randomize"
       ],
       "color": "#223",
@@ -2268,7 +2268,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "retain the same facial features from image 1.\n\nremove all accessories\nuse pose from image 2.\n\n// optionally describe scene\nchange to night time\nmove hand to behind head"
+        "retain the same facial features from image 1.\n\nremove all accessories\nuse pose from image 2.\n\n// this is a comment and is ignored\n// optionally describe scene"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -3511,8 +3511,8 @@
     "ds": {
       "scale": 0.45073244110329536,
       "offset": [
-        1602.707998001606,
-        4147.929496367668
+        462.9089868508472,
+        3928.6932117442925
       ]
     },
     "frontendVersion": "1.36.14",
