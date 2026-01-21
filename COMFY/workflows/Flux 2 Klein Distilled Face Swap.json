@@ -384,7 +384,7 @@
         "Node name for S&R": "RandomNoise"
       },
       "widgets_values": [
-        309310392474145,
+        873291226521492,
         "randomize"
       ],
       "color": "#223",
@@ -553,7 +553,7 @@
         3,
         4,
         "max",
-        1280,
+        1024,
         16
       ],
       "color": "#223",
@@ -609,7 +609,7 @@
         "Node name for S&R": "GetImageSize"
       },
       "widgets_values": [
-        "width: 1280, height: 1280\n batch size: 1"
+        "width: 1024, height: 1024\n batch size: 1"
       ]
     },
     {
@@ -2268,7 +2268,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "retain the same facial features from image 1.\n\nremove all accessories\nuse pose from image 2.\n\n// this is a comment and is ignored\n// optionally describe scene"
+        "retain the same facial features from image 1.\n\n// this is a comment and is ignored\n// remove all accessories\n// use pose from image 2.\n// fyi its best to describe new scene"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -2897,7 +2897,7 @@
         "top",
         16,
         "cpu",
-        "<tr><td>Output: </td><td><b>1</b> x <b>1280</b> x <b>1280 | 18.75MB</b></td></tr>"
+        "<tr><td>Output: </td><td><b>1</b> x <b>1024</b> x <b>1024 | 12.00MB</b></td></tr>"
       ]
     },
     {
@@ -3509,10 +3509,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.45073244110329536,
+      "scale": 0.934638789871793,
       "offset": [
-        462.9089868508472,
-        3928.6932117442925
+        -568.1883699889595,
+        3727.1564285150375
       ]
     },
     "frontendVersion": "1.36.14",
