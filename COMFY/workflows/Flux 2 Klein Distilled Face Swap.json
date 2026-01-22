@@ -102,7 +102,7 @@
         455.4489066892829
       ],
       "flags": {},
-      "order": 5,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -252,7 +252,7 @@
         "image": "clipspace/clipspace-painted-masked-1769060435989.png [input]"
       },
       "widgets_values": [
-        "clipspace/clipspace-painted-masked-1769060435989.png [input]",
+        "pexels-lucaspezeta-3081403.jpg",
         "image"
       ],
       "color": "#223",
@@ -270,7 +270,7 @@
         82
       ],
       "flags": {},
-      "order": 4,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -306,7 +306,7 @@
         106
       ],
       "flags": {},
-      "order": 1,
+      "order": 3,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -485,7 +485,7 @@
       ],
       "size": [
         287.92587040114404,
-        648.4164081526703
+        578.90733800143
       ],
       "flags": {},
       "order": 14,
@@ -575,7 +575,7 @@
         276.11927508541476
       ],
       "flags": {},
-      "order": 2,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -652,31 +652,8 @@
         -1935.2897503015242
       ],
       "size": [
-        270.5327807328383,
-        165.57056034090442
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "RECCOMENDED SETTINGS\nSIGMA MAX ~0.95-0.98\nDO NOT GO HIGHER THAN 1\n\nUNBYPASS LATENT MASK\nIF IMAGE CHANGES TOO\nMUCH"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 654,
-      "type": "Note",
-      "pos": [
-        -784.587430163311,
-        -1025.4481505609533
-      ],
-      "size": [
-        354.8866322841599,
-        88
+        281.2321012707455,
+        260.081225092418
       ],
       "flags": {},
       "order": 7,
@@ -685,7 +662,30 @@
       "outputs": [],
       "properties": {},
       "widgets_values": [
-        "Leaving the neck unmasked seems to get better results"
+        "RECCOMENDED SETTINGS\nSIGMA MAX ~0.95-0.98\nDO NOT GO HIGHER THAN 1\n\n---\nSET IT TO 1 IF YOU DO NOT USE A MASK\n---\n\nUNBYPASS LATENT MASK\nIF IMAGE CHANGES TOO\nMUCH"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 654,
+      "type": "Note",
+      "pos": [
+        -789.0454803874389,
+        -1026.339760605779
+      ],
+      "size": [
+        358.45307246346226,
+        104.04898080686075
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Leaving the neck unmasked seems to get better results. Masking is 100% optional however. I do it to advoid merging faces."
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -2378,7 +2378,7 @@
             ],
             "size": [
               312.4960203192521,
-              569.5034268969844
+              493.6200253990651
             ],
             "flags": {},
             "order": 5,
@@ -2827,8 +2827,8 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              412289984998254,
-              "randomize"
+              25188499487316,
+              "fixed"
             ]
           }
         ],
@@ -3034,10 +3034,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7788656582264942,
+      "scale": 0.6490547151887452,
       "offset": [
-        986.8433278060593,
-        2405.8924444927025
+        1226.1729427034625,
+        2698.7033265104046
       ]
     },
     "frontendVersion": "1.36.14",
