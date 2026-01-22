@@ -1,7 +1,7 @@
 {
   "id": "9fa76aa7-b6a5-47fe-bb51-312a46d74269",
   "revision": 0,
-  "last_node_id": 653,
+  "last_node_id": 654,
   "last_link_id": 1441,
   "nodes": [
     {
@@ -46,7 +46,7 @@
         }
       },
       "widgets_values": [
-        "Put the face from Image 1 onto the body in Image 2.\nPut Image 1’s face on Image 2’s head.\nReplace the black empty space in Image 2 with the face from Image 1.\nMake the person in Image 2 have the face from Image 1.\n\nLeave the clothing and color grading exactly the same. Maintain the same facial features from Image 1. Retain the same hair texture from Image 1. Keep the exact same facial expressions from Image 1.\n\n// This is a comment and will be\n// ignored. Specify new changes below:\nChange to blonde hair."
+        "Put the face from Image 1 onto the body in Image 2.\nPut Image 1’s face on Image 2’s head.\nReplace the black empty space in Image 2 with the face from Image 1.\nMake the person in Image 2 have the face from Image 1.\n\nLeave the clothing and color grading exactly the same. Maintain the same facial features from Image 1. Retain the same hair texture from Image 1. Keep the exact same facial expressions from Image 1.\n\n// This is a comment and will be\n// ignored. Specify new changes below:"
       ],
       "color": "#223",
       "bgcolor": "#335"
@@ -63,7 +63,7 @@
         58
       ],
       "flags": {},
-      "order": 1,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -102,7 +102,7 @@
         455.4489066892829
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -133,7 +133,7 @@
         "image": "clipspace/clipspace-painted-masked-1769058411817.png [input]"
       },
       "widgets_values": [
-        "ComfyUI_temp_qpzae_00015_.png",
+        "model.png",
         "image"
       ],
       "color": "#223",
@@ -153,7 +153,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -196,7 +196,7 @@
         688.8374032977747
       ],
       "flags": {},
-      "order": 14,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -225,7 +225,7 @@
         469.43395037764515
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -249,10 +249,10 @@
         "cnr_id": "comfy-core",
         "ver": "0.5.1",
         "Node name for S&R": "LoadImage",
-        "image": "clipspace/clipspace-painted-masked-1769059852421.png [input]"
+        "image": "clipspace/clipspace-painted-masked-1769060435989.png [input]"
       },
       "widgets_values": [
-        "clipspace/clipspace-painted-masked-1769059852421.png [input]",
+        "clipspace/clipspace-painted-masked-1769060435989.png [input]",
         "image"
       ],
       "color": "#223",
@@ -270,7 +270,7 @@
         82
       ],
       "flags": {},
-      "order": 0,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -306,7 +306,7 @@
         106
       ],
       "flags": {},
-      "order": 6,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -343,7 +343,7 @@
         46
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 4,
       "inputs": [
         {
@@ -387,7 +387,7 @@
         118
       ],
       "flags": {},
-      "order": 7,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -485,10 +485,10 @@
       ],
       "size": [
         287.92587040114404,
-        578.90733800143
+        648.4164081526703
       ],
       "flags": {},
-      "order": 13,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -598,7 +598,7 @@
         327.9022275143268
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -627,7 +627,7 @@
         306.3252644295478
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -666,6 +666,29 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 654,
+      "type": "Note",
+      "pos": [
+        -784.587430163311,
+        -1025.4481505609533
+      ],
+      "size": [
+        354.8866322841599,
+        88
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Leaving the neck unmasked seems to get better results"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -822,8 +845,8 @@
         "version": 1,
         "state": {
           "lastGroupId": 0,
-          "lastNodeId": 652,
-          "lastLinkId": 1432,
+          "lastNodeId": 655,
+          "lastLinkId": 1436,
           "lastRerouteId": 0
         },
         "revision": 0,
@@ -1510,8 +1533,8 @@
             "id": 650,
             "type": "ImageScale",
             "pos": [
-              320.88628191015664,
-              -937.024876668903
+              319.32855059370365,
+              -939.3614736435826
             ],
             "size": [
               210,
@@ -1525,7 +1548,7 @@
                 "localized_name": "image",
                 "name": "image",
                 "type": "IMAGE",
-                "link": 1427
+                "link": 1435
               },
               {
                 "localized_name": "width",
@@ -1572,8 +1595,8 @@
             "id": 649,
             "type": "OpenposePreprocessor",
             "pos": [
-              66.2906755490816,
-              -934.7817435732125
+              -151.01284309611012,
+              -705.795240054622
             ],
             "size": [
               239.51666259765625,
@@ -1596,7 +1619,7 @@
                 "name": "IMAGE",
                 "type": "IMAGE",
                 "links": [
-                  1427
+                  1433
                 ]
               },
               {
@@ -1617,6 +1640,81 @@
               "disable",
               512,
               "disable"
+            ]
+          },
+          {
+            "id": 653,
+            "type": "ImagePadKJ",
+            "pos": [
+              99.61045300802704,
+              -705.697974352606
+            ],
+            "size": [
+              210,
+              262
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 1433
+              },
+              {
+                "localized_name": "mask",
+                "name": "mask",
+                "shape": 7,
+                "type": "MASK",
+                "link": null
+              },
+              {
+                "localized_name": "target_width",
+                "name": "target_width",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              },
+              {
+                "localized_name": "target_height",
+                "name": "target_height",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "images",
+                "name": "images",
+                "type": "IMAGE",
+                "links": [
+                  1435
+                ]
+              },
+              {
+                "localized_name": "masks",
+                "name": "masks",
+                "type": "MASK",
+                "links": null
+              }
+            ],
+            "title": "Shrink Pose",
+            "properties": {
+              "cnr_id": "comfyui-kjnodes",
+              "ver": "42bdf92f9ab7e3d78381c022eaa3b4341c528d72",
+              "Node name for S&R": "ImagePadKJ"
+            },
+            "widgets_values": [
+              0,
+              0,
+              0,
+              0,
+              64,
+              "edge",
+              "0, 0, 0"
             ]
           },
           {
@@ -1917,14 +2015,6 @@
             "type": "IMAGE"
           },
           {
-            "id": 1427,
-            "origin_id": 649,
-            "origin_slot": 0,
-            "target_id": 650,
-            "target_slot": 0,
-            "type": "IMAGE"
-          },
-          {
             "id": 1428,
             "origin_id": 650,
             "origin_slot": 0,
@@ -1947,6 +2037,22 @@
             "target_id": 650,
             "target_slot": 2,
             "type": "INT"
+          },
+          {
+            "id": 1433,
+            "origin_id": 649,
+            "origin_slot": 0,
+            "target_id": 653,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1435,
+            "origin_id": 653,
+            "origin_slot": 0,
+            "target_id": 650,
+            "target_slot": 0,
+            "type": "IMAGE"
           }
         ],
         "extra": {}
@@ -2272,7 +2378,7 @@
             ],
             "size": [
               312.4960203192521,
-              493.6200253990651
+              569.5034268969844
             ],
             "flags": {},
             "order": 5,
@@ -2686,7 +2792,7 @@
               "Node name for S&R": "SigmasRescale"
             },
             "widgets_values": [
-              0.97,
+              0.96,
               0
             ]
           },
@@ -2721,7 +2827,7 @@
               "Node name for S&R": "RandomNoise"
             },
             "widgets_values": [
-              130395705875388,
+              412289984998254,
               "randomize"
             ]
           }
@@ -2928,10 +3034,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6490547151887452,
+      "scale": 0.7788656582264942,
       "offset": [
-        1546.862163596626,
-        2610.4315199773882
+        986.8433278060593,
+        2405.8924444927025
       ]
     },
     "frontendVersion": "1.36.14",
