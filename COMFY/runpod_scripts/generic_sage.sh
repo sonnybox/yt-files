@@ -24,7 +24,7 @@ uv pip install -r ComfyUI/custom_nodes/ComfyUI-Manager/requirements.txt
 # thanks kijai
 uv pip install https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
-python main.py \
+python /root/ComfyUI/main.py \
 	--listen \
 	--preview-method auto \
 	--max-upload-size 9999999 \
