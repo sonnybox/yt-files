@@ -14,7 +14,7 @@ cd ComfyUI
 git fetch --tags
 git checkout $(git tag --sort=-v:refname | head -n 1)
 
-uv venv venv --python 3.12
+uv venv venv --python 3.11
 source venv/bin/activate
 
 uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
@@ -22,7 +22,6 @@ uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 
-# thanks kijai
 uv pip install https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 # models
@@ -40,6 +39,19 @@ wget https://huggingface.co/JunkyByte/easy_ViTPose/resolve/main/onnx/wholebody/v
 wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/umt5-xxl-enc-bf16.safetensors -O models/text_encoders/umt5-xxl-enc-bf16.safetensors
 
 wget https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Wan2_1_VAE_bf16.safetensors -O models/vae/Wan2_1_VAE_bf16.safetensors
+
+TARGET_DIR="/root/ComfyUI/user/default"
+TARGET_FILE="$TARGET_DIR/comfy.settings.json"
+
+mkdir -p "$TARGET_DIR"
+
+cat > "$TARGET_FILE" << 'EOF'
+{
+    "Comfy.InstalledVersion": "1.37.11",
+    "Comfy.TutorialCompleted": true,
+    "VHS.LatentPreview": true
+}
+EOF
 
 python main.py \
 	--listen \
