@@ -7,9 +7,7 @@ wget https://archive.archlinux.org/packages/c/cuda/cuda-12.8.1-3-x86_64.pkg.tar.
 wget https://archive.archlinux.org/packages/g/gcc/gcc-14.2.1%2Br753%2Bg1cd744a6828f-1-x86_64.pkg.tar.zst -O /root/gcc.tar.zst
 wget https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-14.2.1%2Br753%2Bg1cd744a6828f-1-x86_64.pkg.tar.zst -O /root/gcc-libs.tar.zst
 
-pacman -U /root/gcc-libs.tar.zst --noconfirm
-pacman -U /root/gcc.tar.zst --noconfirm
-pacman -U /root/cuda.tar.zst --noconfirm
+pacman -U --noconfirm /root/gcc-libs.tar.zst /root/gcc.tar.zst /root/cuda.tar.zst
 
 export PATH="$CUDA_HOME/bin:$PATH"
 
