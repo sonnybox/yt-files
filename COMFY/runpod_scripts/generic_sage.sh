@@ -9,9 +9,9 @@ git clone https://github.com/Comfy-Org/ComfyUI
 git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
 
 cd ComfyUI
+
 git fetch --tags
 git checkout $(git tag --sort=-v:refname | head -n 1)
-cd ..
 
 uv venv venv --python 3.12
 source venv/bin/activate
