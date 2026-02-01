@@ -46,4 +46,4 @@ EOF
 python main.py \
 	--listen \
 	--preview-method auto \
-	--max-upload-size 9999999 \
+	--max-upload-size 9999999
