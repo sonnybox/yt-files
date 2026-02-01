@@ -20,7 +20,7 @@ uv pip install torch torchvision torchaudio --index-url https://download.pytorch
 uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 
-uv pip install https://huggingface.co/Kijai/PrecompiledWheels/resolve/main/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
+# PUT SAGE WHEEL HERE WHEN COMPILED
 
 python main.py \
 	--listen \

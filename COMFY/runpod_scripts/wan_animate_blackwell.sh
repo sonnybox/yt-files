@@ -20,9 +20,11 @@ source venv/bin/activate
 uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
+uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy
+uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 
-# PUT SAGE WHEEL HERE WHEN COMPILED
+uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
 
 # models
 wget https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_animate_14B_bf16.safetensors -O models/diffusion_models/wan2.2_animate_14B_bf16.safetensors
