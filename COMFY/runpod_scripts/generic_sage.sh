@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 echo 'cd /root' >> /etc/bash.bashrc
 echo 'source venv/bin/activate' >> /etc/bash.bashrc
 cd /root
