@@ -17,7 +17,6 @@ uv venv venv --python 3.12
 source venv/bin/activate
 
 uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
-uv pip install comfy-cli
 uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 
