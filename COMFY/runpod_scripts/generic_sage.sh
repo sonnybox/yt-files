@@ -27,5 +27,5 @@ uv pip install setuptools ninja
 uv pip install . --no-build-isolation
 cd ..
 
-python ComfyUI/main.py
+python ComfyUI/main.py --listen
 sleep infinity
