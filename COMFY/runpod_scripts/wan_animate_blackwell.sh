@@ -19,14 +19,16 @@ git checkout $(git tag --sort=-v:refname | head -n 1)
 uv venv venv --python 3.11
 source venv/bin/activate
 
-uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
 uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 
-uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
+wget https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
+mv sageattention* sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
+uv pip install sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
 TARGET_DIR="/root/ComfyUI/user/default"
 TARGET_FILE="$TARGET_DIR/comfy.settings.json"
