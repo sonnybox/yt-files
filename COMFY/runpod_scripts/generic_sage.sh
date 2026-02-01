@@ -4,10 +4,11 @@ echo 'source venv/bin/activate' >> /etc/bash.bashrc
 cd /root
 
 wget https://archive.archlinux.org/packages/c/cuda/cuda-12.8.1-3-x86_64.pkg.tar.zst -O /root/cuda.tar.zst
-wget https://archive.archlinux.org/packages/g/gcc/gcc-14.2.1%2Br753%2Bg1cd744a6828f-1-x86_64.pkg.tar.zst -O /root/gcc.tar.zst
-wget https://archive.archlinux.org/packages/g/gcc-libs/gcc-libs-14.2.1%2Br753%2Bg1cd744a6828f-1-x86_64.pkg.tar.zst -O /root/gcc-libs.tar.zst
+wget https://archive.archlinux.org/packages/g/gcc14/gcc14-14.3.1%2Br416%2Bg44d5743651c4-2-x86_64.pkg.tar.zst -O /root/gcc.tar.zst
+wget https://archive.archlinux.org/packages/g/gcc14-libs/gcc14-libs-14.3.1%2Br416%2Bg44d5743651c4-2-x86_64.pkg.tar.zst -O /root/gcc-libs.tar.zst
 
-pacman -U --noconfirm /root/gcc-libs.tar.zst /root/gcc.tar.zst /root/cuda.tar.zst
+pacman -U --noconfirm /root/gcc-libs.tar.zst /root/gcc.tar.zst
+pacman -U --noconfirm /root/cuda.tar.zst
 
 export PATH="$CUDA_HOME/bin:$PATH"
 
