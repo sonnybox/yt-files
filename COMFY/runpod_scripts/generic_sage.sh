@@ -3,8 +3,9 @@ echo 'cd /root' >> /etc/bash.bashrc
 echo 'source venv/bin/activate' >> /etc/bash.bashrc
 cd /root
 
-wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run -O /root/cuda128.run
-sh /root/cuda128.run --silent --toolkit --toolkitpath=/opt/cuda
+wget https://archive.archlinux.org/packages/c/cuda/cuda-12.8.1-3-x86_64.pkg.tar.zst -O /root/cuda.tar.zst
+pacman -U /root/cuda.tar.zst --noconfirm
+
 export PATH="$CUDA_HOME/bin:$PATH"
 
 git clone https://github.com/Comfy-Org/ComfyUI
