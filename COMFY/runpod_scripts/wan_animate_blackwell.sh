@@ -5,6 +5,8 @@ echo 'source /root/ComfyUI/venv/bin/activate' >> /etc/bash.bashrc
 
 cd /root
 
+wget https://github.com/sonnybox/yt-files/raw/refs/heads/main/COMFY/runpod_scripts/download_wan_animate_models.sh
+
 git clone https://github.com/Comfy-Org/ComfyUI
 git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
