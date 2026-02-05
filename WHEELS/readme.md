@@ -1,4 +1,4 @@
-### FYI: You must patch you're Python version, compute capability (e.g. sm_120 for blackwell), and platform
+### FYI: You must match your Python version, compute capability (e.g. sm_120 for blackwell), and platform
 
 sm_120_blackwell - RTX 50 series and RTX Pro 6000 Blackwell
 
