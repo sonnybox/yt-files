@@ -1,2 +1,5 @@
-### FYI: You must rename the wheel files
-For Sage Attention rename to `sageattention-2.2.0-cp311-cp311-linux_x86_64.whl` when downloaded other wise pip will throw an error.
+### FYI: You must patch you're Python version, compute capability (e.g. sm_120 for blackwell), and platform
+
+sm_120_blackwell - RTX 50 series and RTX Pro 6000 Blackwell
+
+Wheels currently compiled with Cuda 13.x and PyTorch 2.10.0+cu130.

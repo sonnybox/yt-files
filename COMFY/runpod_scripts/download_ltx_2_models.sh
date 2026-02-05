@@ -7,7 +7,7 @@ mkdir -p models/diffusion_models \
          models/loras
 
 wget -c "https://huggingface.co/Lightricks/LTX-2/resolve/main/ltx-2-19b-dev.safetensors" \
-  -O "models/diffusion_models/ltx-2-19b-dev.safetensors"
+  -O "models/checkpoints/ltx-2-19b-dev.safetensors"
 
 wget -c "https://huggingface.co/Comfy-Org/ltx-2/resolve/main/split_files/text_encoders/gemma_3_12B_it.safetensors" \
   -O "models/text_encoders/gemma_3_12B_it.safetensors"
