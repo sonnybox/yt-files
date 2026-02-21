@@ -5,7 +5,7 @@ echo 'source /root/ComfyUI/venv/bin/activate' >> /etc/bash.bashrc
 
 cd /root
 
-wget https://github.com/sonnybox/yt-files/raw/refs/heads/main/COMFY/runpod_scripts/download_wan_animate_models.sh
+wget -c https://github.com/sonnybox/yt-files/raw/refs/heads/main/COMFY/runpod_scripts/download_wan_animate_models.sh
 
 git clone https://github.com/Comfy-Org/ComfyUI
 git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
@@ -29,7 +29,7 @@ uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 
-wget https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
+wget -c https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
 mv sageattention* sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 uv pip install sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
@@ -44,6 +44,12 @@ cat > "$TARGET_FILE" << 'EOF'
     "VHS.LatentPreview": true
 }
 EOF
+
+mkdir -p /root/ComfyUI/default/workflows
+
+wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Character%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/default/workflows/Character Swap.json"
+
+wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Head%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/default/workflows/Head Swap.json"
 
 while [ ! -f /root/ready ]; do sleep 5; done
 
