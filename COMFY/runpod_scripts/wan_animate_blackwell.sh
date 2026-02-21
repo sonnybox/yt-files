@@ -39,7 +39,35 @@ mkdir -p "$TARGET_DIR"
 cat > "$TARGET_FILE" << 'EOF'
 {
     "Comfy.TutorialCompleted": true,
-    "VHS.LatentPreview": true
+    "VHS.LatentPreview": true,
+    "Comfy.ColorPalette": "github",
+    "Comfy.UI.TabBarLayout": "Integrated",
+    "Comfy.Sidebar.Style": "floating",
+    "Comfy.Sidebar.Size": "small",
+    "LiteGraph.Canvas.MinFontSizeForLOD": 0,
+    "Comfy.Keybinding.NewBindings": [
+        {
+            "commandId": "Comfy.Canvas.FitView",
+            "combo": {
+                "key": "f",
+                "ctrl": false,
+                "alt": false,
+                "shift": false
+            }
+        }
+    ],
+    "Comfy.Keybinding.UnsetBindings": [
+        {
+            "commandId": "Comfy.Canvas.FitView",
+            "combo": {
+                "key": ".",
+                "ctrl": false,
+                "alt": false,
+                "shift": false
+            },
+            "targetElementId": "graph-canvas-container"
+        }
+    ]
 }
 EOF
 
