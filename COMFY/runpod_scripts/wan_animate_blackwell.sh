@@ -29,9 +29,7 @@ uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 
-wget -c https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sageattention-2.2.0-cu130-sm120-cp311-linux_x86_64.whl
-mv sageattention* sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
-uv pip install sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
+uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sm_120_blackwell/sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
 TARGET_DIR="/root/ComfyUI/user/default"
 TARGET_FILE="$TARGET_DIR/comfy.settings.json"
@@ -45,13 +43,13 @@ cat > "$TARGET_FILE" << 'EOF'
 }
 EOF
 
-mkdir -p /root/ComfyUI/default/workflows
+mkdir -p /root/ComfyUI/user/default/workflows
 
-wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Character%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/default/workflows/Character Swap.json"
+wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Character%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/user/default/workflows/Character Swap.json"
 
-wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Head%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/default/workflows/Head Swap.json"
+wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Head%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/user/default/workflows/Head Swap.json"
 
-while [ ! -f /root/ready ]; do sleep 5; done
+while [ ! -f /root/ready ]; do sleep 5 && echo "Downloading models..."; done
 
 python main.py \
 	--listen \
