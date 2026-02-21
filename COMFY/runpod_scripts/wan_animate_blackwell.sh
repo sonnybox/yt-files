@@ -11,6 +11,9 @@ git clone https://github.com/Comfy-Org/ComfyUI
 git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
 
+chmod +x download_wan_animate_models.sh
+nohup ./download_wan_animate_models.sh > /root/model_download.log 2>&1 &
+
 cd ComfyUI
 
 git fetch --tags
@@ -37,11 +40,12 @@ mkdir -p "$TARGET_DIR"
 
 cat > "$TARGET_FILE" << 'EOF'
 {
-    "Comfy.InstalledVersion": "1.37.11",
     "Comfy.TutorialCompleted": true,
     "VHS.LatentPreview": true
 }
 EOF
+
+while [ ! -f /root/ready ]; do sleep 5; done
 
 python main.py \
 	--listen \
