@@ -16,7 +16,7 @@
         207.5
       ],
       "flags": {},
-      "order": 37,
+      "order": 36,
       "mode": 0,
       "inputs": [
         {
@@ -88,7 +88,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 32,
+      "order": 31,
       "mode": 0,
       "inputs": [
         {
@@ -130,7 +130,7 @@
         111.5
       ],
       "flags": {},
-      "order": 22,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -182,7 +182,7 @@
         377.1166687011719
       ],
       "flags": {},
-      "order": 31,
+      "order": 30,
       "mode": 0,
       "inputs": [
         {
@@ -256,7 +256,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 23,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -323,7 +323,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "the woman crosses her arms and sticks out her tongue"
+        "the woman is dancing, and then puts her hands on around her waist"
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -420,7 +420,7 @@
         127.5
       ],
       "flags": {},
-      "order": 41,
+      "order": 40,
       "mode": 0,
       "inputs": [
         {
@@ -469,7 +469,7 @@
         723.6444227430555
       ],
       "flags": {},
-      "order": 43,
+      "order": 42,
       "mode": 0,
       "inputs": [
         {
@@ -600,7 +600,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 34,
+      "order": 33,
       "mode": 0,
       "inputs": [
         {
@@ -642,7 +642,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 28,
+      "order": 27,
       "mode": 0,
       "inputs": [
         {
@@ -688,7 +688,7 @@
       "flags": {
         "collapsed": false
       },
-      "order": 19,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -757,7 +757,7 @@
         "default",
         "default",
         false,
-        "sageattn_qk_int8_pv_fp16_triton",
+        "disabled",
         true
       ],
       "color": "#232",
@@ -818,7 +818,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 20,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -860,7 +860,7 @@
         1009.2740885416666
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -947,7 +947,7 @@
         207.5
       ],
       "flags": {},
-      "order": 38,
+      "order": 37,
       "mode": 0,
       "inputs": [
         {
@@ -1017,7 +1017,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 33,
+      "order": 32,
       "mode": 0,
       "inputs": [
         {
@@ -1061,7 +1061,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 26,
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -1123,7 +1123,7 @@
         "Node name for S&R": "PrimitiveInt"
       },
       "widgets_values": [
-        0,
+        69,
         "fixed"
       ],
       "color": "#232",
@@ -1141,7 +1141,7 @@
         111.5
       ],
       "flags": {},
-      "order": 25,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -1192,7 +1192,7 @@
         127.5
       ],
       "flags": {},
-      "order": 42,
+      "order": 43,
       "mode": 0,
       "inputs": [
         {
@@ -1275,7 +1275,7 @@
         82.16666412353516
       ],
       "flags": {},
-      "order": 13,
+      "order": 10,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1370,7 +1370,7 @@
         266.1666564941406
       ],
       "flags": {},
-      "order": 5,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -1399,7 +1399,7 @@
         "default",
         "default",
         false,
-        "sageattn_qk_int8_pv_fp16_triton",
+        "disabled",
         true
       ],
       "color": "#232",
@@ -1417,7 +1417,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 16,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -1459,7 +1459,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 21,
+      "order": 29,
       "mode": 0,
       "inputs": [
         {
@@ -1501,7 +1501,7 @@
         107.51666259765625
       ],
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -1631,13 +1631,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "extended_video_00014.mp4",
+            "filename": "extended_video_00023.mp4",
             "subfolder": "",
             "type": "output",
             "format": "video/h264-mp4",
             "frame_rate": 16,
-            "workflow": "extended_video_00014.png",
-            "fullpath": "/home/sonny/git/ComfyUI/output/extended_video_00014.mp4"
+            "workflow": "extended_video_00023.png",
+            "fullpath": "/home/sonny/git/ComfyUI/output/extended_video_00023.mp4"
           }
         }
       }
@@ -1791,13 +1791,13 @@
           "hidden": false,
           "paused": false,
           "params": {
-            "filename": "extended_video_00016.mp4",
+            "filename": "high_noise_video_00001.mp4",
             "subfolder": "",
-            "type": "output",
+            "type": "temp",
             "format": "video/h264-mp4",
             "frame_rate": 16,
-            "workflow": "extended_video_00016.png",
-            "fullpath": "/home/sonny/git/ComfyUI/output/extended_video_00016.mp4"
+            "workflow": "high_noise_video_00001.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/high_noise_video_00001.mp4"
           }
         }
       }
@@ -1913,7 +1913,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 17,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -1957,7 +1957,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 18,
+      "order": 17,
       "mode": 4,
       "inputs": [
         {
@@ -2005,7 +2005,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 24,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -2056,7 +2056,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 29,
+      "order": 28,
       "mode": 4,
       "inputs": [
         {
@@ -2098,7 +2098,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 35,
+      "order": 34,
       "mode": 4,
       "inputs": [
         {
@@ -2140,7 +2140,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 39,
+      "order": 38,
       "mode": 4,
       "inputs": [
         {
@@ -2182,7 +2182,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 30,
+      "order": 35,
       "mode": 4,
       "inputs": [
         {
@@ -2224,7 +2224,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 40,
+      "order": 41,
       "mode": 4,
       "inputs": [
         {
@@ -2266,7 +2266,7 @@
         114.16667175292969
       ],
       "flags": {},
-      "order": 36,
+      "order": 39,
       "mode": 4,
       "inputs": [
         {
@@ -2308,8 +2308,8 @@
         400.8333435058594
       ],
       "flags": {},
-      "order": 27,
-      "mode": 4,
+      "order": 26,
+      "mode": 0,
       "inputs": [
         {
           "name": "image",
@@ -2362,7 +2362,7 @@
       ],
       "flags": {},
       "order": 50,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "image",
@@ -2414,7 +2414,7 @@
         325.1237038916996
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2437,7 +2437,7 @@
         177.31467687392558
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -2461,7 +2461,7 @@
         140.80645911712782
       ],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -3111,10 +3111,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.37823898471706213,
+      "scale": 0.2626659616090709,
       "offset": [
-        746.7647435504296,
-        801.4591702148916
+        1902.0794928842365,
+        1304.984588045265
       ]
     },
     "frontendVersion": "1.41.19",
