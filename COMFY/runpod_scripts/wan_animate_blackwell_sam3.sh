@@ -8,7 +8,7 @@ cd /root
 git clone https://github.com/Comfy-Org/ComfyUI
 git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
 git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
-git clone https://github.com/PozzettiAndrea/ComfyUI-SAM3
+git clone https://github.com/PozzettiAndrea/ComfyUI-SAM3 ComfyUI/custom_nodes/ComfyUI-SAM3
 
 cd ComfyUI
 
