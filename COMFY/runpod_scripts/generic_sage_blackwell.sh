@@ -23,6 +23,6 @@ uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/s
 
 python main.py \
 	--listen 127.0.0.1 \
-    --port 8188
+    --port 8188 \
 	--preview-method auto \
 	--max-upload-size 9999999
