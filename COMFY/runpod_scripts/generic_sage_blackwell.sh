@@ -22,6 +22,7 @@ uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sm_120_blackwell/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 python main.py \
-	--listen \
+	--listen 127.0.0.1 \
+    --port 8188
 	--preview-method auto \
 	--max-upload-size 9999999
