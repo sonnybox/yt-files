@@ -69,9 +69,9 @@ cat > "$TARGET_FILE" << 'EOF'
 EOF
 
 mkdir -p /root/ComfyUI/user/default/workflows
+mkdir -p /root/ComfyUI/models/detection
 
 wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Character%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/user/default/workflows/Character Swap.json"
-
 wget -c https://raw.githubusercontent.com/sonnybox/yt-files/refs/heads/main/COMFY/workflows/Wan%20Animate%20-%20Head%20Swap%20-%20RunPod%20-%20RTX%20Pro%206000.json -O "/root/ComfyUI/user/default/workflows/Head Swap.json"
 
 python main.py \
