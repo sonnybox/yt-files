@@ -25,7 +25,7 @@ source venv/bin/activate
 uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
 uv pip install -r requirements.txt
 uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
-uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib
+uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib ninja setuptools
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 

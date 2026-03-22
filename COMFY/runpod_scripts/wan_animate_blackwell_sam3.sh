@@ -6,11 +6,20 @@ echo 'source /root/ComfyUI/venv/bin/activate' >> /etc/bash.bashrc
 cd /root
 
 git clone https://github.com/Comfy-Org/ComfyUI
-git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
-git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
-git clone https://github.com/PozzettiAndrea/ComfyUI-SAM3 ComfyUI/custom_nodes/ComfyUI-SAM3
 
-cd ComfyUI
+cd ComfyUI/custom_nodes
+
+git clone https://github.com/Comfy-Org/ComfyUI-Manager
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess
+git clone https://github.com/PozzettiAndrea/ComfyUI-SAM3
+git clone https://github.com/sonnybox/ComfyUI-SuperNodes
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Subpack
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/kijai/ComfyUI-KJNodes
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+
+cd /root/ComfyUI
 
 git fetch --tags
 git checkout $(git tag --sort=-v:refname | head -n 1)
@@ -25,6 +34,12 @@ uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
 uv pip install -r custom_nodes/ComfyUI-SAM3/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-KJNodes/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-SuperNodes/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-Impact-Pack/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-Impact-Subpack/requirements.txt
 
 uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sm_120_blackwell/sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
