@@ -1,1 +1,5204 @@
-{"id":"761b21b3-3368-479c-b11f-600649edcd95","revision":0,"last_node_id":139,"last_link_id":181,"nodes":[{"id":53,"type":"ImageSizeCalculator","pos":[-2061,-135],"size":[237.11639558607067,174],"flags":{},"order":47,"mode":0,"inputs":[{"localized_name":"aspect_w","name":"aspect_w","type":"INT","widget":{"name":"aspect_w"},"link":89},{"localized_name":"aspect_h","name":"aspect_h","type":"INT","widget":{"name":"aspect_h"},"link":91},{"localized_name":"mode","name":"mode","type":"COMBO","widget":{"name":"mode"},"link":null},{"localized_name":"size","name":"size","type":"INT","widget":{"name":"size"},"link":null},{"localized_name":"multiple_of","name":"multiple_of","type":"INT","widget":{"name":"multiple_of"},"link":null}],"outputs":[{"localized_name":"width","name":"width","type":"INT","links":[66]},{"localized_name":"height","name":"height","type":"INT","links":[67]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"ImageSizeCalculator"},"widgets_values":[16,9,"max",480,16],"color":"#233","bgcolor":"#355"},{"id":44,"type":"EmptyHunyuanLatentVideo","pos":[-1809,-135],"size":[250.67499389648438,130],"flags":{},"order":59,"mode":0,"inputs":[{"localized_name":"width","name":"width","type":"INT","widget":{"name":"width"},"link":66},{"localized_name":"height","name":"height","type":"INT","widget":{"name":"height"},"link":67},{"localized_name":"length","name":"length","type":"INT","widget":{"name":"length"},"link":null},{"localized_name":"batch_size","name":"batch_size","type":"INT","widget":{"name":"batch_size"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","links":[142]}],"title":"Empty Wan Latent","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"EmptyHunyuanLatentVideo"},"widgets_values":[848,480,81,1],"color":"#233","bgcolor":"#355"},{"id":57,"type":"DiffusionModelLoaderKJ","pos":[-3042,-1251],"size":[485.2537203498573,178],"flags":{},"order":0,"mode":0,"inputs":[{"localized_name":"extra_state_dict","name":"extra_state_dict","shape":7,"type":"STRING","link":null},{"localized_name":"model_name","name":"model_name","type":"COMBO","widget":{"name":"model_name"},"link":null},{"localized_name":"weight_dtype","name":"weight_dtype","type":"COMBO","widget":{"name":"weight_dtype"},"link":null},{"localized_name":"compute_dtype","name":"compute_dtype","type":"COMBO","widget":{"name":"compute_dtype"},"link":null},{"localized_name":"patch_cublaslinear","name":"patch_cublaslinear","type":"BOOLEAN","widget":{"name":"patch_cublaslinear"},"link":null},{"localized_name":"sage_attention","name":"sage_attention","type":"COMBO","widget":{"name":"sage_attention"},"link":null},{"localized_name":"enable_fp16_accumulation","name":"enable_fp16_accumulation","type":"BOOLEAN","widget":{"name":"enable_fp16_accumulation"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[72,84]}],"properties":{"cnr_id":"comfyui-kjnodes","ver":"1.3.5","Node name for S&R":"DiffusionModelLoaderKJ"},"widgets_values":["wan/wan2.2_t2v_high_noise_14B_fp16.safetensors","default","default",false,"sageattn_qk_int8_pv_fp16_triton",true],"color":"#2a363b","bgcolor":"#3f5159"},{"id":59,"type":"BasicScheduler","pos":[-2295,-1251],"size":[210,106],"flags":{},"order":50,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":73},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[74]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicScheduler"},"widgets_values":["simple",13,1],"color":"#2a363b","bgcolor":"#3f5159"},{"id":58,"type":"ModelSamplingAuraFlow","pos":[-2538,-1251],"size":[225.9091338550686,58],"flags":{},"order":33,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":72},{"localized_name":"shift","name":"shift","type":"FLOAT","widget":{"name":"shift"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[73]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"ModelSamplingAuraFlow"},"widgets_values":[7],"color":"#2a363b","bgcolor":"#3f5159"},{"id":63,"type":"KSamplerSelect","pos":[-2070,-1125],"size":[210,58],"flags":{},"order":1,"mode":0,"inputs":[{"localized_name":"sampler_name","name":"sampler_name","type":"COMBO","widget":{"name":"sampler_name"},"link":null}],"outputs":[{"localized_name":"SAMPLER","name":"SAMPLER","type":"SAMPLER","links":[77]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"KSamplerSelect"},"widgets_values":["uni_pc"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":64,"type":"CFGGuider","pos":[-2070,-1026],"size":[210,98],"flags":{},"order":34,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":84},{"localized_name":"positive","name":"positive","type":"CONDITIONING","link":125},{"localized_name":"negative","name":"negative","type":"CONDITIONING","link":126},{"localized_name":"cfg","name":"cfg","type":"FLOAT","widget":{"name":"cfg"},"link":null}],"outputs":[{"localized_name":"GUIDER","name":"GUIDER","type":"GUIDER","links":[78]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CFGGuider"},"widgets_values":[3],"color":"#2a363b","bgcolor":"#3f5159"},{"id":93,"type":"GetNode","pos":[-2196,-945],"size":[210,50],"flags":{"collapsed":true},"order":2,"mode":0,"inputs":[],"outputs":[{"name":"CONDITIONING","type":"CONDITIONING","links":[126]}],"title":"Get_nc","properties":{},"widgets_values":["nc"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":92,"type":"GetNode","pos":[-2196,-990],"size":[210,60],"flags":{"collapsed":true},"order":3,"mode":0,"inputs":[],"outputs":[{"name":"CONDITIONING","type":"CONDITIONING","links":[125]}],"title":"Get_pc","properties":{},"widgets_values":["pc"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":86,"type":"GetNode","pos":[-1953,-1314],"size":[210,60],"flags":{"collapsed":true},"order":4,"mode":0,"inputs":[],"outputs":[{"name":"NOISE","type":"NOISE","links":[119]}],"title":"Get_n","properties":{},"widgets_values":["n"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":32,"type":"DiffusionModelLoaderKJ","pos":[-3042,-684],"size":[485.2537203498573,178],"flags":{},"order":5,"mode":0,"inputs":[{"localized_name":"extra_state_dict","name":"extra_state_dict","shape":7,"type":"STRING","link":null},{"localized_name":"model_name","name":"model_name","type":"COMBO","widget":{"name":"model_name"},"link":null},{"localized_name":"weight_dtype","name":"weight_dtype","type":"COMBO","widget":{"name":"weight_dtype"},"link":null},{"localized_name":"compute_dtype","name":"compute_dtype","type":"COMBO","widget":{"name":"compute_dtype"},"link":null},{"localized_name":"patch_cublaslinear","name":"patch_cublaslinear","type":"BOOLEAN","widget":{"name":"patch_cublaslinear"},"link":null},{"localized_name":"sage_attention","name":"sage_attention","type":"COMBO","widget":{"name":"sage_attention"},"link":null},{"localized_name":"enable_fp16_accumulation","name":"enable_fp16_accumulation","type":"BOOLEAN","widget":{"name":"enable_fp16_accumulation"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[37,65]}],"properties":{"cnr_id":"comfyui-kjnodes","ver":"1.3.5","Node name for S&R":"DiffusionModelLoaderKJ"},"widgets_values":["wan/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors","default","default",false,"sageattn_qk_int8_pv_fp16_triton",true],"color":"#2a363b","bgcolor":"#3f5159"},{"id":48,"type":"SigmasRescale","pos":[-2070,-675],"size":[210,82],"flags":{},"order":64,"mode":0,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":53},{"localized_name":"max","name":"max","type":"FLOAT","widget":{"name":"max"},"link":null},{"localized_name":"min","name":"min","type":"FLOAT","widget":{"name":"min"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[68]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"SigmasRescale"},"widgets_values":[0.875,0],"color":"#2a363b","bgcolor":"#3f5159"},{"id":79,"type":"BasicScheduler","pos":[-2304,-540],"size":[210,106],"flags":{},"order":52,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":110},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[108]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicScheduler"},"widgets_values":["simple",2,1],"color":"#2a363b","bgcolor":"#3f5159"},{"id":80,"type":"SigmasRescale","pos":[-2070,-522],"size":[210,82],"flags":{},"order":65,"mode":0,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":108},{"localized_name":"max","name":"max","type":"FLOAT","widget":{"name":"max"},"link":null},{"localized_name":"min","name":"min","type":"FLOAT","widget":{"name":"min"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[127]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"SigmasRescale"},"widgets_values":[0.875,0],"color":"#2a363b","bgcolor":"#3f5159"},{"id":78,"type":"ComfySwitchNode","pos":[-1836,-531],"size":[210,78],"flags":{},"order":76,"mode":0,"inputs":[{"localized_name":"on_false","name":"on_false","type":"SIGMAS","link":127},{"localized_name":"on_true","name":"on_true","type":"SIGMAS","link":106},{"localized_name":"switch","name":"switch","type":"BOOLEAN","widget":{"name":"switch"},"link":131}],"outputs":[{"localized_name":"output","name":"output","type":"SIGMAS","links":[107]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"ComfySwitchNode"},"widgets_values":[false],"color":"#2a363b","bgcolor":"#3f5159"},{"id":41,"type":"KSamplerSelect","pos":[-1836,-405],"size":[214.90750092159738,58],"flags":{},"order":6,"mode":0,"inputs":[{"localized_name":"sampler_name","name":"sampler_name","type":"COMBO","widget":{"name":"sampler_name"},"link":null}],"outputs":[{"localized_name":"SAMPLER","name":"SAMPLER","type":"SAMPLER","links":[45]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"KSamplerSelect"},"widgets_values":["euler"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":94,"type":"GetNode","pos":[-1719,-747],"size":[210,60],"flags":{"collapsed":true},"order":7,"mode":0,"inputs":[],"outputs":[{"name":"NOISE","type":"NOISE","links":[128]}],"title":"Get_n","properties":{},"widgets_values":["n"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":97,"type":"GetNode","pos":[-1962,-405],"size":[210,60],"flags":{"collapsed":true},"order":8,"mode":0,"inputs":[],"outputs":[{"name":"BOOLEAN","type":"BOOLEAN","links":[131]}],"title":"Get_t2i","properties":{},"widgets_values":["t2i"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":100,"type":"GetNode","pos":[-1701,-1269],"size":[210,60],"flags":{"collapsed":true},"order":9,"mode":0,"inputs":[],"outputs":[{"name":"VAE","type":"VAE","links":[134,140]}],"title":"Get_v","properties":{},"widgets_values":["v"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":68,"type":"ImageSizeCalculator","pos":[-2061,108],"size":[237.11639558607067,174],"flags":{},"order":48,"mode":0,"inputs":[{"localized_name":"aspect_w","name":"aspect_w","type":"INT","widget":{"name":"aspect_w"},"link":90},{"localized_name":"aspect_h","name":"aspect_h","type":"INT","widget":{"name":"aspect_h"},"link":92},{"localized_name":"mode","name":"mode","type":"COMBO","widget":{"name":"mode"},"link":null},{"localized_name":"size","name":"size","type":"INT","widget":{"name":"size"},"link":null},{"localized_name":"multiple_of","name":"multiple_of","type":"INT","widget":{"name":"multiple_of"},"link":null}],"outputs":[{"localized_name":"width","name":"width","type":"INT","links":[96,135]},{"localized_name":"height","name":"height","type":"INT","links":[97,136]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"ImageSizeCalculator"},"widgets_values":[16,9,"max",1280,16],"color":"#233","bgcolor":"#355"},{"id":101,"type":"SetNode","pos":[-1800,216],"size":[210,60],"flags":{},"order":60,"mode":0,"inputs":[{"name":"INT","type":"INT","link":135}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_lw","properties":{"previousName":"lw"},"widgets_values":["lw"],"color":"#233","bgcolor":"#355"},{"id":67,"type":"RTXVideoSuperResolution","pos":[-1440,-1215],"size":[268.91258222501835,130],"flags":{},"order":78,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":86},{"localized_name":"resize_type","name":"resize_type","type":"COMFY_DYNAMICCOMBO_V3","widget":{"name":"resize_type"},"link":null},{"localized_name":"resize_type.width","name":"resize_type.width","type":"INT","widget":{"name":"resize_type.width"},"link":138},{"localized_name":"resize_type.height","name":"resize_type.height","type":"INT","widget":{"name":"resize_type.height"},"link":139},{"localized_name":"quality","name":"quality","type":"COMBO","widget":{"name":"quality"},"link":null}],"outputs":[{"localized_name":"upscaled_images","name":"upscaled_images","type":"IMAGE","links":[103]}],"properties":{"cnr_id":"comfyui_nvidia_rtx_nodes","ver":"892515e3eb9a4920a131a502a047e47adca9eb0d","Node name for S&R":"RTXVideoSuperResolution"},"widgets_values":["target dimensions",1920,1080,"ULTRA"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":103,"type":"GetNode","pos":[-1557,-1125],"size":[210,60],"flags":{"collapsed":true},"order":10,"mode":0,"inputs":[],"outputs":[{"name":"INT","type":"INT","links":[138]}],"title":"Get_lw","properties":{},"widgets_values":["lw"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":104,"type":"GetNode","pos":[-1548,-1089],"size":[210,50],"flags":{"collapsed":true},"order":11,"mode":0,"inputs":[],"outputs":[{"name":"INT","type":"INT","links":[139]}],"title":"Get_lh","properties":{},"widgets_values":["lh"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":66,"type":"VAEDecode","pos":[-1593,-1215],"size":[140,46],"flags":{"collapsed":false},"order":75,"mode":0,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":85},{"localized_name":"vae","name":"vae","type":"VAE","link":134}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[86,148]}],"title":"Decode","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAEDecode"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":45,"type":"VAEDecode","pos":[-1350,-603],"size":[140,46],"flags":{},"order":84,"mode":0,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":57},{"localized_name":"vae","name":"vae","type":"VAE","link":141}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[150]}],"title":"Decode","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAEDecode"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":36,"type":"LoraLoaderModelOnly","pos":[-3042,-459],"size":[571.8987156458331,82],"flags":{},"order":36,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":65},{"localized_name":"lora_name","name":"lora_name","type":"COMBO","widget":{"name":"lora_name"},"link":null},{"localized_name":"strength_model","name":"strength_model","type":"FLOAT","widget":{"name":"strength_model"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[40]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"LoraLoaderModelOnly"},"widgets_values":["wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors",1],"color":"#2a363b","bgcolor":"#3f5159"},{"id":62,"type":"SamplerCustomAdvanced","pos":[-1818,-1233],"size":[211.1500015258789,236.31833419799807],"flags":{},"order":70,"mode":0,"inputs":[{"localized_name":"noise","name":"noise","type":"NOISE","link":119},{"localized_name":"guider","name":"guider","type":"GUIDER","link":78},{"localized_name":"sampler","name":"sampler","type":"SAMPLER","link":77},{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":76},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":143}],"outputs":[{"localized_name":"output","name":"output","type":"LATENT","links":[]},{"localized_name":"denoised_output","name":"denoised_output","type":"LATENT","links":[85]}],"title":"KSampler","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"SamplerCustomAdvanced"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":107,"type":"GetNode","pos":[-1971,-891],"size":[210,60],"flags":{"collapsed":true},"order":12,"mode":0,"inputs":[],"outputs":[{"name":"LATENT","type":"LATENT","links":[143]}],"title":"Get_t2vl","properties":{},"widgets_values":["t2vl"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":105,"type":"GetNode","pos":[-1449,-639],"size":[210,60],"flags":{"collapsed":true},"order":13,"mode":0,"inputs":[],"outputs":[{"name":"VAE","type":"VAE","links":[141]}],"title":"Get_v","properties":{},"widgets_values":["v"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":98,"type":"GetNode","pos":[-1530,9],"size":[210,34],"flags":{"collapsed":true},"order":14,"mode":0,"inputs":[],"outputs":[{"name":"BOOLEAN","type":"BOOLEAN","links":[132]}],"title":"Get_t2i","properties":{},"widgets_values":["t2i"],"color":"#233","bgcolor":"#355"},{"id":109,"type":"GetNode","pos":[-1539,-36],"size":[210,60],"flags":{"collapsed":true},"order":15,"mode":0,"inputs":[],"outputs":[{"name":"LATENT","type":"LATENT","links":[145]}],"title":"Get_hnl","properties":{},"widgets_values":["hnl"],"color":"#233","bgcolor":"#355"},{"id":73,"type":"ComfySwitchNode","pos":[-1539,72],"size":[210,78],"flags":{},"order":69,"mode":0,"inputs":[{"localized_name":"on_false","name":"on_false","type":"LATENT","link":145},{"localized_name":"on_true","name":"on_true","type":"LATENT","link":98},{"localized_name":"switch","name":"switch","type":"BOOLEAN","widget":{"name":"switch"},"link":132}],"outputs":[{"localized_name":"output","name":"output","type":"LATENT","links":[146]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"ComfySwitchNode"},"widgets_values":[false],"color":"#233","bgcolor":"#355"},{"id":110,"type":"SetNode","pos":[-1305,99],"size":[210,60],"flags":{"collapsed":true},"order":74,"mode":0,"inputs":[{"name":"LATENT","type":"LATENT","link":146}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_lnl","properties":{"previousName":"lnl"},"widgets_values":["lnl"],"color":"#233","bgcolor":"#355"},{"id":39,"type":"SamplerCustomAdvanced","pos":[-1575,-603],"size":[211.1500015258789,235.52187585830688],"flags":{},"order":80,"mode":0,"inputs":[{"localized_name":"noise","name":"noise","type":"NOISE","link":128},{"localized_name":"guider","name":"guider","type":"GUIDER","link":43},{"localized_name":"sampler","name":"sampler","type":"SAMPLER","link":45},{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":107},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":147}],"outputs":[{"localized_name":"output","name":"output","type":"LATENT","links":[57]},{"localized_name":"denoised_output","name":"denoised_output","type":"LATENT","links":[]}],"title":"KSampler","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"SamplerCustomAdvanced"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":34,"type":"BasicGuider","pos":[-1782,-306],"size":[159.57500076293945,46],"flags":{},"order":53,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":40},{"localized_name":"conditioning","name":"conditioning","type":"CONDITIONING","link":129}],"outputs":[{"localized_name":"GUIDER","name":"GUIDER","type":"GUIDER","links":[43]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicGuider"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":95,"type":"GetNode","pos":[-1908,-261],"size":[210,60],"flags":{"collapsed":true},"order":16,"mode":0,"inputs":[],"outputs":[{"name":"CONDITIONING","type":"CONDITIONING","links":[129]}],"title":"Get_pc","properties":{},"widgets_values":["pc"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":111,"type":"GetNode","pos":[-1719,-225],"size":[210,60],"flags":{"collapsed":true},"order":17,"mode":0,"inputs":[],"outputs":[{"name":"LATENT","type":"LATENT","links":[147]}],"title":"Get_lnl","properties":{},"widgets_values":["lnl"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":113,"type":"SetNode","pos":[-1440,-1044],"size":[210,60],"flags":{"collapsed":true},"order":79,"mode":0,"inputs":[{"name":"IMAGE","type":"IMAGE","link":148}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_hnp","properties":{"previousName":"hnp"},"widgets_values":["hnp"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":116,"type":"SetNode","pos":[-1197,-567],"size":[210,60],"flags":{"collapsed":true},"order":87,"mode":0,"inputs":[{"name":"IMAGE","type":"IMAGE","link":150}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_lnp","properties":{"previousName":"lnp"},"widgets_values":["lnp"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":114,"type":"GetNode","pos":[-3050.6682435144244,526.4774376145776],"size":[210,60],"flags":{"collapsed":true},"order":18,"mode":0,"inputs":[],"outputs":[{"name":"IMAGE","type":"IMAGE","links":[149]}],"title":"Get_hnp","properties":{},"widgets_values":["hnp"]},{"id":33,"type":"ModelSamplingAuraFlow","pos":[-2538,-675],"size":[225.9091338550686,58],"flags":{},"order":35,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":37},{"localized_name":"shift","name":"shift","type":"FLOAT","widget":{"name":"shift"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[47,110]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"ModelSamplingAuraFlow"},"widgets_values":[5],"color":"#2a363b","bgcolor":"#3f5159"},{"id":38,"type":"CLIPLoader","pos":[-3042,-135],"size":[297.98456930654766,106],"flags":{},"order":19,"mode":0,"inputs":[{"localized_name":"clip_name","name":"clip_name","type":"COMBO","widget":{"name":"clip_name"},"link":null},{"localized_name":"type","name":"type","type":"COMBO","widget":{"name":"type"},"link":null},{"localized_name":"device","name":"device","shape":7,"type":"COMBO","widget":{"name":"device"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":[42,81]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CLIPLoader"},"widgets_values":["umt5_xxl_fp16.safetensors","wan","default"],"color":"#233","bgcolor":"#355"},{"id":85,"type":"SetNode","pos":[-2835,9],"size":[210,58],"flags":{"collapsed":true},"order":45,"mode":0,"inputs":[{"name":"NOISE","type":"NOISE","link":118}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_n","properties":{"previousName":"n"},"widgets_values":["n"],"color":"#233","bgcolor":"#355"},{"id":89,"type":"SetNode","pos":[-2412,-135],"size":[210,60],"flags":{"collapsed":true},"order":54,"mode":0,"inputs":[{"name":"CONDITIONING","type":"CONDITIONING","link":121}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_pc","properties":{"previousName":"pc"},"widgets_values":["pc"],"color":"#233","bgcolor":"#355"},{"id":90,"type":"SetNode","pos":[-2412,270],"size":[210,58],"flags":{"collapsed":true},"order":55,"mode":0,"inputs":[{"name":"CONDITIONING","type":"CONDITIONING","link":122}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_nc","properties":{"previousName":"nc"},"widgets_values":["nc"],"color":"#233","bgcolor":"#355"},{"id":99,"type":"SetNode","pos":[-2835,234],"size":[210,60],"flags":{"collapsed":true},"order":40,"mode":0,"inputs":[{"name":"VAE","type":"VAE","link":133}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_v","properties":{"previousName":"v"},"widgets_values":["v"],"color":"#233","bgcolor":"#355"},{"id":96,"type":"SetNode","pos":[-2835,135],"size":[210,60],"flags":{"collapsed":true},"order":49,"mode":0,"inputs":[{"name":"BOOLEAN","type":"BOOLEAN","link":130}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_t2i","properties":{"previousName":"t2i"},"widgets_values":["t2i"],"color":"#233","bgcolor":"#355"},{"id":46,"type":"VAELoader","pos":[-3042,234],"size":[302.49766361300567,58],"flags":{"collapsed":false},"order":20,"mode":0,"inputs":[{"localized_name":"vae_name","name":"vae_name","type":"COMBO","widget":{"name":"vae_name"},"link":null}],"outputs":[{"localized_name":"VAE","name":"VAE","type":"VAE","links":[133]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAELoader"},"widgets_values":["wan2.1-vae.safetensors"],"color":"#233","bgcolor":"#355"},{"id":75,"type":"EmptyHunyuanLatentVideo","pos":[-1809,36],"size":[250.67499389648438,130],"flags":{},"order":61,"mode":0,"inputs":[{"localized_name":"width","name":"width","type":"INT","widget":{"name":"width"},"link":96},{"localized_name":"height","name":"height","type":"INT","widget":{"name":"height"},"link":97},{"localized_name":"length","name":"length","type":"INT","widget":{"name":"length"},"link":null},{"localized_name":"batch_size","name":"batch_size","type":"INT","widget":{"name":"batch_size"},"link":null}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","links":[98]}],"title":"Empty Wan Latent","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"EmptyHunyuanLatentVideo"},"widgets_values":[848,480,1,1],"color":"#233","bgcolor":"#355"},{"id":106,"type":"SetNode","pos":[-1530,-135],"size":[210,60],"flags":{},"order":68,"mode":0,"inputs":[{"name":"LATENT","type":"LATENT","link":142}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_t2vl","properties":{"previousName":"t2vl"},"widgets_values":["t2vl"],"color":"#233","bgcolor":"#355"},{"id":102,"type":"SetNode","pos":[-1800,324],"size":[210,58],"flags":{},"order":62,"mode":0,"inputs":[{"name":"INT","type":"INT","link":136}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_lh","properties":{"previousName":"lh"},"widgets_values":["lh"],"color":"#233","bgcolor":"#355"},{"id":31,"type":"MarkdownNote","pos":[-1182.222828702849,-176.91718147199683],"size":[467.79842578125,449.3226625976563],"flags":{},"order":21,"mode":0,"inputs":[],"outputs":[],"title":"Models","properties":{},"widgets_values":["comfyorg models\n\n* [fp8 high](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors)\n\n* [fp8 low](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors)\n\n* [fp8 text encoder](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors)\n\n* [vae](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors)\n\nlightx2v model\n\n* [low noise lightx2v 1217](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras/resolve/main/wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors)\n\n```\nComfyUI/\n└───📂 models/\n    ├───📂 diffusion_models/\n    │   ├─── wan2.2_t2v_low_noise.safetensors\n    │   └─── wan2.2_t2v_high_noise.safetensors\n    ├───📂 loras/\n    │   └─── lightx2v.safetensors\n    ├───📂 text_encoders/\n    │   └─── umt5_xxl.safetensors \n    └───📂 vae/\n        └── wan_2.1_vae.safetensors\n```\n\nif you need help, join the community [discord](https://discord.gg/hq8qPbvznf)"],"color":"#222","bgcolor":"#000"},{"id":77,"type":"VAEEncode","pos":[-1156.8549713967077,-1215],"size":[140,46],"flags":{},"order":83,"mode":0,"inputs":[{"localized_name":"pixels","name":"pixels","type":"IMAGE","link":103},{"localized_name":"vae","name":"vae","type":"VAE","link":140}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","links":[144]}],"title":"Encode","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAEEncode"},"widgets_values":[],"color":"#2a363b","bgcolor":"#3f5159"},{"id":108,"type":"SetNode","pos":[-1001.4275968215261,-1187.4963388482038],"size":[210,60],"flags":{"collapsed":true},"order":86,"mode":0,"inputs":[{"name":"LATENT","type":"LATENT","link":144}],"outputs":[{"name":"*","type":"*","links":null}],"title":"Set_hnl","properties":{"previousName":"hnl"},"widgets_values":["hnl"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":117,"type":"GetNode","pos":[-2501.6641045614983,516.9294156510568],"size":[210,50],"flags":{"collapsed":true},"order":22,"mode":0,"inputs":[],"outputs":[{"name":"IMAGE","type":"IMAGE","links":[151]}],"title":"Get_lnp","properties":{},"widgets_values":["lnp"]},{"id":120,"type":"ModelSamplingAuraFlow","pos":[-779.0503708116692,747.8598309383141],"size":[229.2180118238639,58],"flags":{},"order":46,"mode":4,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":153},{"localized_name":"shift","name":"shift","type":"FLOAT","widget":{"name":"shift"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[154,160]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"ModelSamplingAuraFlow"},"widgets_values":[3],"color":"#322","bgcolor":"#533"},{"id":125,"type":"RandomNoise","pos":[-146.33099405353218,625.9454627661229],"size":[289.90589510385803,82],"flags":{},"order":23,"mode":4,"inputs":[{"localized_name":"noise_seed","name":"noise_seed","type":"INT","widget":{"name":"noise_seed"},"link":null}],"outputs":[{"localized_name":"NOISE","name":"NOISE","type":"NOISE","links":[158]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"RandomNoise"},"widgets_values":[736675784933900,"randomize"],"color":"#322","bgcolor":"#533"},{"id":126,"type":"BasicGuider","pos":[-14.839962929254186,889.9386301290798],"size":[159.57500076293945,46],"flags":{},"order":58,"mode":4,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":160},{"localized_name":"conditioning","name":"conditioning","type":"CONDITIONING","link":161}],"outputs":[{"localized_name":"GUIDER","name":"GUIDER","type":"GUIDER","links":[159]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicGuider"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":127,"type":"CLIPTextEncode","pos":[-245.45471577596697,938.4890849173045],"size":[400,200],"flags":{"collapsed":true},"order":42,"mode":4,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":162},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":null}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","links":[161]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CLIPTextEncode"},"widgets_values":[""],"color":"#322","bgcolor":"#533"},{"id":128,"type":"CLIPLoader","pos":[-562.0441705750659,909.1565493503],"size":[290.917393779494,106],"flags":{"collapsed":false},"order":24,"mode":4,"inputs":[{"localized_name":"clip_name","name":"clip_name","type":"COMBO","widget":{"name":"clip_name"},"link":null},{"localized_name":"type","name":"type","type":"COMBO","widget":{"name":"type"},"link":null},{"localized_name":"device","name":"device","shape":7,"type":"COMBO","widget":{"name":"device"},"link":null}],"outputs":[{"localized_name":"CLIP","name":"CLIP","type":"CLIP","links":[162]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CLIPLoader"},"widgets_values":["qwen_3_4b.safetensors","lumina2","default"],"color":"#322","bgcolor":"#533"},{"id":130,"type":"VAELoader","pos":[-127.1130748323117,985.016634956902],"size":[272.71088063126604,58],"flags":{},"order":25,"mode":4,"inputs":[{"localized_name":"vae_name","name":"vae_name","type":"COMBO","widget":{"name":"vae_name"},"link":null}],"outputs":[{"localized_name":"VAE","name":"VAE","type":"VAE","links":[164,167]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAELoader"},"widgets_values":["flux-vae.safetensors"],"color":"#322","bgcolor":"#533"},{"id":129,"type":"VAEDecode","pos":[397.83890277065854,768.5624931585168],"size":[140,46],"flags":{},"order":88,"mode":4,"inputs":[{"localized_name":"samples","name":"samples","type":"LATENT","link":163},{"localized_name":"vae","name":"vae","type":"VAE","link":164}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[165]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAEDecode"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":118,"type":"GetNode","pos":[-1953.2195301851423,517.6101964896687],"size":[210,50],"flags":{"collapsed":true},"order":26,"mode":0,"inputs":[],"outputs":[{"name":"IMAGE","type":"IMAGE","links":[152,170,177]}],"title":"Get_lnp","properties":{},"widgets_values":["lnp"]},{"id":132,"type":"VAEEncode","pos":[-720.7751263814305,844.8466206939673],"size":[142.05423819761268,46],"flags":{},"order":82,"mode":4,"inputs":[{"localized_name":"pixels","name":"pixels","type":"IMAGE","link":180},{"localized_name":"vae","name":"vae","type":"VAE","link":167}],"outputs":[{"localized_name":"LATENT","name":"LATENT","type":"LATENT","links":[168]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"VAEEncode"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":124,"type":"SamplerCustomAdvanced","pos":[165.2012451753178,749.3446202386184],"size":[213.32500305175782,385.7666707356771],"flags":{},"order":85,"mode":4,"inputs":[{"localized_name":"noise","name":"noise","type":"NOISE","link":158},{"localized_name":"guider","name":"guider","type":"GUIDER","link":159},{"localized_name":"sampler","name":"sampler","type":"SAMPLER","link":181},{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":157},{"localized_name":"latent_image","name":"latent_image","type":"LATENT","link":168}],"outputs":[{"localized_name":"output","name":"output","type":"LATENT","links":null},{"localized_name":"denoised_output","name":"denoised_output","type":"LATENT","links":[163]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"SamplerCustomAdvanced"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":139,"type":"KSamplerSelect","pos":[-453.57323225591165,638.2211618332379],"size":[290.45887738436807,58],"flags":{},"order":27,"mode":4,"inputs":[{"localized_name":"sampler_name","name":"sampler_name","type":"COMBO","widget":{"name":"sampler_name"},"link":null}],"outputs":[{"localized_name":"SAMPLER","name":"SAMPLER","type":"SAMPLER","links":[181]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"KSamplerSelect"},"widgets_values":["dpmpp_2m_sde_gpu"],"color":"#322","bgcolor":"#533"},{"id":42,"type":"BasicScheduler","pos":[-2304,-684],"size":[210,106],"flags":{},"order":51,"mode":0,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":47},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[53]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicScheduler"},"widgets_values":["simple",3,1],"color":"#2a363b","bgcolor":"#3f5159"},{"id":54,"type":"SigmaSmoother","pos":[-1845,-675],"size":[228.48842588950356,82],"flags":{},"order":71,"mode":0,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":68},{"localized_name":"smooth_steps","name":"smooth_steps","type":"INT","widget":{"name":"smooth_steps"},"link":null},{"localized_name":"interpolation_type","name":"interpolation_type","type":"COMBO","widget":{"name":"interpolation_type"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[106]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"SigmaSmoother"},"widgets_values":[2,"linear"],"color":"#2a363b","bgcolor":"#3f5159"},{"id":40,"type":"RandomNoise","pos":[-3042,9],"size":[298.6852325752368,82],"flags":{},"order":28,"mode":0,"inputs":[{"localized_name":"noise_seed","name":"noise_seed","type":"INT","widget":{"name":"noise_seed"},"link":null}],"outputs":[{"localized_name":"NOISE","name":"NOISE","type":"NOISE","links":[118]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"RandomNoise"},"widgets_values":[840682065236563,"randomize"],"color":"#233","bgcolor":"#355"},{"id":119,"type":"UNETLoader","pos":[-1173.5205959801885,748.1491121307059],"size":[380.26377341777356,82],"flags":{},"order":29,"mode":4,"inputs":[{"localized_name":"unet_name","name":"unet_name","type":"COMBO","widget":{"name":"unet_name"},"link":null},{"localized_name":"weight_dtype","name":"weight_dtype","type":"COMBO","widget":{"name":"weight_dtype"},"link":null}],"outputs":[{"localized_name":"MODEL","name":"MODEL","type":"MODEL","links":[153]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"UNETLoader"},"widgets_values":["zimage/z_image_turbo_bf16.safetensors","default"],"color":"#322","bgcolor":"#533"},{"id":136,"type":"ImageSizeCalculator","pos":[-1076.4797899933762,1294.8451508950664],"size":[210,174],"flags":{"collapsed":true},"order":66,"mode":4,"inputs":[{"localized_name":"aspect_w","name":"aspect_w","type":"INT","widget":{"name":"aspect_w"},"link":173},{"localized_name":"aspect_h","name":"aspect_h","type":"INT","widget":{"name":"aspect_h"},"link":174},{"localized_name":"mode","name":"mode","type":"COMBO","widget":{"name":"mode"},"link":null},{"localized_name":"size","name":"size","type":"INT","widget":{"name":"size"},"link":null},{"localized_name":"multiple_of","name":"multiple_of","type":"INT","widget":{"name":"multiple_of"},"link":null}],"outputs":[{"localized_name":"width","name":"width","type":"INT","links":[175]},{"localized_name":"height","name":"height","type":"INT","links":[176]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"ImageSizeCalculator"},"widgets_values":[1,1,"max",1920,16],"color":"#322","bgcolor":"#533"},{"id":135,"type":"GetCommonAspectRatio","pos":[-1056.152772809549,1362.6416045327055],"size":[210,342],"flags":{"collapsed":true},"order":56,"mode":4,"inputs":[{"localized_name":"width","name":"width","type":"INT","widget":{"name":"width"},"link":171},{"localized_name":"height","name":"height","type":"INT","widget":{"name":"height"},"link":172},{"localized_name":"1:1","name":"1:1","type":"BOOLEAN","widget":{"name":"1:1"},"link":null},{"localized_name":"4:3","name":"4:3","type":"BOOLEAN","widget":{"name":"4:3"},"link":null},{"localized_name":"3:2","name":"3:2","type":"BOOLEAN","widget":{"name":"3:2"},"link":null},{"localized_name":"5:4","name":"5:4","type":"BOOLEAN","widget":{"name":"5:4"},"link":null},{"localized_name":"16:9","name":"16:9","type":"BOOLEAN","widget":{"name":"16:9"},"link":null},{"localized_name":"16:10","name":"16:10","type":"BOOLEAN","widget":{"name":"16:10"},"link":null},{"localized_name":"21:9","name":"21:9","type":"BOOLEAN","widget":{"name":"21:9"},"link":null},{"localized_name":"2:1","name":"2:1","type":"BOOLEAN","widget":{"name":"2:1"},"link":null},{"localized_name":"1.85:1","name":"1.85:1","type":"BOOLEAN","widget":{"name":"1.85:1"},"link":null},{"localized_name":"2.39:1","name":"2.39:1","type":"BOOLEAN","widget":{"name":"2.39:1"},"link":null}],"outputs":[{"localized_name":"aspect_w","name":"aspect_w","type":"INT","links":[173]},{"localized_name":"aspect_h","name":"aspect_h","type":"INT","links":[174]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"GetCommonAspectRatio"},"widgets_values":[1024,1024,true,true,true,true,true,true,true,true,true,true],"color":"#322","bgcolor":"#533"},{"id":134,"type":"GetImageSize","pos":[-1041.1112258530695,1425.287293396601],"size":[140.1249984741211,124],"flags":{"collapsed":true},"order":44,"mode":4,"inputs":[{"localized_name":"image","name":"image","type":"IMAGE","link":170}],"outputs":[{"localized_name":"width","name":"width","type":"INT","links":[171]},{"localized_name":"height","name":"height","type":"INT","links":[172]},{"localized_name":"batch_size","name":"batch_size","type":"INT","links":null}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"GetImageSize"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":137,"type":"0917a7a5-9233-42db-9927-4dcb4ad78d01","pos":[-831.0844424649506,1196.1755028782638],"size":[250,154],"flags":{},"order":77,"mode":4,"inputs":[{"label":"image","localized_name":"images.image0","name":"images.image0","type":"IMAGE","link":178}],"outputs":[{"label":"IMAGE","localized_name":"IMAGE0","name":"IMAGE0","type":"IMAGE","links":[179,180]}],"properties":{"proxyWidgets":[["17","value"],["18","value"],["19","value"],["20","value"],["21","choice"]],"cnr_id":"comfy-core","ver":"0.18.5"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":138,"type":"PreviewImage","pos":[-531.4575741191123,1135.767422559945],"size":[363.53444732254843,466.9999025912821],"flags":{},"order":81,"mode":4,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":179}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PreviewImage"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":131,"type":"PreviewImage","pos":[555.6276956271014,767.550948181559],"size":[424.77745852289354,422.33074756838573],"flags":{},"order":89,"mode":4,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":165}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PreviewImage"},"widgets_values":[],"color":"#322","bgcolor":"#533"},{"id":121,"type":"BasicScheduler","pos":[-535.7457606243925,748.3331215629827],"size":[210,106],"flags":{},"order":57,"mode":4,"inputs":[{"localized_name":"model","name":"model","type":"MODEL","link":154},{"localized_name":"scheduler","name":"scheduler","type":"COMBO","widget":{"name":"scheduler"},"link":null},{"localized_name":"steps","name":"steps","type":"INT","widget":{"name":"steps"},"link":null},{"localized_name":"denoise","name":"denoise","type":"FLOAT","widget":{"name":"denoise"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[155]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"BasicScheduler"},"widgets_values":["simple",9,1],"color":"#322","bgcolor":"#533"},{"id":122,"type":"SplitSigmas","pos":[-309.177095082868,748.3331215629825],"size":[210,78],"flags":{},"order":67,"mode":4,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":155},{"localized_name":"step","name":"step","type":"INT","widget":{"name":"step"},"link":null}],"outputs":[{"localized_name":"high_sigmas","name":"high_sigmas","type":"SIGMAS","links":null},{"localized_name":"low_sigmas","name":"low_sigmas","type":"SIGMAS","links":[156]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"SplitSigmas"},"widgets_values":[7],"color":"#322","bgcolor":"#533"},{"id":123,"type":"SigmaSmoother","pos":[-81.59683826306305,767.5509944828808],"size":[223.14901977004888,82],"flags":{},"order":73,"mode":4,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":156},{"localized_name":"smooth_steps","name":"smooth_steps","type":"INT","widget":{"name":"smooth_steps"},"link":null},{"localized_name":"interpolation_type","name":"interpolation_type","type":"COMBO","widget":{"name":"interpolation_type"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[157]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"SigmaSmoother"},"widgets_values":[2,"linear"],"color":"#322","bgcolor":"#533"},{"id":70,"type":"PrimitiveInt","pos":[-2295,-135],"size":[210,82],"flags":{},"order":30,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"INT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"INT","name":"INT","type":"INT","links":[89,90]}],"title":"W","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveInt"},"widgets_values":[16,"fixed"],"color":"#233","bgcolor":"#355"},{"id":71,"type":"PrimitiveInt","pos":[-2295,-9],"size":[210,82],"flags":{},"order":31,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"INT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"INT","name":"INT","type":"INT","links":[91,92]}],"title":"H","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveInt"},"widgets_values":[9,"fixed"],"color":"#233","bgcolor":"#355"},{"id":60,"type":"SigmasRescale","pos":[-2070,-1251],"size":[210,82],"flags":{},"order":63,"mode":0,"inputs":[{"localized_name":"sigmas","name":"sigmas","type":"SIGMAS","link":74},{"localized_name":"max","name":"max","type":"FLOAT","widget":{"name":"max"},"link":null},{"localized_name":"min","name":"min","type":"FLOAT","widget":{"name":"min"},"link":null}],"outputs":[{"localized_name":"SIGMAS","name":"SIGMAS","type":"SIGMAS","links":[76]}],"properties":{"cnr_id":"comfyui-supernodes","ver":"46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7","Node name for S&R":"SigmasRescale"},"widgets_values":[0.975,0.875],"color":"#2a363b","bgcolor":"#3f5159"},{"id":65,"type":"CLIPTextEncode","pos":[-2717.224866987531,267.7568669043077],"size":[408.2248669875312,202.24313309569231],"flags":{},"order":39,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":81},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":null}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","links":[122]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CLIPTextEncode"},"widgets_values":["ugly, horror, creepy, injured, warped, deformed, glitch, stutter, artifacts, flashes, 3d render, cgi, cartoon, painting, drawing"],"color":"#233","bgcolor":"#355"},{"id":37,"type":"CLIPTextEncode","pos":[-2718,-135],"size":[409.9605448094153,354.3879429941561],"flags":{},"order":38,"mode":0,"inputs":[{"localized_name":"clip","name":"clip","type":"CLIP","link":42},{"localized_name":"text","name":"text","type":"STRING","widget":{"name":"text"},"link":null}],"outputs":[{"localized_name":"CONDITIONING","name":"CONDITIONING","type":"CONDITIONING","links":[121]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CLIPTextEncode"},"widgets_values":["subject:\n - full body shot of young latina woman with straight black hair\n - action: tracking shot, skateboarding briskly through the scene\n - outfit: plaid miniskirt and white top\n - framing: rule of thirds, right aligned\n\nlocation: near sunset, late afternoon, on a road on a massive high point moving down hill\n\nmotion: face pace, high action\n\ncamera: \n - manufacturer: shot on Apple iPhone\n - lens: wide angle lens\n - shot_type: close up shot\n - focus: set to infinity, with everything in focus and very sharp high contrast image\n - f-stop: f/8 f/16\n - focal_length: 12mm / 14mm / 16mm"],"color":"#233","bgcolor":"#355"},{"id":61,"type":"VHS_VideoCombine","pos":[-2375.808505841982,574.8640503350098],"size":[526.3575723561712,633.2013994496222],"flags":{},"order":41,"mode":4,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":151},{"localized_name":"audio","name":"audio","shape":7,"type":"AUDIO","link":null},{"localized_name":"meta_batch","name":"meta_batch","shape":7,"type":"VHS_BatchManager","link":null},{"localized_name":"vae","name":"vae","shape":7,"type":"VAE","link":null},{"localized_name":"frame_rate","name":"frame_rate","type":"FLOAT","widget":{"name":"frame_rate"},"link":null},{"localized_name":"loop_count","name":"loop_count","type":"INT","widget":{"name":"loop_count"},"link":null},{"localized_name":"filename_prefix","name":"filename_prefix","type":"STRING","widget":{"name":"filename_prefix"},"link":null},{"localized_name":"format","name":"format","type":"COMBO","widget":{"name":"format"},"link":null},{"localized_name":"pingpong","name":"pingpong","type":"BOOLEAN","widget":{"name":"pingpong"},"link":null},{"localized_name":"save_output","name":"save_output","type":"BOOLEAN","widget":{"name":"save_output"},"link":null},{"name":"pix_fmt","type":["yuv420p","yuv420p10le"],"widget":{"name":"pix_fmt"},"link":null},{"name":"crf","type":"INT","widget":{"name":"crf"},"link":null},{"name":"save_metadata","type":"BOOLEAN","widget":{"name":"save_metadata"},"link":null},{"name":"trim_to_audio","type":"BOOLEAN","widget":{"name":"trim_to_audio"},"link":null}],"outputs":[{"localized_name":"Filenames","name":"Filenames","type":"VHS_FILENAMES","links":null}],"properties":{"cnr_id":"comfyui-videohelpersuite","ver":"1.7.9","Node name for S&R":"VHS_VideoCombine"},"widgets_values":{"frame_rate":16,"loop_count":0,"filename_prefix":"wan","format":"video/h264-mp4","pix_fmt":"yuv420p","crf":19,"save_metadata":true,"trim_to_audio":false,"pingpong":false,"save_output":false,"videopreview":{"hidden":false,"paused":false,"params":{"filename":"wan_00034.mp4","subfolder":"","type":"temp","format":"video/h264-mp4","frame_rate":16,"workflow":"wan_00034.png","fullpath":"/home/sonny/git/ComfyUI/temp/wan_00034.mp4"}}}},{"id":72,"type":"VHS_VideoCombine","pos":[-2920.9945125447944,575.3354138138423],"size":[526.3575723561712,634.9359576684969],"flags":{},"order":37,"mode":4,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":149},{"localized_name":"audio","name":"audio","shape":7,"type":"AUDIO","link":null},{"localized_name":"meta_batch","name":"meta_batch","shape":7,"type":"VHS_BatchManager","link":null},{"localized_name":"vae","name":"vae","shape":7,"type":"VAE","link":null},{"localized_name":"frame_rate","name":"frame_rate","type":"FLOAT","widget":{"name":"frame_rate"},"link":null},{"localized_name":"loop_count","name":"loop_count","type":"INT","widget":{"name":"loop_count"},"link":null},{"localized_name":"filename_prefix","name":"filename_prefix","type":"STRING","widget":{"name":"filename_prefix"},"link":null},{"localized_name":"format","name":"format","type":"COMBO","widget":{"name":"format"},"link":null},{"localized_name":"pingpong","name":"pingpong","type":"BOOLEAN","widget":{"name":"pingpong"},"link":null},{"localized_name":"save_output","name":"save_output","type":"BOOLEAN","widget":{"name":"save_output"},"link":null},{"name":"pix_fmt","type":["yuv420p","yuv420p10le"],"widget":{"name":"pix_fmt"},"link":null},{"name":"crf","type":"INT","widget":{"name":"crf"},"link":null},{"name":"save_metadata","type":"BOOLEAN","widget":{"name":"save_metadata"},"link":null},{"name":"trim_to_audio","type":"BOOLEAN","widget":{"name":"trim_to_audio"},"link":null}],"outputs":[{"localized_name":"Filenames","name":"Filenames","type":"VHS_FILENAMES","links":null}],"properties":{"cnr_id":"comfyui-videohelpersuite","ver":"1.7.9","Node name for S&R":"VHS_VideoCombine"},"widgets_values":{"frame_rate":16,"loop_count":0,"filename_prefix":"wan","format":"video/h264-mp4","pix_fmt":"yuv420p","crf":19,"save_metadata":true,"trim_to_audio":false,"pingpong":false,"save_output":false,"videopreview":{"hidden":false,"paused":false,"params":{"filename":"wan_00033.mp4","subfolder":"","type":"temp","format":"video/h264-mp4","frame_rate":16,"workflow":"wan_00033.png","fullpath":"/home/sonny/git/ComfyUI/temp/wan_00033.mp4"}}}},{"id":133,"type":"RTXVideoSuperResolution","pos":[-1089.661773243939,1103.4131782488287],"size":[226.79999389648438,130],"flags":{},"order":72,"mode":4,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":177},{"localized_name":"resize_type","name":"resize_type","type":"COMFY_DYNAMICCOMBO_V3","widget":{"name":"resize_type"},"link":null},{"localized_name":"resize_type.width","name":"resize_type.width","type":"INT","widget":{"name":"resize_type.width"},"link":175},{"localized_name":"resize_type.height","name":"resize_type.height","type":"INT","widget":{"name":"resize_type.height"},"link":176},{"localized_name":"quality","name":"quality","type":"COMBO","widget":{"name":"quality"},"link":null}],"outputs":[{"localized_name":"upscaled_images","name":"upscaled_images","type":"IMAGE","links":[178]}],"properties":{"cnr_id":"comfyui_nvidia_rtx_nodes","ver":"892515e3eb9a4920a131a502a047e47adca9eb0d","Node name for S&R":"RTXVideoSuperResolution"},"widgets_values":["target dimensions",1920,1080,"ULTRA"],"color":"#322","bgcolor":"#533"},{"id":83,"type":"PreviewImage","pos":[-1832.6062396738023,579.4597205077218],"size":[627.6506129309273,622.904903128033],"flags":{},"order":43,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":152}],"outputs":[],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PreviewImage"},"widgets_values":[]},{"id":74,"type":"PrimitiveBoolean","pos":[-3042,135],"size":[302.7964220399999,58],"flags":{},"order":32,"mode":0,"inputs":[{"localized_name":"value","name":"value","type":"BOOLEAN","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"BOOLEAN","name":"BOOLEAN","type":"BOOLEAN","links":[130]}],"title":"Text to Image","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveBoolean"},"widgets_values":[true],"color":"#233","bgcolor":"#355"}],"links":[[37,32,0,33,0,"MODEL"],[40,36,0,34,0,"MODEL"],[42,38,0,37,0,"CLIP"],[43,34,0,39,1,"GUIDER"],[45,41,0,39,2,"SAMPLER"],[47,33,0,42,0,"MODEL"],[53,42,0,48,0,"SIGMAS"],[57,39,0,45,0,"LATENT"],[65,32,0,36,0,"MODEL"],[66,53,0,44,0,"INT"],[67,53,1,44,1,"INT"],[68,48,0,54,0,"SIGMAS"],[72,57,0,58,0,"MODEL"],[73,58,0,59,0,"MODEL"],[74,59,0,60,0,"SIGMAS"],[76,60,0,62,3,"SIGMAS"],[77,63,0,62,2,"SAMPLER"],[78,64,0,62,1,"GUIDER"],[81,38,0,65,0,"CLIP"],[84,57,0,64,0,"MODEL"],[85,62,1,66,0,"LATENT"],[86,66,0,67,0,"IMAGE"],[89,70,0,53,0,"INT"],[90,70,0,68,0,"INT"],[91,71,0,53,1,"INT"],[92,71,0,68,1,"INT"],[96,68,0,75,0,"INT"],[97,68,1,75,1,"INT"],[98,75,0,73,1,"LATENT"],[103,67,0,77,0,"IMAGE"],[106,54,0,78,1,"SIGMAS"],[107,78,0,39,3,"SIGMAS"],[108,79,0,80,0,"SIGMAS"],[110,33,0,79,0,"MODEL"],[118,40,0,85,0,"NOISE"],[119,86,0,62,0,"NOISE"],[121,37,0,89,0,"CONDITIONING"],[122,65,0,90,0,"CONDITIONING"],[125,92,0,64,1,"CONDITIONING"],[126,93,0,64,2,"CONDITIONING"],[127,80,0,78,0,"SIGMAS"],[128,94,0,39,0,"NOISE"],[129,95,0,34,1,"CONDITIONING"],[130,74,0,96,0,"BOOLEAN"],[131,97,0,78,2,"BOOLEAN"],[132,98,0,73,2,"BOOLEAN"],[133,46,0,99,0,"VAE"],[134,100,0,66,1,"VAE"],[135,68,0,101,0,"INT"],[136,68,1,102,0,"INT"],[138,103,0,67,2,"INT"],[139,104,0,67,3,"INT"],[140,100,0,77,1,"VAE"],[141,105,0,45,1,"VAE"],[142,44,0,106,0,"LATENT"],[143,107,0,62,4,"LATENT"],[144,77,0,108,0,"LATENT"],[145,109,0,73,0,"LATENT"],[146,73,0,110,0,"LATENT"],[147,111,0,39,4,"LATENT"],[148,66,0,113,0,"IMAGE"],[149,114,0,72,0,"IMAGE"],[150,45,0,116,0,"IMAGE"],[151,117,0,61,0,"IMAGE"],[152,118,0,83,0,"IMAGE"],[153,119,0,120,0,"MODEL"],[154,120,0,121,0,"MODEL"],[155,121,0,122,0,"SIGMAS"],[156,122,1,123,0,"SIGMAS"],[157,123,0,124,3,"SIGMAS"],[158,125,0,124,0,"NOISE"],[159,126,0,124,1,"GUIDER"],[160,120,0,126,0,"MODEL"],[161,127,0,126,1,"CONDITIONING"],[162,128,0,127,0,"CLIP"],[163,124,1,129,0,"LATENT"],[164,130,0,129,1,"VAE"],[165,129,0,131,0,"IMAGE"],[167,130,0,132,1,"VAE"],[168,132,0,124,4,"LATENT"],[170,118,0,134,0,"IMAGE"],[171,134,0,135,0,"INT"],[172,134,1,135,1,"INT"],[173,135,0,136,0,"INT"],[174,135,1,136,1,"INT"],[175,136,0,133,2,"INT"],[176,136,1,133,3,"INT"],[177,118,0,133,0,"IMAGE"],[178,133,0,137,0,"IMAGE"],[179,137,0,138,0,"IMAGE"],[180,137,0,132,0,"IMAGE"],[181,139,0,124,2,"SAMPLER"]],"groups":[{"id":1,"title":"Sampling","bounding":[-3051,-1386,2164.033176244474,1171.4008528332806],"color":"#3f789e","font_size":24,"flags":{}},{"id":2,"title":"Settings","bounding":[-3051,-207,1856.1103213009144,687.4328862318844],"color":"#8AA","font_size":24,"flags":{}},{"id":3,"title":"Image Detailing","bounding":[-1183.5205959801885,552.3454627661229,2181.4626116149193,1119.6405596821826],"color":"#A88","font_size":24,"flags":{}}],"definitions":{"subgraphs":[{"id":"0917a7a5-9233-42db-9927-4dcb4ad78d01","version":1,"state":{"lastGroupId":3,"lastNodeId":139,"lastLinkId":181,"lastRerouteId":0},"revision":0,"config":{},"name":"Film Grain","inputNode":{"id":-10,"bounding":[4096.671470760602,-948.2184031393472,120,60]},"outputNode":{"id":-20,"bounding":[4900,-948.2184031393472,120,60]},"inputs":[{"id":"062968ea-da25-47e7-a180-d913c267f148","name":"images.image0","type":"IMAGE","linkIds":[22],"localized_name":"images.image0","label":"image","pos":[4196.671470760602,-928.2184031393472]}],"outputs":[{"id":"43247d06-a39f-4733-9828-c39400fe02a4","name":"IMAGE0","type":"IMAGE","linkIds":[23],"localized_name":"IMAGE0","label":"IMAGE","pos":[4920,-928.2184031393472]}],"widgets":[],"nodes":[{"id":15,"type":"GLSLShader","pos":[4510,-1180],"size":[330,272],"flags":{},"order":5,"mode":0,"inputs":[{"label":"image0","localized_name":"images.image0","name":"images.image0","type":"IMAGE","link":22},{"label":"image1","localized_name":"images.image1","name":"images.image1","shape":7,"type":"IMAGE","link":null},{"label":"u_float0","localized_name":"floats.u_float0","name":"floats.u_float0","shape":7,"type":"FLOAT","link":26},{"label":"u_float1","localized_name":"floats.u_float1","name":"floats.u_float1","shape":7,"type":"FLOAT","link":27},{"label":"u_float2","localized_name":"floats.u_float2","name":"floats.u_float2","shape":7,"type":"FLOAT","link":28},{"label":"u_float3","localized_name":"floats.u_float3","name":"floats.u_float3","shape":7,"type":"FLOAT","link":29},{"label":"u_float4","localized_name":"floats.u_float4","name":"floats.u_float4","shape":7,"type":"FLOAT","link":null},{"label":"u_int0","localized_name":"ints.u_int0","name":"ints.u_int0","shape":7,"type":"INT","link":30},{"label":"u_int1","localized_name":"ints.u_int1","name":"ints.u_int1","shape":7,"type":"INT","link":null},{"localized_name":"fragment_shader","name":"fragment_shader","type":"STRING","widget":{"name":"fragment_shader"},"link":null},{"localized_name":"size_mode","name":"size_mode","type":"COMFY_DYNAMICCOMBO_V3","widget":{"name":"size_mode"},"link":null}],"outputs":[{"localized_name":"IMAGE0","name":"IMAGE0","type":"IMAGE","links":[23]},{"localized_name":"IMAGE1","name":"IMAGE1","type":"IMAGE","links":null},{"localized_name":"IMAGE2","name":"IMAGE2","type":"IMAGE","links":null},{"localized_name":"IMAGE3","name":"IMAGE3","type":"IMAGE","links":null}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"GLSLShader"},"widgets_values":["#version 300 es\nprecision highp float;\n\nuniform sampler2D u_image0;\nuniform vec2 u_resolution;\nuniform float u_float0; // grain amount      [0.0 – 1.0]   typical: 0.2–0.8\nuniform float u_float1; // grain size        [0.3 – 3.0]   lower = finer grain\nuniform float u_float2; // color amount      [0.0 – 1.0]   0 = monochrome, 1 = RGB grain\nuniform float u_float3; // luminance bias    [0.0 – 1.0]   0 = uniform, 1 = shadows only\nuniform int   u_int0;   // noise mode        [0 or 1]      0 = smooth, 1 = grainy\n\nin vec2 v_texCoord;\nlayout(location = 0) out vec4 fragColor0;\n\n// High-quality integer hash (pcg-like)\nuint pcg(uint v) {\n    uint state = v * 747796405u + 2891336453u;\n    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;\n    return (word >> 22u) ^ word;\n}\n\n// 2D -> 1D hash input\nuint hash2d(uvec2 p) {\n    return pcg(p.x + pcg(p.y));\n}\n\n// Hash to float [0, 1]\nfloat hashf(uvec2 p) {\n    return float(hash2d(p)) / float(0xffffffffu);\n}\n\n// Hash to float with offset (for RGB channels)\nfloat hashf(uvec2 p, uint offset) {\n    return float(pcg(hash2d(p) + offset)) / float(0xffffffffu);\n}\n\n// Convert uniform [0,1] to roughly Gaussian distribution\n// Using simple approximation: average of multiple samples\nfloat toGaussian(uvec2 p) {\n    float sum = hashf(p, 0u) + hashf(p, 1u) + hashf(p, 2u) + hashf(p, 3u);\n    return (sum - 2.0) * 0.7;  // Centered, scaled\n}\n\nfloat toGaussian(uvec2 p, uint offset) {\n    float sum = hashf(p, offset) + hashf(p, offset + 1u) \n              + hashf(p, offset + 2u) + hashf(p, offset + 3u);\n    return (sum - 2.0) * 0.7;\n}\n\n// Smooth noise with better interpolation\nfloat smoothNoise(vec2 p) {\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n    \n    // Quintic interpolation (less banding than cubic)\n    f = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);\n    \n    uvec2 ui = uvec2(i);\n    float a = toGaussian(ui);\n    float b = toGaussian(ui + uvec2(1u, 0u));\n    float c = toGaussian(ui + uvec2(0u, 1u));\n    float d = toGaussian(ui + uvec2(1u, 1u));\n    \n    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n}\n\nfloat smoothNoise(vec2 p, uint offset) {\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n    \n    f = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);\n    \n    uvec2 ui = uvec2(i);\n    float a = toGaussian(ui, offset);\n    float b = toGaussian(ui + uvec2(1u, 0u), offset);\n    float c = toGaussian(ui + uvec2(0u, 1u), offset);\n    float d = toGaussian(ui + uvec2(1u, 1u), offset);\n    \n    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n}\n\nvoid main() {\n    vec4 color = texture(u_image0, v_texCoord);\n    \n    // Luminance (Rec.709)\n    float luma = dot(color.rgb, vec3(0.2126, 0.7152, 0.0722));\n    \n    // Grain UV (resolution-independent)\n    vec2 grainUV = v_texCoord * u_resolution / max(u_float1, 0.01);\n    uvec2 grainPixel = uvec2(grainUV);\n    \n    float g;\n    vec3 grainRGB;\n    \n    if (u_int0 == 1) {\n        // Grainy mode: pure hash noise (no interpolation = no banding)\n        g = toGaussian(grainPixel);\n        grainRGB = vec3(\n            toGaussian(grainPixel, 100u),\n            toGaussian(grainPixel, 200u),\n            toGaussian(grainPixel, 300u)\n        );\n    } else {\n        // Smooth mode: interpolated with quintic curve\n        g = smoothNoise(grainUV);\n        grainRGB = vec3(\n            smoothNoise(grainUV, 100u),\n            smoothNoise(grainUV, 200u),\n            smoothNoise(grainUV, 300u)\n        );\n    }\n    \n    // Luminance weighting (less grain in highlights)\n    float lumWeight = mix(1.0, 1.0 - luma, clamp(u_float3, 0.0, 1.0));\n    \n    // Strength\n    float strength = u_float0 * 0.15;\n    \n    // Color vs monochrome grain\n    vec3 grainColor = mix(vec3(g), grainRGB, clamp(u_float2, 0.0, 1.0));\n    \n    color.rgb += grainColor * strength * lumWeight;\n    fragColor0 = vec4(clamp(color.rgb, 0.0, 1.0), color.a);\n}\n","from_input"]},{"id":21,"type":"CustomCombo","pos":[4280,-780],"size":[210,153.8888931274414],"flags":{},"order":0,"mode":0,"inputs":[{"label":"grain_mode","localized_name":"choice","name":"choice","type":"COMBO","widget":{"name":"choice"},"link":null}],"outputs":[{"localized_name":"STRING","name":"STRING","type":"STRING","links":null},{"localized_name":"INDEX","name":"INDEX","type":"INT","links":[30]}],"properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"CustomCombo"},"widgets_values":["Smooth",0,"Smooth","Grainy",""]},{"id":17,"type":"PrimitiveFloat","pos":[4276.671470760602,-1180.3256994061358],"size":[210,58],"flags":{},"order":1,"mode":0,"inputs":[{"label":"grain_amount","localized_name":"value","name":"value","type":"FLOAT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"FLOAT","name":"FLOAT","type":"FLOAT","links":[26]}],"title":"Grain amount","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveFloat","min":0,"max":1,"step":0.05,"precision":2},"widgets_values":[0.25]},{"id":18,"type":"PrimitiveFloat","pos":[4280,-1080],"size":[210,58],"flags":{},"order":2,"mode":0,"inputs":[{"label":"grain_size","localized_name":"value","name":"value","type":"FLOAT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"FLOAT","name":"FLOAT","type":"FLOAT","links":[27]}],"title":"Grain size","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveFloat","min":0.05,"max":3,"precision":2,"step":0.05},"widgets_values":[3]},{"id":19,"type":"PrimitiveFloat","pos":[4280,-980],"size":[210,58],"flags":{},"order":3,"mode":0,"inputs":[{"label":"color_amount","localized_name":"value","name":"value","type":"FLOAT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"FLOAT","name":"FLOAT","type":"FLOAT","links":[28]}],"title":"Color amount","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveFloat","min":0,"max":1,"precision":2,"step":0.05},"widgets_values":[0]},{"id":20,"type":"PrimitiveFloat","pos":[4280,-880],"size":[210,58],"flags":{},"order":4,"mode":0,"inputs":[{"label":"shadow_focus","localized_name":"value","name":"value","type":"FLOAT","widget":{"name":"value"},"link":null}],"outputs":[{"localized_name":"FLOAT","name":"FLOAT","type":"FLOAT","links":[29]}],"title":"Luminance bias","properties":{"cnr_id":"comfy-core","ver":"0.18.5","Node name for S&R":"PrimitiveFloat","min":0,"max":1,"precision":2,"step":0.05},"widgets_values":[0]}],"groups":[],"links":[{"id":26,"origin_id":17,"origin_slot":0,"target_id":15,"target_slot":2,"type":"FLOAT"},{"id":27,"origin_id":18,"origin_slot":0,"target_id":15,"target_slot":3,"type":"FLOAT"},{"id":28,"origin_id":19,"origin_slot":0,"target_id":15,"target_slot":4,"type":"FLOAT"},{"id":29,"origin_id":20,"origin_slot":0,"target_id":15,"target_slot":5,"type":"FLOAT"},{"id":30,"origin_id":21,"origin_slot":1,"target_id":15,"target_slot":7,"type":"INT"},{"id":22,"origin_id":-10,"origin_slot":0,"target_id":15,"target_slot":0,"type":"IMAGE"},{"id":23,"origin_id":15,"origin_slot":0,"target_id":-20,"target_slot":0,"type":"IMAGE"}],"extra":{"workflowRendererVersion":"LG"}}]},"config":{},"extra":{"ds":{"offset":[0,0],"scale":1}},"version":0.4}
+{
+  "id": "761b21b3-3368-479c-b11f-600649edcd95",
+  "revision": 0,
+  "last_node_id": 139,
+  "last_link_id": 181,
+  "nodes": [
+    {
+      "id": 31,
+      "type": "MarkdownNote",
+      "pos": [
+        -1182.222828702849,
+        -176.91718147199683
+      ],
+      "size": [
+        475.5754441248637,
+        427.40552852077997
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Models",
+      "properties": {},
+      "widgets_values": [
+        "comfyorg models\n\n* [fp8 high](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_high_noise_14B_fp8_scaled.safetensors)\n\n* [fp8 low](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors)\n\n* [fp8 text encoder](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors)\n\n* [vae](https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors)\n\nlightx2v model\n\n* [low noise lightx2v 1217](https://huggingface.co/lightx2v/Wan2.2-Distill-Loras/resolve/main/wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors)\n\n```\nComfyUI/\n└───📂 models/\n    ├───📂 diffusion_models/\n    │   ├─── wan2.2_t2v_low_noise.safetensors\n    │   └─── wan2.2_t2v_high_noise.safetensors\n    ├───📂 loras/\n    │   └─── lightx2v.safetensors\n    ├───📂 text_encoders/\n    │   └─── umt5_xxl.safetensors \n    └───📂 vae/\n        └── wan_2.1_vae.safetensors\n```\n\nif you need help, join the community [discord](https://discord.gg/hq8qPbvznf)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 32,
+      "type": "DiffusionModelLoaderKJ",
+      "pos": [
+        -3042,
+        -684
+      ],
+      "size": [
+        485.2537203498573,
+        178
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_state_dict",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            37,
+            65
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.3.5",
+        "Node name for S&R": "DiffusionModelLoaderKJ"
+      },
+      "widgets_values": [
+        "wan/wan2.2_t2v_low_noise_14B_fp8_scaled.safetensors",
+        "default",
+        "default",
+        false,
+        "sageattn_qk_int8_pv_fp16_triton",
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 33,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        -2538,
+        -675
+      ],
+      "size": [
+        225.9091338550686,
+        58
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            47,
+            110
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "ModelSamplingAuraFlow"
+      },
+      "widgets_values": [
+        5
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 34,
+      "type": "BasicGuider",
+      "pos": [
+        -1782,
+        -306
+      ],
+      "size": [
+        159.57500076293945,
+        46
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 40
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 129
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            43
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 36,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -3042,
+        -459
+      ],
+      "size": [
+        571.8987156458331,
+        82
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 65
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            40
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "wan2.2_t2v_A14b_low_noise_lora_rank64_lightx2v_4step_1217.safetensors",
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 37,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -2718,
+        -135
+      ],
+      "size": [
+        409.9605448094153,
+        354.3879429941561
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            121
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "subject:\n - full body shot of young latina woman with straight black hair\n - action: tracking shot, skateboarding briskly through the scene\n - outfit: plaid miniskirt and white top\n - framing: rule of thirds, right aligned\n\nlocation: near sunset, late afternoon, on a road on a massive high point moving down hill\n\nmotion: face pace, high action\n\ncamera: \n - manufacturer: shot on Apple iPhone\n - lens: wide angle lens\n - shot_type: close up shot\n - focus: set to infinity, with everything in focus and very sharp high contrast image\n - f-stop: f/8 f/16\n - focal_length: 12mm / 14mm / 16mm"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 38,
+      "type": "CLIPLoader",
+      "pos": [
+        -3042,
+        -135
+      ],
+      "size": [
+        297.98456930654766,
+        106
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            42,
+            81
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "umt5_xxl_fp16.safetensors",
+        "wan",
+        "default"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 39,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        -1575,
+        -603
+      ],
+      "size": [
+        211.1500015258789,
+        235.52187585830688
+      ],
+      "flags": {},
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 128
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 43
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 45
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 107
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 147
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            57
+          ]
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": []
+        }
+      ],
+      "title": "KSampler",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 40,
+      "type": "RandomNoise",
+      "pos": [
+        -3042,
+        9
+      ],
+      "size": [
+        298.6852325752368,
+        82
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            118
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        840682065236563,
+        "randomize"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 41,
+      "type": "KSamplerSelect",
+      "pos": [
+        -1836,
+        -405
+      ],
+      "size": [
+        214.90750092159738,
+        58
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            45
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 42,
+      "type": "BasicScheduler",
+      "pos": [
+        -2304,
+        -684
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            53
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        3,
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 44,
+      "type": "EmptyHunyuanLatentVideo",
+      "pos": [
+        -1809,
+        -135
+      ],
+      "size": [
+        250.67499389648438,
+        130
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 66
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            142
+          ]
+        }
+      ],
+      "title": "Empty Wan Latent",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "EmptyHunyuanLatentVideo"
+      },
+      "widgets_values": [
+        848,
+        480,
+        81,
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 45,
+      "type": "VAEDecode",
+      "pos": [
+        -1350,
+        -603
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 57
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 141
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            150
+          ]
+        }
+      ],
+      "title": "Decode",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 46,
+      "type": "VAELoader",
+      "pos": [
+        -3042,
+        234
+      ],
+      "size": [
+        302.49766361300567,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            133
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "wan2.1-vae.safetensors"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 48,
+      "type": "SigmasRescale",
+      "pos": [
+        -2070,
+        -675
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 53
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "SigmasRescale"
+      },
+      "widgets_values": [
+        0.875,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 53,
+      "type": "ImageSizeCalculator",
+      "pos": [
+        -2061,
+        -135
+      ],
+      "size": [
+        237.11639558607067,
+        174
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "aspect_w",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_w"
+          },
+          "link": 89
+        },
+        {
+          "name": "aspect_h",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_h"
+          },
+          "link": 91
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            66
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            67
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "ImageSizeCalculator"
+      },
+      "widgets_values": [
+        16,
+        9,
+        "max",
+        480,
+        16
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 54,
+      "type": "SigmaSmoother",
+      "pos": [
+        -1845,
+        -675
+      ],
+      "size": [
+        228.48842588950356,
+        82
+      ],
+      "flags": {},
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 68
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            106
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "SigmaSmoother"
+      },
+      "widgets_values": [
+        2,
+        "linear"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 57,
+      "type": "DiffusionModelLoaderKJ",
+      "pos": [
+        -3042,
+        -1251
+      ],
+      "size": [
+        485.2537203498573,
+        178
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_state_dict",
+          "shape": 7,
+          "type": "STRING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            72,
+            84
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-kjnodes",
+        "ver": "1.3.5",
+        "Node name for S&R": "DiffusionModelLoaderKJ"
+      },
+      "widgets_values": [
+        "wan/wan2.2_t2v_high_noise_14B_fp16.safetensors",
+        "default",
+        "default",
+        false,
+        "sageattn_qk_int8_pv_fp16_triton",
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 58,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        -2538,
+        -1251
+      ],
+      "size": [
+        225.9091338550686,
+        58
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            73
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "ModelSamplingAuraFlow"
+      },
+      "widgets_values": [
+        7
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 59,
+      "type": "BasicScheduler",
+      "pos": [
+        -2295,
+        -1251
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 73
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            74
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        13,
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 60,
+      "type": "SigmasRescale",
+      "pos": [
+        -2070,
+        -1251
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            76
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "SigmasRescale"
+      },
+      "widgets_values": [
+        0.975,
+        0.875
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 61,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -2375.808505841982,
+        574.8640503350098
+      ],
+      "size": [
+        526.3575723561712,
+        334
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 151
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "wan",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "wan_00034.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "wan_00034.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_00034.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 62,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        -1818,
+        -1233
+      ],
+      "size": [
+        211.1500015258789,
+        236.31833419799807
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 119
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 78
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 77
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 76
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 143
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": []
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": [
+            85
+          ]
+        }
+      ],
+      "title": "KSampler",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 63,
+      "type": "KSamplerSelect",
+      "pos": [
+        -2070,
+        -1125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "uni_pc"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 64,
+      "type": "CFGGuider",
+      "pos": [
+        -2070,
+        -1026
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 84
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 125
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 126
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            78
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CFGGuider"
+      },
+      "widgets_values": [
+        3
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 65,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -2717.224866987531,
+        267.7568669043077
+      ],
+      "size": [
+        408.2248669875312,
+        202.24313309569231
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 81
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            122
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "ugly, horror, creepy, injured, warped, deformed, glitch, stutter, artifacts, flashes, 3d render, cgi, cartoon, painting, drawing"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 66,
+      "type": "VAEDecode",
+      "pos": [
+        -1593,
+        -1215
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 85
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 134
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            86,
+            148
+          ]
+        }
+      ],
+      "title": "Decode",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 67,
+      "type": "RTXVideoSuperResolution",
+      "pos": [
+        -1440,
+        -1215
+      ],
+      "size": [
+        268.91258222501835,
+        130
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 86
+        },
+        {
+          "name": "resize_type.width",
+          "type": "INT",
+          "widget": {
+            "name": "resize_type.width"
+          },
+          "link": 138
+        },
+        {
+          "name": "resize_type.height",
+          "type": "INT",
+          "widget": {
+            "name": "resize_type.height"
+          },
+          "link": 139
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            103
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_nvidia_rtx_nodes",
+        "ver": "892515e3eb9a4920a131a502a047e47adca9eb0d",
+        "Node name for S&R": "RTXVideoSuperResolution"
+      },
+      "widgets_values": [
+        "target dimensions",
+        1920,
+        1080,
+        "ULTRA"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 68,
+      "type": "ImageSizeCalculator",
+      "pos": [
+        -2061,
+        108
+      ],
+      "size": [
+        237.11639558607067,
+        174
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "aspect_w",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_w"
+          },
+          "link": 90
+        },
+        {
+          "name": "aspect_h",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_h"
+          },
+          "link": 92
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            96,
+            135
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            97,
+            136
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "ImageSizeCalculator"
+      },
+      "widgets_values": [
+        16,
+        9,
+        "max",
+        1280,
+        16
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 70,
+      "type": "PrimitiveInt",
+      "pos": [
+        -2295,
+        -135
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            89,
+            90
+          ]
+        }
+      ],
+      "title": "W",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        16,
+        "fixed"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 71,
+      "type": "PrimitiveInt",
+      "pos": [
+        -2295,
+        -9
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            91,
+            92
+          ]
+        }
+      ],
+      "title": "H",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        9,
+        "fixed"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 72,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        -2920.9945125447944,
+        575.3354138138423
+      ],
+      "size": [
+        526.3575723561712,
+        334
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 149
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "wan",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "wan_00033.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 16,
+            "workflow": "wan_00033.png",
+            "fullpath": "/home/sonny/git/ComfyUI/temp/wan_00033.mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 73,
+      "type": "ComfySwitchNode",
+      "pos": [
+        -1539,
+        72
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "type": "LATENT",
+          "link": 145
+        },
+        {
+          "name": "on_true",
+          "type": "LATENT",
+          "link": 98
+        },
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "switch"
+          },
+          "link": 132
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            146
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 74,
+      "type": "PrimitiveBoolean",
+      "pos": [
+        -3042,
+        135
+      ],
+      "size": [
+        302.7964220399999,
+        58
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            130
+          ]
+        }
+      ],
+      "title": "Text to Image",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PrimitiveBoolean"
+      },
+      "widgets_values": [
+        true
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 75,
+      "type": "EmptyHunyuanLatentVideo",
+      "pos": [
+        -1809,
+        36
+      ],
+      "size": [
+        250.67499389648438,
+        130
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 96
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 97
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            98
+          ]
+        }
+      ],
+      "title": "Empty Wan Latent",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "EmptyHunyuanLatentVideo"
+      },
+      "widgets_values": [
+        848,
+        480,
+        1,
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 77,
+      "type": "VAEEncode",
+      "pos": [
+        -1156.8549713967077,
+        -1215
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 103
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            144
+          ]
+        }
+      ],
+      "title": "Encode",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 78,
+      "type": "ComfySwitchNode",
+      "pos": [
+        -1836,
+        -531
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "on_false",
+          "type": "SIGMAS",
+          "link": 127
+        },
+        {
+          "name": "on_true",
+          "type": "SIGMAS",
+          "link": 106
+        },
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "switch"
+          },
+          "link": 131
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "SIGMAS",
+          "links": [
+            107
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": [
+        false
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 79,
+      "type": "BasicScheduler",
+      "pos": [
+        -2304,
+        -540
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 110
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            108
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        2,
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 80,
+      "type": "SigmasRescale",
+      "pos": [
+        -2070,
+        -522
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {},
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            127
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "SigmasRescale"
+      },
+      "widgets_values": [
+        0.875,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 83,
+      "type": "PreviewImage",
+      "pos": [
+        -1832.6062396738023,
+        579.4597205077218
+      ],
+      "size": [
+        627.6506129309273,
+        622.904903128033
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 152
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 85,
+      "type": "SetNode",
+      "pos": [
+        -2835,
+        9
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "link": 118
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_n",
+      "properties": {
+        "previousName": "n"
+      },
+      "widgets_values": [
+        "n"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 86,
+      "type": "GetNode",
+      "pos": [
+        -1953,
+        -1314
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            119
+          ]
+        }
+      ],
+      "title": "Get_n",
+      "properties": {},
+      "widgets_values": [
+        "n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 89,
+      "type": "SetNode",
+      "pos": [
+        -2412,
+        -135
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 121
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_pc",
+      "properties": {
+        "previousName": "pc"
+      },
+      "widgets_values": [
+        "pc"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 90,
+      "type": "SetNode",
+      "pos": [
+        -2412,
+        270
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "link": 122
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_nc",
+      "properties": {
+        "previousName": "nc"
+      },
+      "widgets_values": [
+        "nc"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 92,
+      "type": "GetNode",
+      "pos": [
+        -2196,
+        -990
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            125
+          ]
+        }
+      ],
+      "title": "Get_pc",
+      "properties": {},
+      "widgets_values": [
+        "pc"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 93,
+      "type": "GetNode",
+      "pos": [
+        -2196,
+        -945
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            126
+          ]
+        }
+      ],
+      "title": "Get_nc",
+      "properties": {},
+      "widgets_values": [
+        "nc"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 94,
+      "type": "GetNode",
+      "pos": [
+        -1719,
+        -747
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            128
+          ]
+        }
+      ],
+      "title": "Get_n",
+      "properties": {},
+      "widgets_values": [
+        "n"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 95,
+      "type": "GetNode",
+      "pos": [
+        -1908,
+        -261
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            129
+          ]
+        }
+      ],
+      "title": "Get_pc",
+      "properties": {},
+      "widgets_values": [
+        "pc"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 96,
+      "type": "SetNode",
+      "pos": [
+        -2835,
+        135
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "link": 130
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_t2i",
+      "properties": {
+        "previousName": "t2i"
+      },
+      "widgets_values": [
+        "t2i"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 97,
+      "type": "GetNode",
+      "pos": [
+        -1962,
+        -405
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            131
+          ]
+        }
+      ],
+      "title": "Get_t2i",
+      "properties": {},
+      "widgets_values": [
+        "t2i"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 98,
+      "type": "GetNode",
+      "pos": [
+        -1530,
+        9
+      ],
+      "size": [
+        210,
+        34
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            132
+          ]
+        }
+      ],
+      "title": "Get_t2i",
+      "properties": {},
+      "widgets_values": [
+        "t2i"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 99,
+      "type": "SetNode",
+      "pos": [
+        -2835,
+        234
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "link": 133
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_v",
+      "properties": {
+        "previousName": "v"
+      },
+      "widgets_values": [
+        "v"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 100,
+      "type": "GetNode",
+      "pos": [
+        -1701,
+        -1269
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            134,
+            140
+          ]
+        }
+      ],
+      "title": "Get_v",
+      "properties": {},
+      "widgets_values": [
+        "v"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 101,
+      "type": "SetNode",
+      "pos": [
+        -1800,
+        216
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 135
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_lw",
+      "properties": {
+        "previousName": "lw"
+      },
+      "widgets_values": [
+        "lw"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 102,
+      "type": "SetNode",
+      "pos": [
+        -1800,
+        324
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "link": 136
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_lh",
+      "properties": {
+        "previousName": "lh"
+      },
+      "widgets_values": [
+        "lh"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 103,
+      "type": "GetNode",
+      "pos": [
+        -1557,
+        -1125
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            138
+          ]
+        }
+      ],
+      "title": "Get_lw",
+      "properties": {},
+      "widgets_values": [
+        "lw"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 104,
+      "type": "GetNode",
+      "pos": [
+        -1548,
+        -1089
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            139
+          ]
+        }
+      ],
+      "title": "Get_lh",
+      "properties": {},
+      "widgets_values": [
+        "lh"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 105,
+      "type": "GetNode",
+      "pos": [
+        -1449,
+        -639
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            141
+          ]
+        }
+      ],
+      "title": "Get_v",
+      "properties": {},
+      "widgets_values": [
+        "v"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 106,
+      "type": "SetNode",
+      "pos": [
+        -1530,
+        -135
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_t2vl",
+      "properties": {
+        "previousName": "t2vl"
+      },
+      "widgets_values": [
+        "t2vl"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 107,
+      "type": "GetNode",
+      "pos": [
+        -1971,
+        -891
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            143
+          ]
+        }
+      ],
+      "title": "Get_t2vl",
+      "properties": {},
+      "widgets_values": [
+        "t2vl"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 108,
+      "type": "SetNode",
+      "pos": [
+        -1001.4275968215261,
+        -1187.4963388482038
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 144
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_hnl",
+      "properties": {
+        "previousName": "hnl"
+      },
+      "widgets_values": [
+        "hnl"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 109,
+      "type": "GetNode",
+      "pos": [
+        -1539,
+        -36
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            145
+          ]
+        }
+      ],
+      "title": "Get_hnl",
+      "properties": {},
+      "widgets_values": [
+        "hnl"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 110,
+      "type": "SetNode",
+      "pos": [
+        -1305,
+        99
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "link": 146
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_lnl",
+      "properties": {
+        "previousName": "lnl"
+      },
+      "widgets_values": [
+        "lnl"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 111,
+      "type": "GetNode",
+      "pos": [
+        -1719,
+        -225
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            147
+          ]
+        }
+      ],
+      "title": "Get_lnl",
+      "properties": {},
+      "widgets_values": [
+        "lnl"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 113,
+      "type": "SetNode",
+      "pos": [
+        -1440,
+        -1044
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 148
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_hnp",
+      "properties": {
+        "previousName": "hnp"
+      },
+      "widgets_values": [
+        "hnp"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 114,
+      "type": "GetNode",
+      "pos": [
+        -3050.6682435144244,
+        526.4774376145776
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            149
+          ]
+        }
+      ],
+      "title": "Get_hnp",
+      "properties": {},
+      "widgets_values": [
+        "hnp"
+      ]
+    },
+    {
+      "id": 116,
+      "type": "SetNode",
+      "pos": [
+        -1197,
+        -567
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 150
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_lnp",
+      "properties": {
+        "previousName": "lnp"
+      },
+      "widgets_values": [
+        "lnp"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 117,
+      "type": "GetNode",
+      "pos": [
+        -2501.6641045614983,
+        516.9294156510568
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            151
+          ]
+        }
+      ],
+      "title": "Get_lnp",
+      "properties": {},
+      "widgets_values": [
+        "lnp"
+      ]
+    },
+    {
+      "id": 118,
+      "type": "GetNode",
+      "pos": [
+        -1953.2195301851423,
+        517.6101964896687
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            152,
+            170,
+            177
+          ]
+        }
+      ],
+      "title": "Get_lnp",
+      "properties": {},
+      "widgets_values": [
+        "lnp"
+      ]
+    },
+    {
+      "id": 119,
+      "type": "UNETLoader",
+      "pos": [
+        -1173.5205959801885,
+        748.1491121307059
+      ],
+      "size": [
+        380.26377341777356,
+        82
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            153
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "zimage/z_image_turbo_bf16.safetensors",
+        "default"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 120,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        -779.0503708116692,
+        747.8598309383141
+      ],
+      "size": [
+        229.2180118238639,
+        58
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 153
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            154,
+            160
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "ModelSamplingAuraFlow"
+      },
+      "widgets_values": [
+        3
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 121,
+      "type": "BasicScheduler",
+      "pos": [
+        -535.7457606243925,
+        748.3331215629827
+      ],
+      "size": [
+        210,
+        106
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 154
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            155
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        9,
+        1
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 122,
+      "type": "SplitSigmas",
+      "pos": [
+        -309.177095082868,
+        748.3331215629825
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 67,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 155
+        }
+      ],
+      "outputs": [
+        {
+          "name": "high_sigmas",
+          "type": "SIGMAS",
+          "links": null
+        },
+        {
+          "name": "low_sigmas",
+          "type": "SIGMAS",
+          "links": [
+            156
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "SplitSigmas"
+      },
+      "widgets_values": [
+        7
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 123,
+      "type": "SigmaSmoother",
+      "pos": [
+        -81.59683826306305,
+        767.5509944828808
+      ],
+      "size": [
+        223.14901977004888,
+        82
+      ],
+      "flags": {},
+      "order": 73,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 156
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            157
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "SigmaSmoother"
+      },
+      "widgets_values": [
+        2,
+        "linear"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 124,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        165.2012451753178,
+        749.3446202386184
+      ],
+      "size": [
+        213.32500305175782,
+        385.7666707356771
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 158
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 159
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 181
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 157
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 168
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": null
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": [
+            163
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 125,
+      "type": "RandomNoise",
+      "pos": [
+        -146.33099405353218,
+        625.9454627661229
+      ],
+      "size": [
+        289.90589510385803,
+        82
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            158
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        736675784933900,
+        "randomize"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 126,
+      "type": "BasicGuider",
+      "pos": [
+        -14.839962929254186,
+        889.9386301290798
+      ],
+      "size": [
+        159.57500076293945,
+        46
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 160
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 161
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            159
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 127,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -245.45471577596697,
+        938.4890849173045
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 42,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 162
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            161
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 128,
+      "type": "CLIPLoader",
+      "pos": [
+        -562.0441705750659,
+        909.1565493503
+      ],
+      "size": [
+        290.917393779494,
+        106
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            162
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen_3_4b.safetensors",
+        "lumina2",
+        "default"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 129,
+      "type": "VAEDecode",
+      "pos": [
+        397.83890277065854,
+        768.5624931585168
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 88,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 163
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 164
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            165
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 130,
+      "type": "VAELoader",
+      "pos": [
+        -127.1130748323117,
+        985.016634956902
+      ],
+      "size": [
+        272.71088063126604,
+        58
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            164,
+            167
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "flux-vae.safetensors"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 131,
+      "type": "PreviewImage",
+      "pos": [
+        555.6276956271014,
+        767.550948181559
+      ],
+      "size": [
+        424.77745852289354,
+        422.33074756838573
+      ],
+      "flags": {},
+      "order": 89,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 165
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 132,
+      "type": "VAEEncode",
+      "pos": [
+        -720.7751263814305,
+        844.8466206939673
+      ],
+      "size": [
+        142.05423819761268,
+        46
+      ],
+      "flags": {},
+      "order": 82,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 180
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 167
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            168
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 133,
+      "type": "RTXVideoSuperResolution",
+      "pos": [
+        -1089.661773243939,
+        1103.4131782488287
+      ],
+      "size": [
+        226.79999389648438,
+        130
+      ],
+      "flags": {},
+      "order": 72,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 177
+        },
+        {
+          "name": "resize_type.width",
+          "type": "INT",
+          "widget": {
+            "name": "resize_type.width"
+          },
+          "link": 175
+        },
+        {
+          "name": "resize_type.height",
+          "type": "INT",
+          "widget": {
+            "name": "resize_type.height"
+          },
+          "link": 176
+        }
+      ],
+      "outputs": [
+        {
+          "name": "upscaled_images",
+          "type": "IMAGE",
+          "links": [
+            178
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_nvidia_rtx_nodes",
+        "ver": "892515e3eb9a4920a131a502a047e47adca9eb0d",
+        "Node name for S&R": "RTXVideoSuperResolution"
+      },
+      "widgets_values": [
+        "target dimensions",
+        1920,
+        1080,
+        "ULTRA"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 134,
+      "type": "GetImageSize",
+      "pos": [
+        -1041.1112258530695,
+        1425.287293396601
+      ],
+      "size": [
+        140.1249984741211,
+        124
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 44,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 170
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            171
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            172
+          ]
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "GetImageSize"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 135,
+      "type": "GetCommonAspectRatio",
+      "pos": [
+        -1056.152772809549,
+        1362.6416045327055
+      ],
+      "size": [
+        210,
+        342
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 56,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 171
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "aspect_w",
+          "type": "INT",
+          "links": [
+            173
+          ]
+        },
+        {
+          "name": "aspect_h",
+          "type": "INT",
+          "links": [
+            174
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "GetCommonAspectRatio"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 136,
+      "type": "ImageSizeCalculator",
+      "pos": [
+        -1076.4797899933762,
+        1294.8451508950664
+      ],
+      "size": [
+        210,
+        174
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 66,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "aspect_w",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_w"
+          },
+          "link": 173
+        },
+        {
+          "name": "aspect_h",
+          "type": "INT",
+          "widget": {
+            "name": "aspect_h"
+          },
+          "link": 174
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            175
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            176
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-supernodes",
+        "ver": "46e8e6a1eb3bbbd09ac6f6fe0f9a949860a136e7",
+        "Node name for S&R": "ImageSizeCalculator"
+      },
+      "widgets_values": [
+        1,
+        1,
+        "max",
+        1920,
+        16
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 137,
+      "type": "0917a7a5-9233-42db-9927-4dcb4ad78d01",
+      "pos": [
+        -831.0844424649506,
+        1196.1755028782638
+      ],
+      "size": [
+        250,
+        154
+      ],
+      "flags": {},
+      "order": 77,
+      "mode": 4,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "images.image0",
+          "type": "IMAGE",
+          "link": 178
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE0",
+          "type": "IMAGE",
+          "links": [
+            179,
+            180
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "17",
+            "value"
+          ],
+          [
+            "18",
+            "value"
+          ],
+          [
+            "19",
+            "value"
+          ],
+          [
+            "20",
+            "value"
+          ],
+          [
+            "21",
+            "choice"
+          ]
+        ],
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 138,
+      "type": "PreviewImage",
+      "pos": [
+        -531.4575741191123,
+        1135.767422559945
+      ],
+      "size": [
+        363.53444732254843,
+        466.9999025912821
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 179
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 139,
+      "type": "KSamplerSelect",
+      "pos": [
+        -453.57323225591165,
+        638.2211618332379
+      ],
+      "size": [
+        290.45887738436807,
+        58
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            181
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.18.5",
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "dpmpp_2m_sde_gpu"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    }
+  ],
+  "links": [
+    [
+      37,
+      32,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      40,
+      36,
+      0,
+      34,
+      0,
+      "MODEL"
+    ],
+    [
+      42,
+      38,
+      0,
+      37,
+      0,
+      "CLIP"
+    ],
+    [
+      43,
+      34,
+      0,
+      39,
+      1,
+      "GUIDER"
+    ],
+    [
+      45,
+      41,
+      0,
+      39,
+      2,
+      "SAMPLER"
+    ],
+    [
+      47,
+      33,
+      0,
+      42,
+      0,
+      "MODEL"
+    ],
+    [
+      53,
+      42,
+      0,
+      48,
+      0,
+      "SIGMAS"
+    ],
+    [
+      57,
+      39,
+      0,
+      45,
+      0,
+      "LATENT"
+    ],
+    [
+      65,
+      32,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      66,
+      53,
+      0,
+      44,
+      0,
+      "INT"
+    ],
+    [
+      67,
+      53,
+      1,
+      44,
+      1,
+      "INT"
+    ],
+    [
+      68,
+      48,
+      0,
+      54,
+      0,
+      "SIGMAS"
+    ],
+    [
+      72,
+      57,
+      0,
+      58,
+      0,
+      "MODEL"
+    ],
+    [
+      73,
+      58,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      74,
+      59,
+      0,
+      60,
+      0,
+      "SIGMAS"
+    ],
+    [
+      76,
+      60,
+      0,
+      62,
+      3,
+      "SIGMAS"
+    ],
+    [
+      77,
+      63,
+      0,
+      62,
+      2,
+      "SAMPLER"
+    ],
+    [
+      78,
+      64,
+      0,
+      62,
+      1,
+      "GUIDER"
+    ],
+    [
+      81,
+      38,
+      0,
+      65,
+      0,
+      "CLIP"
+    ],
+    [
+      84,
+      57,
+      0,
+      64,
+      0,
+      "MODEL"
+    ],
+    [
+      85,
+      62,
+      1,
+      66,
+      0,
+      "LATENT"
+    ],
+    [
+      86,
+      66,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      89,
+      70,
+      0,
+      53,
+      0,
+      "INT"
+    ],
+    [
+      90,
+      70,
+      0,
+      68,
+      0,
+      "INT"
+    ],
+    [
+      91,
+      71,
+      0,
+      53,
+      1,
+      "INT"
+    ],
+    [
+      92,
+      71,
+      0,
+      68,
+      1,
+      "INT"
+    ],
+    [
+      96,
+      68,
+      0,
+      75,
+      0,
+      "INT"
+    ],
+    [
+      97,
+      68,
+      1,
+      75,
+      1,
+      "INT"
+    ],
+    [
+      98,
+      75,
+      0,
+      73,
+      1,
+      "LATENT"
+    ],
+    [
+      103,
+      67,
+      0,
+      77,
+      0,
+      "IMAGE"
+    ],
+    [
+      106,
+      54,
+      0,
+      78,
+      1,
+      "SIGMAS"
+    ],
+    [
+      107,
+      78,
+      0,
+      39,
+      3,
+      "SIGMAS"
+    ],
+    [
+      108,
+      79,
+      0,
+      80,
+      0,
+      "SIGMAS"
+    ],
+    [
+      110,
+      33,
+      0,
+      79,
+      0,
+      "MODEL"
+    ],
+    [
+      118,
+      40,
+      0,
+      85,
+      0,
+      "NOISE"
+    ],
+    [
+      119,
+      86,
+      0,
+      62,
+      0,
+      "NOISE"
+    ],
+    [
+      121,
+      37,
+      0,
+      89,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      122,
+      65,
+      0,
+      90,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      125,
+      92,
+      0,
+      64,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      126,
+      93,
+      0,
+      64,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      127,
+      80,
+      0,
+      78,
+      0,
+      "SIGMAS"
+    ],
+    [
+      128,
+      94,
+      0,
+      39,
+      0,
+      "NOISE"
+    ],
+    [
+      129,
+      95,
+      0,
+      34,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      130,
+      74,
+      0,
+      96,
+      0,
+      "BOOLEAN"
+    ],
+    [
+      131,
+      97,
+      0,
+      78,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      132,
+      98,
+      0,
+      73,
+      2,
+      "BOOLEAN"
+    ],
+    [
+      133,
+      46,
+      0,
+      99,
+      0,
+      "VAE"
+    ],
+    [
+      134,
+      100,
+      0,
+      66,
+      1,
+      "VAE"
+    ],
+    [
+      135,
+      68,
+      0,
+      101,
+      0,
+      "INT"
+    ],
+    [
+      136,
+      68,
+      1,
+      102,
+      0,
+      "INT"
+    ],
+    [
+      138,
+      103,
+      0,
+      67,
+      1,
+      "INT"
+    ],
+    [
+      139,
+      104,
+      0,
+      67,
+      2,
+      "INT"
+    ],
+    [
+      140,
+      100,
+      0,
+      77,
+      1,
+      "VAE"
+    ],
+    [
+      141,
+      105,
+      0,
+      45,
+      1,
+      "VAE"
+    ],
+    [
+      142,
+      44,
+      0,
+      106,
+      0,
+      "LATENT"
+    ],
+    [
+      143,
+      107,
+      0,
+      62,
+      4,
+      "LATENT"
+    ],
+    [
+      144,
+      77,
+      0,
+      108,
+      0,
+      "LATENT"
+    ],
+    [
+      145,
+      109,
+      0,
+      73,
+      0,
+      "LATENT"
+    ],
+    [
+      146,
+      73,
+      0,
+      110,
+      0,
+      "LATENT"
+    ],
+    [
+      147,
+      111,
+      0,
+      39,
+      4,
+      "LATENT"
+    ],
+    [
+      148,
+      66,
+      0,
+      113,
+      0,
+      "IMAGE"
+    ],
+    [
+      149,
+      114,
+      0,
+      72,
+      0,
+      "IMAGE"
+    ],
+    [
+      150,
+      45,
+      0,
+      116,
+      0,
+      "IMAGE"
+    ],
+    [
+      151,
+      117,
+      0,
+      61,
+      0,
+      "IMAGE"
+    ],
+    [
+      152,
+      118,
+      0,
+      83,
+      0,
+      "IMAGE"
+    ],
+    [
+      153,
+      119,
+      0,
+      120,
+      0,
+      "MODEL"
+    ],
+    [
+      154,
+      120,
+      0,
+      121,
+      0,
+      "MODEL"
+    ],
+    [
+      155,
+      121,
+      0,
+      122,
+      0,
+      "SIGMAS"
+    ],
+    [
+      156,
+      122,
+      1,
+      123,
+      0,
+      "SIGMAS"
+    ],
+    [
+      157,
+      123,
+      0,
+      124,
+      3,
+      "SIGMAS"
+    ],
+    [
+      158,
+      125,
+      0,
+      124,
+      0,
+      "NOISE"
+    ],
+    [
+      159,
+      126,
+      0,
+      124,
+      1,
+      "GUIDER"
+    ],
+    [
+      160,
+      120,
+      0,
+      126,
+      0,
+      "MODEL"
+    ],
+    [
+      161,
+      127,
+      0,
+      126,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      162,
+      128,
+      0,
+      127,
+      0,
+      "CLIP"
+    ],
+    [
+      163,
+      124,
+      1,
+      129,
+      0,
+      "LATENT"
+    ],
+    [
+      164,
+      130,
+      0,
+      129,
+      1,
+      "VAE"
+    ],
+    [
+      165,
+      129,
+      0,
+      131,
+      0,
+      "IMAGE"
+    ],
+    [
+      167,
+      130,
+      0,
+      132,
+      1,
+      "VAE"
+    ],
+    [
+      168,
+      132,
+      0,
+      124,
+      4,
+      "LATENT"
+    ],
+    [
+      170,
+      118,
+      0,
+      134,
+      0,
+      "IMAGE"
+    ],
+    [
+      171,
+      134,
+      0,
+      135,
+      0,
+      "INT"
+    ],
+    [
+      172,
+      134,
+      1,
+      135,
+      1,
+      "INT"
+    ],
+    [
+      173,
+      135,
+      0,
+      136,
+      0,
+      "INT"
+    ],
+    [
+      174,
+      135,
+      1,
+      136,
+      1,
+      "INT"
+    ],
+    [
+      175,
+      136,
+      0,
+      133,
+      1,
+      "INT"
+    ],
+    [
+      176,
+      136,
+      1,
+      133,
+      2,
+      "INT"
+    ],
+    [
+      177,
+      118,
+      0,
+      133,
+      0,
+      "IMAGE"
+    ],
+    [
+      178,
+      133,
+      0,
+      137,
+      0,
+      "IMAGE"
+    ],
+    [
+      179,
+      137,
+      0,
+      138,
+      0,
+      "IMAGE"
+    ],
+    [
+      180,
+      137,
+      0,
+      132,
+      0,
+      "IMAGE"
+    ],
+    [
+      181,
+      139,
+      0,
+      124,
+      2,
+      "SAMPLER"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Sampling",
+      "bounding": [
+        -3051,
+        -1386,
+        2164.033176244474,
+        1171.4008528332806
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Settings",
+      "bounding": [
+        -3051,
+        -207,
+        1856.1103213009144,
+        687.4328862318844
+      ],
+      "color": "#8AA",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Image Detailing",
+      "bounding": [
+        -1183.5205959801885,
+        552.3454627661229,
+        2181.4626116149193,
+        1119.6405596821826
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "0917a7a5-9233-42db-9927-4dcb4ad78d01",
+        "version": 1,
+        "state": {
+          "lastGroupId": 3,
+          "lastNodeId": 139,
+          "lastLinkId": 181,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Film Grain",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            4096.671470760602,
+            -948.2184031393472,
+            120,
+            60
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            4900,
+            -948.2184031393472,
+            120,
+            60
+          ]
+        },
+        "inputs": [
+          {
+            "id": "062968ea-da25-47e7-a180-d913c267f148",
+            "name": "images.image0",
+            "type": "IMAGE",
+            "linkIds": [
+              22
+            ],
+            "localized_name": "images.image0",
+            "label": "image",
+            "pos": [
+              4196.671470760602,
+              -928.2184031393472
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "43247d06-a39f-4733-9828-c39400fe02a4",
+            "name": "IMAGE0",
+            "type": "IMAGE",
+            "linkIds": [
+              23
+            ],
+            "localized_name": "IMAGE0",
+            "label": "IMAGE",
+            "pos": [
+              4920,
+              -928.2184031393472
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 15,
+            "type": "GLSLShader",
+            "pos": [
+              4510,
+              -1180
+            ],
+            "size": [
+              330,
+              272
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "image0",
+                "localized_name": "images.image0",
+                "name": "images.image0",
+                "type": "IMAGE",
+                "link": 22
+              },
+              {
+                "label": "image1",
+                "localized_name": "images.image1",
+                "name": "images.image1",
+                "shape": 7,
+                "type": "IMAGE",
+                "link": null
+              },
+              {
+                "label": "u_float0",
+                "localized_name": "floats.u_float0",
+                "name": "floats.u_float0",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 26
+              },
+              {
+                "label": "u_float1",
+                "localized_name": "floats.u_float1",
+                "name": "floats.u_float1",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 27
+              },
+              {
+                "label": "u_float2",
+                "localized_name": "floats.u_float2",
+                "name": "floats.u_float2",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 28
+              },
+              {
+                "label": "u_float3",
+                "localized_name": "floats.u_float3",
+                "name": "floats.u_float3",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": 29
+              },
+              {
+                "label": "u_float4",
+                "localized_name": "floats.u_float4",
+                "name": "floats.u_float4",
+                "shape": 7,
+                "type": "FLOAT",
+                "link": null
+              },
+              {
+                "label": "u_int0",
+                "localized_name": "ints.u_int0",
+                "name": "ints.u_int0",
+                "shape": 7,
+                "type": "INT",
+                "link": 30
+              },
+              {
+                "label": "u_int1",
+                "localized_name": "ints.u_int1",
+                "name": "ints.u_int1",
+                "shape": 7,
+                "type": "INT",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE0",
+                "name": "IMAGE0",
+                "type": "IMAGE",
+                "links": [
+                  23
+                ]
+              },
+              {
+                "localized_name": "IMAGE1",
+                "name": "IMAGE1",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE2",
+                "name": "IMAGE2",
+                "type": "IMAGE",
+                "links": null
+              },
+              {
+                "localized_name": "IMAGE3",
+                "name": "IMAGE3",
+                "type": "IMAGE",
+                "links": null
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "GLSLShader"
+            },
+            "widgets_values": [
+              "#version 300 es\nprecision highp float;\n\nuniform sampler2D u_image0;\nuniform vec2 u_resolution;\nuniform float u_float0; // grain amount      [0.0 – 1.0]   typical: 0.2–0.8\nuniform float u_float1; // grain size        [0.3 – 3.0]   lower = finer grain\nuniform float u_float2; // color amount      [0.0 – 1.0]   0 = monochrome, 1 = RGB grain\nuniform float u_float3; // luminance bias    [0.0 – 1.0]   0 = uniform, 1 = shadows only\nuniform int   u_int0;   // noise mode        [0 or 1]      0 = smooth, 1 = grainy\n\nin vec2 v_texCoord;\nlayout(location = 0) out vec4 fragColor0;\n\n// High-quality integer hash (pcg-like)\nuint pcg(uint v) {\n    uint state = v * 747796405u + 2891336453u;\n    uint word = ((state >> ((state >> 28u) + 4u)) ^ state) * 277803737u;\n    return (word >> 22u) ^ word;\n}\n\n// 2D -> 1D hash input\nuint hash2d(uvec2 p) {\n    return pcg(p.x + pcg(p.y));\n}\n\n// Hash to float [0, 1]\nfloat hashf(uvec2 p) {\n    return float(hash2d(p)) / float(0xffffffffu);\n}\n\n// Hash to float with offset (for RGB channels)\nfloat hashf(uvec2 p, uint offset) {\n    return float(pcg(hash2d(p) + offset)) / float(0xffffffffu);\n}\n\n// Convert uniform [0,1] to roughly Gaussian distribution\n// Using simple approximation: average of multiple samples\nfloat toGaussian(uvec2 p) {\n    float sum = hashf(p, 0u) + hashf(p, 1u) + hashf(p, 2u) + hashf(p, 3u);\n    return (sum - 2.0) * 0.7;  // Centered, scaled\n}\n\nfloat toGaussian(uvec2 p, uint offset) {\n    float sum = hashf(p, offset) + hashf(p, offset + 1u) \n              + hashf(p, offset + 2u) + hashf(p, offset + 3u);\n    return (sum - 2.0) * 0.7;\n}\n\n// Smooth noise with better interpolation\nfloat smoothNoise(vec2 p) {\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n    \n    // Quintic interpolation (less banding than cubic)\n    f = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);\n    \n    uvec2 ui = uvec2(i);\n    float a = toGaussian(ui);\n    float b = toGaussian(ui + uvec2(1u, 0u));\n    float c = toGaussian(ui + uvec2(0u, 1u));\n    float d = toGaussian(ui + uvec2(1u, 1u));\n    \n    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n}\n\nfloat smoothNoise(vec2 p, uint offset) {\n    vec2 i = floor(p);\n    vec2 f = fract(p);\n    \n    f = f * f * f * (f * (f * 6.0 - 15.0) + 10.0);\n    \n    uvec2 ui = uvec2(i);\n    float a = toGaussian(ui, offset);\n    float b = toGaussian(ui + uvec2(1u, 0u), offset);\n    float c = toGaussian(ui + uvec2(0u, 1u), offset);\n    float d = toGaussian(ui + uvec2(1u, 1u), offset);\n    \n    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n}\n\nvoid main() {\n    vec4 color = texture(u_image0, v_texCoord);\n    \n    // Luminance (Rec.709)\n    float luma = dot(color.rgb, vec3(0.2126, 0.7152, 0.0722));\n    \n    // Grain UV (resolution-independent)\n    vec2 grainUV = v_texCoord * u_resolution / max(u_float1, 0.01);\n    uvec2 grainPixel = uvec2(grainUV);\n    \n    float g;\n    vec3 grainRGB;\n    \n    if (u_int0 == 1) {\n        // Grainy mode: pure hash noise (no interpolation = no banding)\n        g = toGaussian(grainPixel);\n        grainRGB = vec3(\n            toGaussian(grainPixel, 100u),\n            toGaussian(grainPixel, 200u),\n            toGaussian(grainPixel, 300u)\n        );\n    } else {\n        // Smooth mode: interpolated with quintic curve\n        g = smoothNoise(grainUV);\n        grainRGB = vec3(\n            smoothNoise(grainUV, 100u),\n            smoothNoise(grainUV, 200u),\n            smoothNoise(grainUV, 300u)\n        );\n    }\n    \n    // Luminance weighting (less grain in highlights)\n    float lumWeight = mix(1.0, 1.0 - luma, clamp(u_float3, 0.0, 1.0));\n    \n    // Strength\n    float strength = u_float0 * 0.15;\n    \n    // Color vs monochrome grain\n    vec3 grainColor = mix(vec3(g), grainRGB, clamp(u_float2, 0.0, 1.0));\n    \n    color.rgb += grainColor * strength * lumWeight;\n    fragColor0 = vec4(clamp(color.rgb, 0.0, 1.0), color.a);\n}\n",
+              "from_input"
+            ]
+          },
+          {
+            "id": 21,
+            "type": "CustomCombo",
+            "pos": [
+              4280,
+              -780
+            ],
+            "size": [
+              210,
+              153.8888931274414
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "grain_mode",
+                "localized_name": "choice",
+                "name": "choice",
+                "type": "COMBO",
+                "widget": {
+                  "name": "choice"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "STRING",
+                "name": "STRING",
+                "type": "STRING",
+                "links": null
+              },
+              {
+                "localized_name": "INDEX",
+                "name": "INDEX",
+                "type": "INT",
+                "links": [
+                  30
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "CustomCombo"
+            },
+            "widgets_values": [
+              "Smooth",
+              0,
+              "Smooth",
+              "Grainy",
+              ""
+            ]
+          },
+          {
+            "id": 17,
+            "type": "PrimitiveFloat",
+            "pos": [
+              4276.671470760602,
+              -1180.3256994061358
+            ],
+            "size": [
+              210,
+              58
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "grain_amount",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  26
+                ]
+              }
+            ],
+            "title": "Grain amount",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "PrimitiveFloat",
+              "min": 0,
+              "max": 1,
+              "step": 0.05,
+              "precision": 2
+            },
+            "widgets_values": [
+              0.25
+            ]
+          },
+          {
+            "id": 18,
+            "type": "PrimitiveFloat",
+            "pos": [
+              4280,
+              -1080
+            ],
+            "size": [
+              210,
+              58
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "grain_size",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  27
+                ]
+              }
+            ],
+            "title": "Grain size",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "PrimitiveFloat",
+              "min": 0.05,
+              "max": 3,
+              "precision": 2,
+              "step": 0.05
+            },
+            "widgets_values": [
+              3
+            ]
+          },
+          {
+            "id": 19,
+            "type": "PrimitiveFloat",
+            "pos": [
+              4280,
+              -980
+            ],
+            "size": [
+              210,
+              58
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "color_amount",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  28
+                ]
+              }
+            ],
+            "title": "Color amount",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "PrimitiveFloat",
+              "min": 0,
+              "max": 1,
+              "precision": 2,
+              "step": 0.05
+            },
+            "widgets_values": [
+              0
+            ]
+          },
+          {
+            "id": 20,
+            "type": "PrimitiveFloat",
+            "pos": [
+              4280,
+              -880
+            ],
+            "size": [
+              210,
+              58
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "shadow_focus",
+                "localized_name": "value",
+                "name": "value",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "value"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "FLOAT",
+                "name": "FLOAT",
+                "type": "FLOAT",
+                "links": [
+                  29
+                ]
+              }
+            ],
+            "title": "Luminance bias",
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.18.5",
+              "Node name for S&R": "PrimitiveFloat",
+              "min": 0,
+              "max": 1,
+              "precision": 2,
+              "step": 0.05
+            },
+            "widgets_values": [
+              0
+            ]
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 26,
+            "origin_id": 17,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": 27,
+            "origin_id": 18,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": 28,
+            "origin_id": 19,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 4,
+            "type": "FLOAT"
+          },
+          {
+            "id": 29,
+            "origin_id": 20,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 5,
+            "type": "FLOAT"
+          },
+          {
+            "id": 30,
+            "origin_id": 21,
+            "origin_slot": 1,
+            "target_id": 15,
+            "target_slot": 7,
+            "type": "INT"
+          },
+          {
+            "id": 22,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 15,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 23,
+            "origin_id": 15,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          }
+        ],
+        "extra": {
+          "workflowRendererVersion": "LG"
+        }
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        0,
+        0
+      ],
+      "scale": 1
+    },
+    "frontendVersion": "1.41.21",
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": false,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
