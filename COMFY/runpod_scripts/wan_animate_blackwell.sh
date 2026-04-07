@@ -7,14 +7,22 @@ cd /root
 
 wget -c https://github.com/sonnybox/yt-files/raw/refs/heads/main/COMFY/runpod_scripts/download_wan_animate_models.sh
 
-git clone https://github.com/Comfy-Org/ComfyUI
-git clone https://github.com/Comfy-Org/ComfyUI-Manager ComfyUI/custom_nodes/ComfyUI-Manager
-git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess ComfyUI/custom_nodes/ComfyUI-WanAnimatePreprocess
-
 chmod +x download_wan_animate_models.sh
 nohup ./download_wan_animate_models.sh > /root/model_download.log 2>&1 &
 
-cd ComfyUI
+git clone https://github.com/Comfy-Org/ComfyUI
+
+cd ComfyUI/custom_nodes
+
+git clone https://github.com/Comfy-Org/ComfyUI-Manager
+git clone https://github.com/kijai/ComfyUI-WanAnimatePreprocess
+git clone https://github.com/sonnybox/ComfyUI-SuperNodes
+git clone https://github.com/kijai/ComfyUI-WanVideoWrapper
+git clone https://github.com/kijai/ComfyUI-KJNodes
+git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite
+git clone https://github.com/kijai/ComfyUI-segment-anything-2
+
+cd /root/ComfyUI
 
 git fetch --tags
 git checkout $(git tag --sort=-v:refname | head -n 1)
@@ -28,6 +36,11 @@ uv pip install -r custom_nodes/ComfyUI-Manager/requirements.txt
 uv pip install coloredlogs flatbuffers numpy packaging protobuf sympy matplotlib ninja setuptools
 uv pip install --pre --index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ort-cuda-13-nightly/pypi/simple/ onnxruntime-gpu
 uv pip install -r custom_nodes/ComfyUI-WanAnimatePreprocess/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-WanVideoWrapper/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-KJNodes/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-VideoHelperSuite/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-SuperNodes/requirements.txt
+uv pip install -r custom_nodes/ComfyUI-segment-anything-2/requirements.txt
 
 uv pip install https://github.com/sonnybox/yt-files/raw/refs/heads/main/WHEELS/sm_120_blackwell/sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
